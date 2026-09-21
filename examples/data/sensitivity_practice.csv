@@ -1,0 +1,17 @@
+record_type,parameter,parameter_value,alpha,beta,response
+curve,lambda,0.10,,,0.86
+curve,lambda,0.25,,,0.55
+curve,lambda,0.40,,,0.31
+curve,lambda,0.55,,,0.18
+curve,lambda,0.70,,,0.12
+curve,lambda,0.85,,,0.16
+curve,lambda,1.00,,,0.27
+heatmap,,,0.10,0.10,-0.72
+heatmap,,,0.10,0.50,-0.31
+heatmap,,,0.10,0.90,0.08
+heatmap,,,0.50,0.10,-0.48
+heatmap,,,0.50,0.50,0.00
+heatmap,,,0.50,0.90,0.44
+heatmap,,,0.90,0.10,-0.09
+heatmap,,,0.90,0.50,0.35
+heatmap,,,0.90,0.90,0.81
