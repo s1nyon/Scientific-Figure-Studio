@@ -1,0 +1,39 @@
+# 个人科研绘图图库工作流
+
+## 添加图片
+
+把图片复制到 `figure_gallery/00_inbox/`，或按明确分类放入 `01_minimal`、`02_algorithm`、`03_visual_narrative`、`04_my_favorites`、`05_my_work`。系统不会修改原图，也不会因为图片好看就自动标记为 favorite。
+
+## 扫描与增量索引
+
+在项目根目录运行：
+
+```powershell
+python tools/update_gallery.py
+```
+
+扫描器使用相对路径和 SHA-256 识别新增、变化和重复图片，把程序估计写入 `gallery_index.csv`，把设计笔记写入 `figure_gallery/_generated/gallery_notes/`。空图库会得到空索引，绘图仍使用默认设计系统。
+
+## 设计档案与评价
+
+每张图的笔记只能写可观察事实：类型、布局、留白、颜色关系、字体层级、线条和标注方法。不能从图片推断原始数据、科研结论或字体精确名称。来源、版权说明和用户评价由用户补充；用户明确认可后再把图片复制或移动到 favorites，移动操作由用户自行完成。
+
+## 检索
+
+可在 Python 中按关键词和类别检索：
+
+```python
+from figure_studio.gallery import GalleryIndex
+
+gallery = GalleryIndex("figure_gallery")
+gallery.scan()
+matches = gallery.search(query="convergence", style="algorithm_research")
+for record in matches:
+    print(record.relative_path, record.style_tags)
+```
+
+绘图时把检索结果作为设计参考输入，借鉴信息层级和可复现的视觉方法；不要复制参考图中的数据或结论。
+
+## 清理失效索引
+
+先确认图片路径确实失效，再删除 `gallery_index.csv` 中对应记录或 `_generated` 中的笔记。不要删除图库原图；如需重新建立索引，重新运行 `update_gallery.py`。
