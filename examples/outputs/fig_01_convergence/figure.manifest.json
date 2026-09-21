@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-09-21T15:21:46.112886+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    6.2,
+    4.1
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples\\data\\convergence_practice.csv",
+    "objective_direction": "minimize",
+    "historical_best": true
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

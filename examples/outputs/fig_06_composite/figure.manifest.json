@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-21T15:21:56.205333+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    5.1
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples\\data\\composite_practice.csv",
+    "panels": [
+      "Primary result by algorithm",
+      "Residual evidence",
+      "One-parameter sensitivity evidence"
+    ]
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

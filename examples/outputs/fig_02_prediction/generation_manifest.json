@@ -1,0 +1,42 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_02_prediction",
+  "data_file": "examples/data/prediction_practice.csv",
+  "data_sha256": "08c264f82cf23ed6396c8f0a0317d403d76e84965de8418c4f41c13181968cef",
+  "config_summary": {
+    "figure_id": "fig_02_prediction",
+    "figure_width": 6.2,
+    "figure_height": 5.1,
+    "dpi": 300,
+    "style_name": "algorithm_research",
+    "palette_name": "algorithm_research",
+    "line_width": 1.8,
+    "marker_size": 4.2,
+    "font_size": 8.5,
+    "legend_location": "upper left",
+    "x_limits": null,
+    "y_limits": null,
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/prediction_practice.csv",
+    "split_colors": {
+      "train": "#166A8F",
+      "validation": "#2A9D8F",
+      "test": "#D9822B"
+    },
+    "split_markers": {
+      "train": "o",
+      "validation": "s",
+      "test": "^"
+    }
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}

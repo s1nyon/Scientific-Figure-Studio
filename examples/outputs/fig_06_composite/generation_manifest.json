@@ -1,0 +1,35 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_06_composite",
+  "data_file": "examples/data/composite_practice.csv",
+  "data_sha256": "f1c89484eaf0b55b86c899a939e7861a7715ba47dc29119211cf4955d5d3f13c",
+  "config_summary": {
+    "figure_id": "fig_06_composite",
+    "figure_width": 7.2,
+    "figure_height": 5.1,
+    "dpi": 300,
+    "style_name": "algorithm_research",
+    "palette_name": "algorithm_research",
+    "font_size": 8.2,
+    "line_width": 2.0,
+    "marker_size": 4.2,
+    "legend_location": "lower right",
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/composite_practice.csv",
+    "algorithm_colors": {
+      "Proposed": "#166A8F",
+      "Adaptive": "#2A9D8F",
+      "Baseline": "#7A8793"
+    }
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}

@@ -1,0 +1,43 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_01_convergence",
+  "data_file": "examples/data/convergence_practice.csv",
+  "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+  "config_summary": {
+    "figure_id": "fig_01_convergence",
+    "figure_width": 6.2,
+    "figure_height": 4.1,
+    "dpi": 300,
+    "style_name": "algorithm_research",
+    "palette_name": "algorithm_research",
+    "primary_color": "#166A8F",
+    "line_width": 2.0,
+    "auxiliary_line_width": 0.9,
+    "marker_size": 4.0,
+    "font_size": 8.5,
+    "legend_location": "upper right",
+    "x_limits": null,
+    "y_limits": [
+      0.75,
+      2.55
+    ],
+    "show_current_objective": true,
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/convergence_practice.csv",
+    "algorithm_colors": {
+      "Proposed": "#166A8F",
+      "Adaptive": "#2A9D8F",
+      "Baseline": "#7A8793"
+    }
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}

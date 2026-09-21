@@ -1,0 +1,17 @@
+{
+  "figure_id": "fig_05_spatial",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/spatial_practice.csv",
+  "coordinate_system": "simulated planar units; not geographic coordinates",
+  "fields": {
+    "record_type": "node, edge, obstacle, or path record",
+    "x": "x coordinate (simulated unit)",
+    "y": "y coordinate (simulated unit)",
+    "x2": "second x coordinate for edge or obstacle",
+    "y2": "second y coordinate for edge or obstacle",
+    "path_id": "candidate route identifier",
+    "order": "route point order"
+  },
+  "transformations": ["Paths are sorted by order before drawing"],
+  "random_seed": null
+}

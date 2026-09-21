@@ -1,0 +1,32 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_03_sensitivity",
+  "data_file": "examples/data/sensitivity_practice.csv",
+  "data_sha256": "ec747a05d9c1557c40ec59150c85b50c627edc5b0fd63d224f45439f5ac52ece",
+  "config_summary": {
+    "figure_id": "fig_03_sensitivity",
+    "figure_width": 7.2,
+    "figure_height": 3.8,
+    "dpi": 300,
+    "style_name": "visual_narrative",
+    "palette_name": "visual_narrative",
+    "line_width": 2.0,
+    "marker_size": 4.2,
+    "font_size": 8.2,
+    "heatmap_cmap": "RdBu_r",
+    "color_center": 0.0,
+    "legend_location": "upper right",
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/sensitivity_practice.csv"
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}

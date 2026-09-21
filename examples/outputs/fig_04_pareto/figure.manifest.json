@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-21T15:21:52.146135+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    6.2,
+    4.3
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples\\data\\pareto_practice.csv",
+    "objective_directions": [
+      "minimize",
+      "minimize"
+    ],
+    "front_definition": "No other feasible point is no worse in every objective and strictly better in one."
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

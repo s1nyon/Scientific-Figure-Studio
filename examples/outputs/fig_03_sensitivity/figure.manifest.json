@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-09-21T15:21:50.346289+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    3.8
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples\\data\\sensitivity_practice.csv",
+    "color_center": 0.0,
+    "transformations": [
+      "Pivoted observed alpha-beta-response rows"
+    ]
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

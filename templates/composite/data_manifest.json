@@ -1,0 +1,21 @@
+{
+  "figure_id": "fig_06_composite",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/composite_practice.csv",
+  "study_scope": "One simulated study links the hero result to residual and sensitivity evidence.",
+  "records": {
+    "hero": "Algorithm performance at five evaluation checkpoints",
+    "residual": "Residual values for the proposed and adaptive methods",
+    "sensitivity": "One-parameter response values used as supporting evidence"
+  },
+  "units": {
+    "x": "checkpoint or parameter value as indicated by record_type",
+    "y": "normalized performance or residual as indicated by record_type",
+    "parameter": "arbitrary practice units",
+    "response": "arbitrary practice units"
+  },
+  "transformations": [
+    "Sorted each panel by its x or parameter coordinate; no smoothing or data deletion."
+  ],
+  "random_seed": null
+}

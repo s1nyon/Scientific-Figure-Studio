@@ -1,0 +1,30 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_05_spatial",
+  "data_file": "examples/data/spatial_practice.csv",
+  "data_sha256": "4895af73d4019ba539351f28c68a0b630601803727bb9cec92121798a8747977",
+  "config_summary": {
+    "figure_id": "fig_05_spatial",
+    "figure_width": 6.8,
+    "figure_height": 4.6,
+    "dpi": 300,
+    "style_name": "visual_narrative",
+    "palette_name": "visual_narrative",
+    "font_size": 8.5,
+    "node_size": 42.0,
+    "path_line_width": 2.2,
+    "legend_location": "upper left",
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/spatial_practice.csv"
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}

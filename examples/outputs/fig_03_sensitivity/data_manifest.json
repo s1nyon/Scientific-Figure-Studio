@@ -1,0 +1,19 @@
+{
+  "figure_id": "fig_03_sensitivity",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/sensitivity_practice.csv",
+  "fields": {
+    "parameter": "Parameter name",
+    "parameter_value": "One-dimensional parameter value (a.u.)",
+    "alpha": "First heatmap parameter (a.u.)",
+    "beta": "Second heatmap parameter (a.u.)",
+    "response": "Response change relative to a declared reference (a.u.)"
+  },
+  "units": {
+    "parameter": "arbitrary practice units",
+    "response": "arbitrary practice units"
+  },
+  "color_center": 0,
+  "transformations": ["Heatmap rows are pivoted by alpha and beta"],
+  "random_seed": null
+}

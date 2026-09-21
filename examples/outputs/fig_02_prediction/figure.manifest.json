@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-09-21T15:21:48.078398+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    6.2,
+    5.1
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples\\data\\prediction_practice.csv",
+    "splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "uncertainty": "No prediction interval is shown; input data contain no interval basis."
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "package_version": "0.1.0",
+  "template": "fig_04_pareto",
+  "data_file": "examples/data/pareto_practice.csv",
+  "data_sha256": "d04fd0bae36ba865664904b3dd3c0660ba45b3f4bd23e0caf0321b2ca3e30f22",
+  "config_summary": {
+    "figure_id": "fig_04_pareto",
+    "figure_width": 6.2,
+    "figure_height": 4.3,
+    "dpi": 300,
+    "style_name": "algorithm_research",
+    "palette_name": "algorithm_research",
+    "font_size": 8.5,
+    "marker_size": 32.0,
+    "front_line_width": 2.0,
+    "legend_location": "upper right",
+    "objective_directions": [
+      "minimize",
+      "minimize"
+    ],
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/pareto_practice.csv"
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "source_status": "generated from the copied template source and config"
+}
