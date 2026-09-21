@@ -19,6 +19,7 @@ tmp/
 scratch/
 *.tmp
 *.bak
+tmp_*.png
 
 # Gallery-generated thumbnails are reproducible and should not be committed.
 figure_gallery/_generated/thumbnails/

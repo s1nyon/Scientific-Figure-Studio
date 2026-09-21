@@ -1,0 +1,178 @@
+"""Generate an honest prediction and residual analysis figure."""
+
+import sys
+from math import sqrt
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+PROJECT_ROOT = next(
+    parent
+    for parent in [Path(__file__).resolve(), *Path(__file__).resolve().parents]
+    if (parent / "figure_studio").is_dir()
+)
+sys.path.insert(0, str(PROJECT_ROOT))
+
+try:
+    from .config import CONFIG
+except ImportError:
+    from config import CONFIG
+
+from figure_studio.annotations import add_reference_line  # noqa: E402
+from figure_studio.export import export_figure  # noqa: E402
+from figure_studio.palettes import get_palette  # noqa: E402
+from figure_studio.style import figure_style  # noqa: E402
+from figure_studio.validation import validate_numeric_frame  # noqa: E402
+
+
+def load_data(path: str | Path) -> pd.DataFrame:
+    """Read prediction rows and require all three split labels."""
+
+    data_path = Path(path)
+    if not data_path.exists():
+        raise FileNotFoundError(data_path)
+    frame = pd.read_csv(data_path)
+    validate_numeric_frame(frame, ["sample", "x", "y_true", "y_pred"])
+    expected = {"train", "validation", "test"}
+    actual = set(frame["split"].dropna().astype(str))
+    missing = expected.difference(actual)
+    if missing:
+        raise ValueError(f"split is missing required labels: {sorted(missing)}")
+    frame = frame.copy()
+    frame["residual"] = frame["y_true"] - frame["y_pred"]
+    return frame.sort_values("sample").reset_index(drop=True)
+
+
+def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
+    """Build observed/predicted and residual panels from measured values."""
+
+    validate_numeric_frame(frame, ["sample", "x", "y_true", "y_pred"])
+    if "residual" not in frame:
+        frame = frame.copy()
+        frame["residual"] = frame["y_true"] - frame["y_pred"]
+    palette = get_palette(str(config["palette_name"]))
+    with figure_style(str(config["style_name"]), canvas="composite"):
+        with plt.rc_context(
+            {
+                "font.size": float(config["font_size"]),
+                "axes.labelsize": float(config["font_size"]),
+                "xtick.labelsize": float(config["font_size"]) - 1.0,
+                "ytick.labelsize": float(config["font_size"]) - 1.0,
+                "legend.fontsize": float(config["font_size"]) - 1.0,
+            }
+        ):
+            fig, (main_ax, residual_ax) = plt.subplots(
+                2,
+                1,
+                figsize=(float(config["figure_width"]), float(config["figure_height"])),
+                sharex=True,
+                height_ratios=(2.2, 1.0),
+                layout="constrained",
+            )
+            ordered = frame.sort_values("x")
+            main_ax.plot(
+                ordered["x"],
+                ordered["y_true"],
+                color=palette.ink,
+                linewidth=float(config["line_width"]),
+                marker="o",
+                markersize=float(config["marker_size"]),
+                label="Observed",
+            )
+            split_colors = dict(config["split_colors"])
+            split_markers = dict(config["split_markers"])
+            for split in ("train", "validation", "test"):
+                subset = ordered[ordered["split"] == split]
+                main_ax.plot(
+                    subset["x"],
+                    subset["y_pred"],
+                    color=split_colors[split],
+                    linewidth=float(config["line_width"]),
+                    marker=split_markers[split],
+                    markersize=float(config["marker_size"]),
+                    label=f"Predicted · {split}",
+                )
+                residual_ax.scatter(
+                    subset["x"],
+                    subset["residual"],
+                    color=split_colors[split],
+                    marker=split_markers[split],
+                    s=(float(config["marker_size"]) * 2.5) ** 2,
+                    label=split,
+                    zorder=3,
+                )
+
+            test = ordered[ordered["split"] == "test"]
+            rmse = sqrt(float(np.mean(test["residual"] ** 2)))
+            mae = float(np.mean(np.abs(test["residual"])))
+            main_ax.text(
+                0.99,
+                0.04,
+                f"Test RMSE = {rmse:.3f}\nTest MAE = {mae:.3f}",
+                transform=main_ax.transAxes,
+                ha="right",
+                va="bottom",
+                color=palette.ink,
+                fontsize=max(6.5, float(config["font_size"]) - 1.0),
+            )
+            for split in ("validation", "test"):
+                first_x = float(ordered.loc[ordered["split"] == split, "x"].min())
+                main_ax.axvline(first_x, color=palette.grid, linewidth=0.75, linestyle=":")
+                residual_ax.axvline(first_x, color=palette.grid, linewidth=0.75, linestyle=":")
+            add_reference_line(residual_ax, 0.0, axis="y", color=palette.muted, linewidth=0.8)
+            main_ax.set_ylabel("Response (unit)")
+            residual_ax.set_xlabel("Input (unit)")
+            residual_ax.set_ylabel("Residual (unit)")
+            main_ax.set_title("Prediction and residual analysis", loc="left", pad=10)
+            main_ax.legend(loc=str(config["legend_location"]), ncols=2)
+            residual_ax.legend(loc="upper right", ncols=3)
+            if config["x_limits"] is not None:
+                residual_ax.set_xlim(config["x_limits"])
+            if config["y_limits"] is not None:
+                main_ax.set_ylim(config["y_limits"])
+            fig.text(
+                0.01,
+                0.005,
+                "练习数据 · illustrative practice data",
+                color=palette.muted,
+                fontsize=max(6.5, float(config["font_size"]) - 1.5),
+            )
+            return fig
+
+
+def main(output_dir: str | Path | None = None, data_path: str | Path | None = None):
+    """Generate prediction artifacts and return their paths."""
+
+    source = PROJECT_ROOT / str(data_path or CONFIG["data_file"])
+    destination = (
+        Path(output_dir)
+        if output_dir
+        else PROJECT_ROOT / "examples" / "outputs" / str(CONFIG["figure_id"])
+    )
+    destination.mkdir(parents=True, exist_ok=True)
+    figure = build_figure(load_data(source), CONFIG)
+    try:
+        with figure_style(str(CONFIG["style_name"]), canvas="composite"):
+            return export_figure(
+                figure,
+                destination / "figure",
+                formats=tuple(CONFIG["output_formats"]),
+                dpi=int(CONFIG["dpi"]),
+                overwrite=True,
+                provenance={
+                    "data_status": "illustrative practice data",
+                    "data_file": str(source.relative_to(PROJECT_ROOT)),
+                    "splits": ["train", "validation", "test"],
+                    "uncertainty": (
+                        "No prediction interval is shown; input data contain no interval basis."
+                    ),
+                },
+            )
+    finally:
+        plt.close(figure)
+
+
+if __name__ == "__main__":
+    main()

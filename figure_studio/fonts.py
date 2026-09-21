@@ -20,9 +20,9 @@ class FontReport:
 
 _ENGLISH_CANDIDATES = ("Arial", "Calibri", "Aptos", "DejaVu Sans", "Liberation Sans")
 _CHINESE_CANDIDATES = (
-    "Noto Sans SC",
     "Microsoft YaHei",
     "SimHei",
+    "Noto Sans SC",
     "Source Han Sans SC",
     "DejaVu Sans",
 )
@@ -70,8 +70,8 @@ def configure_fonts(report: FontReport | None = None) -> FontReport:
         {
             "font.family": "sans-serif",
             "font.sans-serif": [
-                report.english_family,
                 report.chinese_family,
+                report.english_family,
                 "DejaVu Sans",
                 "sans-serif",
             ],

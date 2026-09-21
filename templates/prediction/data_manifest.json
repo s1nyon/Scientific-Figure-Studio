@@ -1,0 +1,16 @@
+{
+  "figure_id": "fig_02_prediction",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/prediction_practice.csv",
+  "fields": {
+    "sample": "Observation index (count)",
+    "split": "train, validation, or test partition",
+    "x": "Input variable (practice unit)",
+    "y_true": "Observed response (practice unit)",
+    "y_pred": "Model prediction (practice unit)"
+  },
+  "transformations": ["Residual = y_true - y_pred"],
+  "metrics": ["Test RMSE", "Test MAE"],
+  "uncertainty": "No interval is plotted because no interval data or fitted model is supplied.",
+  "random_seed": null
+}
