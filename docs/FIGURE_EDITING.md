@@ -17,10 +17,10 @@ python templates/convergence/plot.py --output-dir examples/outputs/fig_01_conver
 以 `examples/outputs/fig_01_convergence/config.py` 为例：
 
 ```python
-PRIMARY_COLOR = "#166A8F"  # 主曲线颜色
-LINE_WIDTH = 2.0            # 历史最优曲线线宽
+PRIMARY_COLOR = "#C65D3B"  # 主曲线颜色
+LINE_WIDTH = 2.2            # 历史最优曲线线宽
 FONT_SIZE = 8.5             # 轴、刻度和图例的基础字号
-FIGURE_WIDTH = 6.20         # 英寸
+FIGURE_WIDTH = 6.6          # 英寸
 FIGURE_HEIGHT = 4.10        # 英寸
 LEGEND_LOCATION = "upper right"
 ```

@@ -28,6 +28,12 @@ python templates/convergence/plot.py
 
 打开 `examples/outputs/fig_01_convergence/`，其中包含 PNG 预览、PDF、SVG、源码快照、配置和数据清单。
 
+一次生成全部六类练习图：
+
+```powershell
+python tools/generate_examples.py
+```
+
 ## 3. 修改常见参数
 
 打开对应输出目录或模板目录的 `config.py`，优先修改：
@@ -46,6 +52,7 @@ FIGURE_WIDTH = 6.6
 ```powershell
 conda run -n scientific-figure-studio pytest -q
 conda run -n scientific-figure-studio ruff check .
+conda run -n scientific-figure-studio python tools/validate_skills.py
 ```
 
 完整测试报告位于 `docs/TEST_REPORT.md`。

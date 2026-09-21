@@ -105,7 +105,7 @@ def build_figure(data: dict[str, pd.DataFrame], config: dict[str, object]) -> pl
                 )
             hero_ax.set_xlabel("Evaluation checkpoint")
             hero_ax.set_ylabel("Normalized performance")
-            hero_ax.set_title("Primary result", loc="left", pad=10)
+            hero_ax.set_title("Primary result", loc="center", pad=10)
             hero_ax.legend(loc=str(config["legend_location"]))
             hero_ax.grid(axis="y", color=palette.grid, linewidth=0.55, alpha=0.8)
 
@@ -128,7 +128,7 @@ def build_figure(data: dict[str, pd.DataFrame], config: dict[str, object]) -> pl
             add_reference_line(residual_ax, 0.0, axis="y", color=palette.muted)
             residual_ax.set_xlabel("Checkpoint")
             residual_ax.set_ylabel("Residual")
-            residual_ax.set_title("Test residuals", loc="left", pad=8)
+            residual_ax.set_title("Test residuals", loc="center", pad=8)
             residual_ax.grid(axis="y", color=palette.grid, linewidth=0.5, alpha=0.75)
 
             sensitivity = data["sensitivity"].sort_values("parameter")
@@ -142,7 +142,7 @@ def build_figure(data: dict[str, pd.DataFrame], config: dict[str, object]) -> pl
             )
             sensitivity_ax.set_xlabel("Parameter α (a.u.)")
             sensitivity_ax.set_ylabel("Response")
-            sensitivity_ax.set_title("Parameter evidence", loc="left", pad=8)
+            sensitivity_ax.set_title("Parameter evidence", loc="center", pad=8)
             sensitivity_ax.grid(axis="y", color=palette.grid, linewidth=0.5, alpha=0.75)
 
             add_panel_label(hero_ax, "(a)", color=palette.ink)

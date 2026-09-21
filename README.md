@@ -38,6 +38,16 @@ python templates/convergence/plot.py
 
 六类示例的详细位置和实际视觉检查结果见 `docs/TEST_REPORT.md`。正式使用时，请先把真实数据复制到独立的数据目录，更新 manifest 和字段说明，再选择合适模板。
 
+## 示例预览
+
+这些图片由仓库中的 Python 源码实际生成，使用的是明确标记的练习数据：
+
+![算法收敛曲线](examples/outputs/fig_01_convergence/figure.png)
+
+![多面板综合结果图](examples/outputs/fig_06_composite/figure.png)
+
+其余四类图片和对应源码见 [`design_system/figure_examples.md`](design_system/figure_examples.md)。
+
 ## Skills
 
 在 Codex 中可以显式调用：
@@ -50,6 +60,12 @@ $figure-reference-manager
 ```
 
 Skill 只负责工作流程和审查要求；最终图表仍由保存下来的 Python 源码生成。详见 [`docs/SKILLS_USAGE.md`](docs/SKILLS_USAGE.md)。
+
+生成全部六张示例图：
+
+```powershell
+python tools/generate_examples.py
+```
 
 ## 参考图库
 
