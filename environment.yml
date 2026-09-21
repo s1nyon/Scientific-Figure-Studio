@@ -1,0 +1,13 @@
+name: scientific-figure-studio
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - matplotlib>=3.8
+  - numpy>=1.26
+  - pandas>=2.1
+  - pillow>=10.0
+  - pyyaml>=6.0
+  - pypdf>=4.0
+  - pytest>=8.0
+  - ruff>=0.6

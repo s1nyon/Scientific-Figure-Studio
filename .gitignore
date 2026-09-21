@@ -1,0 +1,30 @@
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and package caches
+.venv/
+venv/
+env/
+*.conda-pack
+conda-bld/
+pkgs/
+
+# Temporary render outputs
+tmp/
+scratch/
+*.tmp
+*.bak
+
+# Gallery-generated thumbnails are reproducible and should not be committed.
+figure_gallery/_generated/thumbnails/
+
+# Operating-system/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
