@@ -1,0 +1,14 @@
+{
+  "figure_id": "fig_04_pareto",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/pareto_practice.csv",
+  "fields": {
+    "solution": "Feasible solution identifier",
+    "cost": "First objective (a.u.)",
+    "risk": "Second objective (a.u.)",
+    "is_key_solution": "User-supplied flag for a solution that may be labeled"
+  },
+  "objective_directions": ["minimize", "minimize"],
+  "transformations": ["Non-dominated rows calculated from cost and risk"],
+  "random_seed": null
+}
