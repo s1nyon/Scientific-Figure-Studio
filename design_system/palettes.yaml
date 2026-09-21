@@ -1,0 +1,47 @@
+minimal_editorial:
+  ink: "#243444"
+  muted: "#6E7C89"
+  primary: "#1F6F8B"
+  secondary: "#4C9A8A"
+  accent: "#C8753D"
+  positive: "#2E8B72"
+  negative: "#B4544F"
+  grid: "#D9E1E6"
+  background: "#FFFFFF"
+  category_cycle: ["#1F6F8B", "#4C9A8A", "#C8753D", "#6D597A", "#7A8793", "#A44A3F"]
+  line_styles: ["-", "--", "-.", ":"]
+  markers: ["o", "s", "^", "D", "P", "X"]
+  sequential_cmap: "Blues"
+  diverging_cmap: "vlag"
+
+algorithm_research:
+  ink: "#1F3040"
+  muted: "#71808C"
+  primary: "#166A8F"
+  secondary: "#2A9D8F"
+  accent: "#D9822B"
+  positive: "#27856A"
+  negative: "#B34E52"
+  grid: "#DDE5E9"
+  background: "#FFFFFF"
+  category_cycle: ["#166A8F", "#2A9D8F", "#D9822B", "#75507B", "#647786", "#B34E52"]
+  line_styles: ["-", "--", "-.", ":"]
+  markers: ["o", "s", "^", "D", "P", "X"]
+  sequential_cmap: "viridis"
+  diverging_cmap: "RdBu_r"
+
+visual_narrative:
+  ink: "#20323F"
+  muted: "#79858C"
+  primary: "#145A78"
+  secondary: "#2C8C82"
+  accent: "#D2673E"
+  positive: "#338C6D"
+  negative: "#B84E50"
+  grid: "#E1E7EA"
+  background: "#FFFFFF"
+  category_cycle: ["#145A78", "#2C8C82", "#D2673E", "#7A5C83", "#687C86", "#B84E50"]
+  line_styles: ["-", "--", "-.", ":"]
+  markers: ["o", "s", "^", "D", "P", "X"]
+  sequential_cmap: "mako"
+  diverging_cmap: "PuOr"
