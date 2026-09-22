@@ -1,0 +1,50 @@
+{
+  "package_version": "0.1.0",
+  "template": "illustration.flowchart",
+  "input_files": [
+    {
+      "name": "illustration_flowchart.json",
+      "sha256": "4f3d6d7495c544b31bc28b671b48e8775de44a3fc501445384cba2cddcf162dc"
+    }
+  ],
+  "config_summary": {
+    "figure_id": "fig_08_illustration_flowchart",
+    "figure_width": 7.2,
+    "figure_height": 4.3,
+    "dpi": 300,
+    "style_name": "visual_narrative",
+    "palette_name": "visual_narrative",
+    "font_size": 8.5,
+    "node_width": 0.18,
+    "node_height": 0.1,
+    "node_color": "#EAF2F5",
+    "node_edge_color": "#166A8F",
+    "connection_color": "#56636B",
+    "connection_width": 1.2,
+    "arrow_scale": 12.0,
+    "arrow_shrink": 4.0,
+    "node_label_size": 8.0,
+    "edge_label_size": 7.5,
+    "x_limits": [
+      0.0,
+      1.0
+    ],
+    "y_limits": [
+      0.08,
+      0.96
+    ],
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/illustration_flowchart.json"
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "nature_context": null,
+  "source_status": "generated from the copied template source, config, manifest, and input files"
+}

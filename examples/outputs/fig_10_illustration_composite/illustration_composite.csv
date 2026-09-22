@@ -1,0 +1,16 @@
+panel,x,y,series
+hero,0.0,0.20,Method A
+hero,1.0,0.34,Method A
+hero,2.0,0.48,Method A
+hero,3.0,0.57,Method A
+hero,4.0,0.63,Method A
+hero,0.0,0.16,Method B
+hero,1.0,0.25,Method B
+hero,2.0,0.35,Method B
+hero,3.0,0.42,Method B
+hero,4.0,0.47,Method B
+evidence,0.0,0.04,Residual
+evidence,1.0,-0.02,Residual
+evidence,2.0,0.03,Residual
+evidence,3.0,-0.01,Residual
+evidence,4.0,0.02,Residual

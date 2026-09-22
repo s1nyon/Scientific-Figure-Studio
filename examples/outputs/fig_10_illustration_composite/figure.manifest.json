@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-09-22T04:21:34.507369+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    5.1
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples/data/illustration_composite.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\illustration_composite.csv",
+    "data_sha256": "25ec0b7a9cf1be4ba4e4b3f46dd5ed250c87abae72995601010130182b9d78f5",
+    "fields": {
+      "panel": "hero or evidence panel selector",
+      "x": "Illustrative checkpoint (arbitrary practice unit)",
+      "y": "Illustrative response or residual (arbitrary practice unit)",
+      "series": "Series label from the input CSV"
+    },
+    "units": {
+      "x": "practice unit",
+      "y": "practice unit"
+    },
+    "transformations": [
+      "Rows are selected by panel and sorted by x for display only."
+    ],
+    "uncertainty": "No interval or statistical conclusion is shown; inputs are illustrative practice values.",
+    "unsupported_claims": [
+      "experimental efficacy",
+      "causal mechanism",
+      "model superiority",
+      "user architecture"
+    ],
+    "structure_file": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\illustration_composite.json",
+    "structure_sha256": "9467f800c3fe9aad45e605ad94e22a0b4b36d8055b9a60bcdc5fbcdd260e3f2f",
+    "structure_status": "illustrative example structure",
+    "panels": [
+      "Quantitative practice chart",
+      "Explicit mechanism schematic",
+      "Residual evidence check"
+    ]
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

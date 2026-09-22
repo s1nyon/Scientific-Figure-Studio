@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-22T04:21:30.610112+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    6.8,
+    4.3
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples/data/convergence_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Algorithm label",
+      "iteration": "Iteration count",
+      "objective": "Objective value in an arbitrary practice unit"
+    },
+    "units": {
+      "iteration": "count",
+      "objective": "practice unit"
+    },
+    "transformations": [
+      "Historical best is the cumulative minimum per algorithm."
+    ],
+    "uncertainty": "No replicate runs are provided; no uncertainty band is shown.",
+    "unsupported_claims": [
+      "algorithm superiority",
+      "formal competition result",
+      "experimental conclusion"
+    ],
+    "objective_direction": "minimize",
+    "nature_context_file": "nature_context.json",
+    "nature_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "nature_references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "project_backend": "Python",
+    "upstream_r_track_preserved": true
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

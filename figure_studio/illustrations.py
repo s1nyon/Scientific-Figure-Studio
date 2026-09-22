@@ -79,6 +79,33 @@ def _node_xy(node: Mapping[str, object]) -> tuple[float, float]:
     return _coordinate(node, "x"), _coordinate(node, "y")
 
 
+def _edge_points(
+    source_node: Mapping[str, object],
+    target_node: Mapping[str, object],
+    config: Mapping[str, object],
+) -> tuple[tuple[float, float], tuple[float, float]]:
+    """Trim an edge near rectangular node boundaries so labels stay readable."""
+
+    source = np.asarray(_node_xy(source_node), dtype=float)
+    target = np.asarray(_node_xy(target_node), dtype=float)
+    delta = target - source
+    if not np.any(delta):
+        raise ValueError("edge endpoints must have distinct coordinates")
+
+    def trim(center: np.ndarray, other: np.ndarray, node: Mapping[str, object]) -> np.ndarray:
+        direction = other - center
+        width = float(node.get("width", config.get("node_width", 0.18))) / 2.0
+        height = float(node.get("height", config.get("node_height", 0.10))) / 2.0
+        candidates = [
+            extent / abs(component)
+            for extent, component in zip((width, height), direction)
+            if component != 0
+        ]
+        return center + direction * (min(candidates) * 0.90)
+
+    return tuple(trim(source, target, source_node)), tuple(trim(target, source, target_node))
+
+
 def _limits_from_config(config: Mapping[str, object], default: tuple[float, float, float, float]):
     x_limits = config.get("x_limits")
     y_limits = config.get("y_limits")
@@ -104,14 +131,17 @@ def _add_arrow(
         connectionstyle=str(config.get("connection_style", "arc3,rad=0.0")),
         shrinkA=float(config.get("arrow_shrink", 12.0)),
         shrinkB=float(config.get("arrow_shrink", 12.0)),
-        zorder=2,
+        zorder=3.2,
     )
     ax.add_patch(arrow)
     if label:
         midpoint = ((source[0] + target[0]) / 2.0, (source[1] + target[1]) / 2.0)
+        label_offset = tuple(
+            float(value) for value in config.get("edge_label_offset", (0.0, 0.0))
+        )
         ax.text(
-            midpoint[0],
-            midpoint[1],
+            midpoint[0] + label_offset[0],
+            midpoint[1] + label_offset[1],
             label,
             ha="center",
             va="center",
@@ -201,16 +231,19 @@ def draw_flowchart(
     node_map = _node_mapping(nodes)
     edge_list = _edge_endpoints(edges)
     validate_flow_edges(node_map, edge_list)
+    for node_id, node in node_map.items():
+        _draw_box(ax, node_id, node, config)
     for edge in edge_list:
+        source, target = _edge_points(
+            node_map[str(edge["source"])], node_map[str(edge["target"])], config
+        )
         _add_arrow(
             ax,
-            _node_xy(node_map[str(edge["source"])]),
-            _node_xy(node_map[str(edge["target"])]),
+            source,
+            target,
             config,
             str(edge["label"]) if edge.get("label") is not None else None,
         )
-    for node_id, node in node_map.items():
-        _draw_box(ax, node_id, node, config)
     ax.set_xlim(*tuple(float(value) for value in config.get("x_limits", (0.0, 1.0))))
     ax.set_ylim(*tuple(float(value) for value in config.get("y_limits", (0.0, 1.0))))
     ax.axis("off")
@@ -227,16 +260,21 @@ def draw_architecture(
     module_map = _node_mapping(modules)
     connection_list = _edge_endpoints(connections)
     validate_flow_edges(module_map, connection_list)
+    for module_id, module in module_map.items():
+        _draw_box(ax, module_id, module, config)
     for connection in connection_list:
+        source, target = _edge_points(
+            module_map[str(connection["source"])],
+            module_map[str(connection["target"])],
+            config,
+        )
         _add_arrow(
             ax,
-            _node_xy(module_map[str(connection["source"])]),
-            _node_xy(module_map[str(connection["target"])]),
+            source,
+            target,
             config,
             str(connection["label"]) if connection.get("label") is not None else None,
         )
-    for module_id, module in module_map.items():
-        _draw_box(ax, module_id, module, config)
     ax.set_xlim(*tuple(float(value) for value in config.get("x_limits", (0.0, 1.0))))
     ax.set_ylim(*tuple(float(value) for value in config.get("y_limits", (0.0, 1.0))))
     ax.axis("off")
@@ -329,14 +367,6 @@ def draw_network(
     node_map = _node_mapping(nodes)
     edge_list = _edge_endpoints(edges)
     validate_flow_edges(node_map, edge_list)
-    for edge in edge_list:
-        _add_arrow(
-            ax,
-            _node_xy(node_map[str(edge["source"])]),
-            _node_xy(node_map[str(edge["target"])]),
-            config,
-            str(edge["label"]) if edge.get("label") is not None else None,
-        )
     for node_id, node in node_map.items():
         x, y = _node_xy(node)
         ax.add_patch(
@@ -351,6 +381,17 @@ def draw_network(
             )
         )
         ax.text(x, y, str(node.get("label", node_id)), ha="center", va="center", zorder=4)
+    for edge in edge_list:
+        source, target = _edge_points(
+            node_map[str(edge["source"])], node_map[str(edge["target"])], config
+        )
+        _add_arrow(
+            ax,
+            source,
+            target,
+            config,
+            str(edge["label"]) if edge.get("label") is not None else None,
+        )
     ax.set_xlim(*tuple(float(value) for value in config.get("x_limits", (0.0, 1.0))))
     ax.set_ylim(*tuple(float(value) for value in config.get("y_limits", (0.0, 1.0))))
     ax.axis("off")

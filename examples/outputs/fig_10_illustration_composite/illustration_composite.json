@@ -1,0 +1,16 @@
+{
+  "figure_id": "fig_10_illustration_composite",
+  "structure_status": "illustrative example structure",
+  "evidence_note": "The chart values and mechanism panel are illustrative practice inputs, not experimental evidence.",
+  "nodes": {
+    "sample": {"x": 0.15, "y": 0.50, "label": "Sample", "kind": "terminal"},
+    "representation": {"x": 0.40, "y": 0.50, "label": "Repr.\nblock", "kind": "process"},
+    "mechanism": {"x": 0.66, "y": 0.50, "label": "Mech.\nblock", "kind": "process"},
+    "response": {"x": 0.89, "y": 0.50, "label": "Response", "kind": "terminal"}
+  },
+  "edges": [
+    {"source": "sample", "target": "representation"},
+    {"source": "representation", "target": "mechanism"},
+    {"source": "mechanism", "target": "response"}
+  ]
+}

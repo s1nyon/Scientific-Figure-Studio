@@ -1,0 +1,14 @@
+{
+  "figure_id": "fig_08_illustration_flowchart",
+  "data_status": "illustrative practice data",
+  "structure_status": "illustrative example structure",
+  "data_file": "examples/data/illustration_flowchart.json",
+  "fields": {
+    "nodes": "Explicit node IDs, positions, labels, and roles",
+    "edges": "Directed source and target node IDs with optional branch labels"
+  },
+  "units": {"x": "normalized figure coordinate", "y": "normalized figure coordinate"},
+  "transformations": ["No data transformation; JSON coordinates are drawn as supplied."],
+  "uncertainty": "This structure is illustrative and contains no measured performance or experimental result.",
+  "unsupported_claims": ["algorithm superiority", "runtime", "accuracy", "user model structure"]
+}

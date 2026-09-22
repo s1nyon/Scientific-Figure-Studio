@@ -76,6 +76,12 @@ python templates/illustration/composite/plot.py
 python templates/nature_adapter/plot.py
 ```
 
+也可以一次生成 `fig_07`–`fig_10` 的完整交付目录（Nature 适配示例要求已安装固定 Skill）：
+
+```powershell
+python tools/generate_phase2_examples.py
+```
+
 ## 参考图库
 
 把新图片放入 `figure_gallery/00_inbox/`，然后运行图库更新命令或调用 `$figure-reference-manager`。系统会生成哈希、主色和布局等有限的可观察信息，不会修改原图或自动推断你的喜好。详见 [`docs/GALLERY_WORKFLOW.md`](docs/GALLERY_WORKFLOW.md)。

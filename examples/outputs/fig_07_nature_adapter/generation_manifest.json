@@ -1,0 +1,41 @@
+{
+  "package_version": "0.1.0",
+  "template": "nature_adapter",
+  "input_files": [
+    {
+      "name": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459"
+    }
+  ],
+  "config_summary": {
+    "figure_id": "fig_07_nature_adapter",
+    "figure_width": 6.8,
+    "figure_height": 4.3,
+    "dpi": 300,
+    "style_name": "minimal_editorial",
+    "palette_name": "minimal_editorial",
+    "font_size": 8.5,
+    "line_width": 2.0,
+    "auxiliary_line_width": 0.9,
+    "marker_size": 4.0,
+    "legend_location": "upper right",
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/convergence_practice.csv",
+    "algorithm_colors": {
+      "Proposed": "#166A8F",
+      "Adaptive": "#2A9D8F",
+      "Baseline": "#7A8793"
+    }
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "nature_context": "nature_context.json",
+  "source_status": "generated from the copied template source, config, manifest, and input files"
+}

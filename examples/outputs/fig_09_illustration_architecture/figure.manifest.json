@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-09-22T04:21:32.710450+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    3.6
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples/data/illustration_architecture.json",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\illustration_architecture.json",
+    "data_sha256": "c52421bc3bad72586dc879b15ba4ac48b3f4dc90421faea49cdf9ad3979b7df3",
+    "fields": {
+      "modules": "Explicit module IDs, positions, labels, and roles",
+      "connections": "Directed source and target module IDs with supplied interface labels"
+    },
+    "units": {
+      "x": "normalized figure coordinate",
+      "y": "normalized figure coordinate"
+    },
+    "transformations": [
+      "No module, connection, coordinate, or label is inferred by the template."
+    ],
+    "uncertainty": "This is an illustrative architecture and does not identify a user model or measured result.",
+    "unsupported_claims": [
+      "model accuracy",
+      "causal mechanism",
+      "deployment readiness",
+      "user architecture"
+    ],
+    "structure_status": "illustrative example structure",
+    "evidence_note": "This architecture is a supplied example structure; it does not describe a user model.",
+    "architecture_semantics": "Connections are source-to-target edges from input JSON."
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

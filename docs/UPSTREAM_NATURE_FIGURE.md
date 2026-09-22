@@ -45,5 +45,9 @@ primitives 和自动测试。
 `references/qa-contract.md`，并把 commit、reference 哈希和适配器版本写入
 `nature_context.json`。这证明原版内容在生成时被实际读取并参与适配。
 
+`templates/nature_adapter/plot.py` 是项目适配示例；它不会修改上游文件，也不会把上游正文
+复制到仓库。`tools/generate_phase2_examples.py` 会把模板源码、配置、manifest、练习输入和
+最终 PDF/SVG/PNG 一起写入 `examples/outputs/fig_07_nature_adapter/`。
+
 本地文件读取/校验不等于当前 Codex 进程已经刷新 Skill 索引。安装或更新后若主机需要
 重启 Codex 才能发现新 Skill，应在测试报告中单独记录，不把它隐含为已验证。

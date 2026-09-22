@@ -1,0 +1,54 @@
+{
+  "package_version": "0.1.0",
+  "template": "illustration.architecture",
+  "input_files": [
+    {
+      "name": "illustration_architecture.json",
+      "sha256": "c52421bc3bad72586dc879b15ba4ac48b3f4dc90421faea49cdf9ad3979b7df3"
+    }
+  ],
+  "config_summary": {
+    "figure_id": "fig_09_illustration_architecture",
+    "figure_width": 7.2,
+    "figure_height": 3.6,
+    "dpi": 300,
+    "style_name": "minimal_editorial",
+    "palette_name": "minimal_editorial",
+    "font_size": 8.5,
+    "node_width": 0.14,
+    "node_height": 0.14,
+    "node_color": "#EAF2F5",
+    "node_edge_color": "#166A8F",
+    "connection_color": "#56636B",
+    "connection_width": 1.2,
+    "arrow_scale": 12.0,
+    "arrow_shrink": 4.0,
+    "node_label_size": 8.0,
+    "edge_label_size": 7.0,
+    "edge_label_offset": [
+      0.0,
+      0.045
+    ],
+    "x_limits": [
+      0.0,
+      1.0
+    ],
+    "y_limits": [
+      0.25,
+      0.75
+    ],
+    "output_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_file": "examples/data/illustration_architecture.json"
+  },
+  "artifacts": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "nature_context": null,
+  "source_status": "generated from the copied template source, config, manifest, and input files"
+}

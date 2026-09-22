@@ -78,13 +78,21 @@ def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
                 "ytick.labelsize": float(config["font_size"]) - 1.0,
             }
         ):
-            fig, (curve_ax, heat_ax) = plt.subplots(
+            fig = plt.figure(
+                figsize=(float(config["figure_width"]), float(config["figure_height"]))
+            )
+            grid = fig.add_gridspec(
                 1,
                 2,
-                figsize=(float(config["figure_width"]), float(config["figure_height"])),
                 width_ratios=(1.0, 1.08),
-                layout="constrained",
+                left=0.10,
+                right=0.94,
+                bottom=0.23,
+                top=0.91,
+                wspace=0.34,
             )
+            curve_ax = fig.add_subplot(grid[0, 0])
+            heat_ax = fig.add_subplot(grid[0, 1])
             curve_ax.plot(
                 curve["parameter_value"],
                 curve["response"],

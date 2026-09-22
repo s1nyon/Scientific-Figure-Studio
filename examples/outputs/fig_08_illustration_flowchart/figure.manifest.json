@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-09-22T04:21:31.689186+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    4.3
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "examples/data/illustration_flowchart.json",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\illustration_flowchart.json",
+    "data_sha256": "4f3d6d7495c544b31bc28b671b48e8775de44a3fc501445384cba2cddcf162dc",
+    "fields": {
+      "nodes": "Explicit node IDs, positions, labels, and roles",
+      "edges": "Directed source and target node IDs with optional branch labels"
+    },
+    "units": {
+      "x": "normalized figure coordinate",
+      "y": "normalized figure coordinate"
+    },
+    "transformations": [
+      "No data transformation; JSON coordinates are drawn as supplied."
+    ],
+    "uncertainty": "This structure is illustrative and contains no measured performance or experimental result.",
+    "unsupported_claims": [
+      "algorithm superiority",
+      "runtime",
+      "accuracy",
+      "user model structure"
+    ],
+    "structure_status": "illustrative example structure",
+    "evidence_note": "This is an illustrative algorithm structure, not a measured workflow or performance result.",
+    "edge_semantics": "Directed source-to-target edges from input JSON."
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

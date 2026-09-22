@@ -50,6 +50,12 @@ python tools/verify_nature_figure.py --path "$env:USERPROFILE\.codex\skills\natu
 python templates/nature_adapter/plot.py
 ```
 
+一次复制源码、输入文件并生成四个第二阶段交付目录：
+
+```powershell
+python tools/generate_phase2_examples.py
+```
+
 ## 3. 修改常见参数
 
 打开对应输出目录或模板目录的 `config.py`，优先修改：
