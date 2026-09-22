@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:34:58.643207+00:00",
+  "created_utc": "2026-09-22T03:22:57.284030+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,7 +12,21 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\pareto_practice.csv",
+    "data_file": "examples/data/pareto_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\pareto_practice.csv",
+    "data_sha256": "d04fd0bae36ba865664904b3dd3c0660ba45b3f4bd23e0caf0321b2ca3e30f22",
+    "fields": {
+      "solution": "Feasible solution identifier",
+      "cost": "First objective (a.u.)",
+      "risk": "Second objective (a.u.)",
+      "is_key_solution": "User-supplied flag for a solution that may be labeled"
+    },
+    "units": {},
+    "transformations": [
+      "Non-dominated rows calculated from cost and risk"
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
     "objective_directions": [
       "minimize",
       "minimize"

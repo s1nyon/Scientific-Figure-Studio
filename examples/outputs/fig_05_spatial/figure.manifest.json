@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:35:00.422259+00:00",
+  "created_utc": "2026-09-22T03:22:59.066040+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,7 +12,24 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\spatial_practice.csv",
+    "data_file": "examples/data/spatial_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\spatial_practice.csv",
+    "data_sha256": "4895af73d4019ba539351f28c68a0b630601803727bb9cec92121798a8747977",
+    "fields": {
+      "record_type": "node, edge, obstacle, or path record",
+      "x": "x coordinate (simulated unit)",
+      "y": "y coordinate (simulated unit)",
+      "x2": "second x coordinate for edge or obstacle",
+      "y2": "second y coordinate for edge or obstacle",
+      "path_id": "candidate route identifier",
+      "order": "route point order"
+    },
+    "units": {},
+    "transformations": [
+      "Paths are sorted by order before drawing"
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
     "coordinate_system": "simulated planar units; not geographic coordinates"
   },
   "outputs": {

@@ -29,6 +29,11 @@ except ImportError:
 
 from figure_studio.annotations import add_reference_line  # noqa: E402
 from figure_studio.export import export_figure  # noqa: E402
+from figure_studio.manifest import (  # noqa: E402
+    build_data_provenance,
+    load_manifest,
+    provenance_data_label,
+)
 from figure_studio.palettes import get_palette  # noqa: E402
 from figure_studio.style import figure_style  # noqa: E402
 from figure_studio.validation import validate_numeric_frame  # noqa: E402
@@ -139,27 +144,44 @@ def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
                 residual_ax.set_xlim(config["x_limits"])
             if config["y_limits"] is not None:
                 main_ax.set_ylim(config["y_limits"])
-            fig.text(
-                0.01,
-                0.005,
-                "练习数据 · illustrative practice data",
-                color=palette.muted,
-                fontsize=max(6.5, float(config["font_size"]) - 1.5),
-            )
+            data_label = provenance_data_label(str(config.get("data_status", "")))
+            if data_label:
+                fig.text(
+                    0.01,
+                    0.005,
+                    data_label,
+                    color=palette.muted,
+                    fontsize=max(6.5, float(config["font_size"]) - 1.5),
+                )
             return fig
 
 
-def main(output_dir: str | Path | None = None, data_path: str | Path | None = None):
+def main(
+    output_dir: str | Path | None = None,
+    data_path: str | Path | None = None,
+    manifest_path: str | Path | None = None,
+):
     """Generate prediction artifacts and return their paths."""
 
-    source = PROJECT_ROOT / str(data_path or CONFIG["data_file"])
+    manifest_file = Path(manifest_path) if manifest_path else Path(__file__).with_name(
+        "data_manifest.json"
+    )
+    manifest = load_manifest(
+        manifest_file,
+        base_dir=manifest_file.parent if manifest_path else PROJECT_ROOT,
+    )
+    if data_path is not None:
+        manifest = manifest.with_data_path(data_path, PROJECT_ROOT)
+    source = manifest.data_path
     destination = (
         Path(output_dir)
         if output_dir
         else PROJECT_ROOT / "examples" / "outputs" / str(CONFIG["figure_id"])
     )
     destination.mkdir(parents=True, exist_ok=True)
-    figure = build_figure(load_data(source), CONFIG)
+    frame = load_data(source)
+    runtime_config = {**CONFIG, "data_status": manifest.data_status}
+    figure = build_figure(frame, runtime_config)
     try:
         with figure_style(str(CONFIG["style_name"]), canvas="composite"):
             return export_figure(
@@ -168,14 +190,15 @@ def main(output_dir: str | Path | None = None, data_path: str | Path | None = No
                 formats=tuple(CONFIG["output_formats"]),
                 dpi=int(CONFIG["dpi"]),
                 overwrite=True,
-                provenance={
-                    "data_status": "illustrative practice data",
-                    "data_file": str(source.relative_to(PROJECT_ROOT)),
-                    "splits": ["train", "validation", "test"],
-                    "uncertainty": (
-                        "No prediction interval is shown; input data contain no interval basis."
-                    ),
-                },
+                provenance=build_data_provenance(
+                    manifest,
+                    {
+                        "splits": sorted(frame["split"].astype(str).unique()),
+                        "uncertainty_basis": (
+                            "No prediction interval is shown; input data contain no interval basis."
+                        ),
+                    },
+                ),
             )
     finally:
         plt.close(figure)
@@ -185,9 +208,14 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--data-path", type=Path, default=None)
+    parser.add_argument("--manifest-path", type=Path, default=None)
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     arguments = _parse_args()
-    main(output_dir=arguments.output_dir, data_path=arguments.data_path)
+    main(
+        output_dir=arguments.output_dir,
+        data_path=arguments.data_path,
+        manifest_path=arguments.manifest_path,
+    )

@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:34:54.678062+00:00",
+  "created_utc": "2026-09-22T03:22:53.315449+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,13 +12,28 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\prediction_practice.csv",
-    "splits": [
-      "train",
-      "validation",
-      "test"
+    "data_file": "examples/data/prediction_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\prediction_practice.csv",
+    "data_sha256": "08c264f82cf23ed6396c8f0a0317d403d76e84965de8418c4f41c13181968cef",
+    "fields": {
+      "sample": "Observation index (count)",
+      "split": "train, validation, or test partition",
+      "x": "Input variable (practice unit)",
+      "y_true": "Observed response (practice unit)",
+      "y_pred": "Model prediction (practice unit)"
+    },
+    "units": {},
+    "transformations": [
+      "Residual = y_true - y_pred"
     ],
-    "uncertainty": "No prediction interval is shown; input data contain no interval basis."
+    "uncertainty": "No interval is plotted because no interval data or fitted model is supplied.",
+    "unsupported_claims": [],
+    "splits": [
+      "test",
+      "train",
+      "validation"
+    ],
+    "uncertainty_basis": "No prediction interval is shown; input data contain no interval basis."
   },
   "outputs": {
     "png": "figure.png",

@@ -45,3 +45,34 @@ def test_manifest_rejects_unknown_data_status(tmp_path: Path):
             {"data_status": "invented result", "data_file": data_path.name},
             base_dir=tmp_path,
         )
+
+
+def test_manifest_rejects_missing_source_file(tmp_path: Path):
+    from figure_studio.manifest import load_manifest
+
+    with pytest.raises(FileNotFoundError, match="data file"):
+        load_manifest(
+            {"data_status": "formal input data", "data_file": "missing.csv"},
+            base_dir=tmp_path,
+        )
+
+
+def test_manifest_reports_hash_and_practice_label(tmp_path: Path):
+    from figure_studio.manifest import load_manifest, provenance_data_label
+
+    data_path = tmp_path / "practice.csv"
+    data_path.write_text("x\n1\n", encoding="utf-8")
+    loaded = load_manifest(
+        {
+            "data_status": "illustrative practice data",
+            "data_file": data_path.name,
+            "objective_direction": "maximize",
+            "fields": {"x": "practice input"},
+        },
+        base_dir=tmp_path,
+    )
+
+    assert len(loaded.data_sha256) == 64
+    assert loaded.objective_direction == "maximize"
+    assert provenance_data_label(loaded.data_status)
+    assert provenance_data_label("formal input data") is None

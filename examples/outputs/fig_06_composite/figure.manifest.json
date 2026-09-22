@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:35:02.607528+00:00",
+  "created_utc": "2026-09-22T03:23:01.268219+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,7 +12,21 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\composite_practice.csv",
+    "data_file": "examples/data/composite_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\composite_practice.csv",
+    "data_sha256": "f1c89484eaf0b55b86c899a939e7861a7715ba47dc29119211cf4955d5d3f13c",
+    "fields": {},
+    "units": {
+      "x": "checkpoint or parameter value as indicated by record_type",
+      "y": "normalized performance or residual as indicated by record_type",
+      "parameter": "arbitrary practice units",
+      "response": "arbitrary practice units"
+    },
+    "transformations": [
+      "Sorted each panel by its x or parameter coordinate; no smoothing or data deletion."
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
     "panels": [
       "Primary result by algorithm",
       "Residual evidence",

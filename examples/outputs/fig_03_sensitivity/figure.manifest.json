@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:34:56.872110+00:00",
+  "created_utc": "2026-09-22T03:22:55.520345+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,9 +12,27 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\sensitivity_practice.csv",
-    "color_center": 0.0,
+    "data_file": "examples/data/sensitivity_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\sensitivity_practice.csv",
+    "data_sha256": "ec747a05d9c1557c40ec59150c85b50c627edc5b0fd63d224f45439f5ac52ece",
+    "fields": {
+      "parameter": "Parameter name",
+      "parameter_value": "One-dimensional parameter value (a.u.)",
+      "alpha": "First heatmap parameter (a.u.)",
+      "beta": "Second heatmap parameter (a.u.)",
+      "response": "Response change relative to a declared reference (a.u.)"
+    },
+    "units": {
+      "parameter": "arbitrary practice units",
+      "response": "arbitrary practice units"
+    },
     "transformations": [
+      "Heatmap rows are pivoted by alpha and beta"
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
+    "color_center": 0.0,
+    "plot_transformations": [
       "Pivoted observed alpha-beta-response rows"
     ]
   },

@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-21T15:34:52.733101+00:00",
+  "created_utc": "2026-09-22T03:22:51.401222+00:00",
   "formats": [
     "png",
     "svg",
@@ -12,7 +12,20 @@
   ],
   "provenance": {
     "data_status": "illustrative practice data",
-    "data_file": "examples\\data\\convergence_practice.csv",
+    "data_file": "examples/data/convergence_practice.csv",
+    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Algorithm label",
+      "iteration": "Iteration number (count)",
+      "objective": "Current objective value (arbitrary practice units)"
+    },
+    "units": {},
+    "transformations": [
+      "Historical best computed with cumulative minimum per algorithm"
+    ],
+    "uncertainty": "No uncertainty band is shown because replicate data are not present.",
+    "unsupported_claims": [],
     "objective_direction": "minimize",
     "historical_best": true
   },
