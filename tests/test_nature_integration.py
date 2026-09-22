@@ -25,5 +25,5 @@ def test_nature_context_requires_verified_references(tmp_path: Path):
     from figure_studio.nature_adapter import build_nature_context
 
     (tmp_path / "SKILL.md").write_text("---\nname: nature-figure\n---\n", encoding="utf-8")
-    with pytest.raises(ValueError, match="verified"):
+    with pytest.raises(ValueError, match="missing"):
         build_nature_context(tmp_path, ("references/figure-contract.md",))
