@@ -4,13 +4,13 @@
   "data_file": "examples/data/prediction_practice.csv",
   "fields": {
     "sample": "Observation index (count)",
-    "split": "train, validation, or test partition",
+    "split": "Optional partition label; when absent, rows are labeled all",
     "x": "Input variable (practice unit)",
     "y_true": "Observed response (practice unit)",
     "y_pred": "Model prediction (practice unit)"
   },
   "transformations": ["Residual = y_true - y_pred"],
-  "metrics": ["Test RMSE", "Test MAE"],
+  "metrics": ["Test RMSE and Test MAE only when test rows exist"],
   "uncertainty": "No interval is plotted because no interval data or fitted model is supplied.",
   "random_seed": null
 }

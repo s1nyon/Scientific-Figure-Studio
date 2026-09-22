@@ -15,6 +15,7 @@ LEGEND_LOCATION = "upper right"
 X_LIMITS = None
 Y_LIMITS = (0.75, 2.55)
 SHOW_CURRENT_OBJECTIVE = True
+OBJECTIVE_DIRECTION = "minimize"
 OUTPUT_FORMATS = ("png", "svg", "pdf")
 DATA_FILE = "examples/data/convergence_practice.csv"
 
@@ -40,6 +41,7 @@ CONFIG = {
     "x_limits": X_LIMITS,
     "y_limits": Y_LIMITS,
     "show_current_objective": SHOW_CURRENT_OBJECTIVE,
+    "objective_direction": OBJECTIVE_DIRECTION,
     "output_formats": OUTPUT_FORMATS,
     "data_file": DATA_FILE,
     "algorithm_colors": ALGORITHM_COLORS,

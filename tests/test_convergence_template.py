@@ -4,7 +4,7 @@ import pandas as pd
 
 from figure_studio.analysis import running_best
 from templates.convergence.config import CONFIG
-from templates.convergence.plot import build_figure, load_data, main
+from templates.convergence.plot import build_figure, build_running_best, load_data, main
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "examples" / "data"
@@ -13,6 +13,11 @@ DATA = ROOT / "examples" / "data"
 def test_convergence_uses_running_best_for_minimization():
     frame = pd.DataFrame({"iteration": [1, 2, 3], "objective": [3.0, 2.0, 2.5]})
     assert running_best(frame["objective"], goal="minimize").tolist() == [3.0, 2.0, 2.0]
+
+
+def test_convergence_uses_maximum_running_best_when_direction_is_maximize():
+    frame = pd.DataFrame({"objective": [1.0, 3.0, 2.0]})
+    assert build_running_best(frame["objective"], "maximize").tolist() == [1.0, 3.0, 3.0]
 
 
 def test_convergence_loads_practice_data_with_three_algorithms():

@@ -31,7 +31,8 @@
       "train": "o",
       "validation": "s",
       "test": "^"
-    }
+    },
+    "default_split": "all"
   },
   "artifacts": [
     "figure.pdf",

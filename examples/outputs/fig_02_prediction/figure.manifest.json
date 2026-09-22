@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T03:22:53.315449+00:00",
+  "created_utc": "2026-09-22T03:28:43.970248+00:00",
   "formats": [
     "png",
     "svg",
@@ -17,7 +17,7 @@
     "data_sha256": "08c264f82cf23ed6396c8f0a0317d403d76e84965de8418c4f41c13181968cef",
     "fields": {
       "sample": "Observation index (count)",
-      "split": "train, validation, or test partition",
+      "split": "Optional partition label; when absent, rows are labeled all",
       "x": "Input variable (practice unit)",
       "y_true": "Observed response (practice unit)",
       "y_pred": "Model prediction (practice unit)"

@@ -40,19 +40,24 @@ from figure_studio.validation import validate_numeric_frame  # noqa: E402
 
 
 def load_data(path: str | Path) -> pd.DataFrame:
-    """Read prediction rows and require all three split labels."""
+    """Read prediction rows with optional, semantically explicit split labels."""
 
     data_path = Path(path)
     if not data_path.exists():
         raise FileNotFoundError(data_path)
     frame = pd.read_csv(data_path)
     validate_numeric_frame(frame, ["sample", "x", "y_true", "y_pred"])
-    expected = {"train", "validation", "test"}
-    actual = set(frame["split"].dropna().astype(str))
-    missing = expected.difference(actual)
-    if missing:
-        raise ValueError(f"split is missing required labels: {sorted(missing)}")
     frame = frame.copy()
+    if "split" not in frame:
+        frame["split"] = "all"
+    else:
+        frame["split"] = (
+            frame["split"]
+            .astype("string")
+            .fillna("all")
+            .str.strip()
+            .replace("", "all")
+        )
     frame["residual"] = frame["y_true"] - frame["y_pred"]
     return frame.sort_values("sample").reset_index(drop=True)
 
@@ -61,8 +66,18 @@ def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
     """Build observed/predicted and residual panels from measured values."""
 
     validate_numeric_frame(frame, ["sample", "x", "y_true", "y_pred"])
+    frame = frame.copy()
+    if "split" not in frame:
+        frame["split"] = "all"
+    else:
+        frame["split"] = (
+            frame["split"]
+            .astype("string")
+            .fillna("all")
+            .str.strip()
+            .replace("", "all")
+        )
     if "residual" not in frame:
-        frame = frame.copy()
         frame["residual"] = frame["y_true"] - frame["y_pred"]
     palette = get_palette(str(config["palette_name"]))
     with figure_style(str(config["style_name"]), canvas="composite"):
@@ -95,41 +110,50 @@ def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
             )
             split_colors = dict(config["split_colors"])
             split_markers = dict(config["split_markers"])
-            for split in ("train", "validation", "test"):
+            split_names = list(dict.fromkeys(ordered["split"].tolist()))
+            fallback_markers = tuple(palette.markers)
+            for index, split in enumerate(split_names):
                 subset = ordered[ordered["split"] == split]
+                color = split_colors.get(
+                    split, palette.category_cycle[index % len(palette.category_cycle)]
+                )
+                marker = split_markers.get(
+                    split, fallback_markers[index % len(fallback_markers)]
+                )
                 main_ax.plot(
                     subset["x"],
                     subset["y_pred"],
-                    color=split_colors[split],
+                    color=color,
                     linewidth=float(config["line_width"]),
-                    marker=split_markers[split],
+                    marker=marker,
                     markersize=float(config["marker_size"]),
                     label=f"Predicted · {split}",
                 )
                 residual_ax.scatter(
                     subset["x"],
                     subset["residual"],
-                    color=split_colors[split],
-                    marker=split_markers[split],
+                    color=color,
+                    marker=marker,
                     s=(float(config["marker_size"]) * 2.5) ** 2,
                     label=split,
                     zorder=3,
                 )
 
             test = ordered[ordered["split"] == "test"]
-            rmse = sqrt(float(np.mean(test["residual"] ** 2)))
-            mae = float(np.mean(np.abs(test["residual"])))
-            main_ax.text(
-                0.99,
-                0.04,
-                f"Test RMSE = {rmse:.3f}\nTest MAE = {mae:.3f}",
-                transform=main_ax.transAxes,
-                ha="right",
-                va="bottom",
-                color=palette.ink,
-                fontsize=max(6.5, float(config["font_size"]) - 1.0),
-            )
-            for split in ("validation", "test"):
+            if not test.empty:
+                rmse = sqrt(float(np.mean(test["residual"] ** 2)))
+                mae = float(np.mean(np.abs(test["residual"])))
+                main_ax.text(
+                    0.99,
+                    0.04,
+                    f"Test RMSE = {rmse:.3f}\nTest MAE = {mae:.3f}",
+                    transform=main_ax.transAxes,
+                    ha="right",
+                    va="bottom",
+                    color=palette.ink,
+                    fontsize=max(6.5, float(config["font_size"]) - 1.0),
+                )
+            for split in split_names[1:]:
                 first_x = float(ordered.loc[ordered["split"] == split, "x"].min())
                 main_ax.axvline(first_x, color=palette.grid, linewidth=0.75, linestyle=":")
                 residual_ax.axvline(first_x, color=palette.grid, linewidth=0.75, linestyle=":")

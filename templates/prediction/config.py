@@ -21,6 +21,7 @@ SPLIT_COLORS = {
     "test": "#D9822B",
 }
 SPLIT_MARKERS = {"train": "o", "validation": "s", "test": "^"}
+DEFAULT_SPLIT = "all"
 
 CONFIG = {
     "figure_id": FIGURE_ID,
@@ -39,4 +40,5 @@ CONFIG = {
     "data_file": DATA_FILE,
     "split_colors": SPLIT_COLORS,
     "split_markers": SPLIT_MARKERS,
+    "default_split": DEFAULT_SPLIT,
 }

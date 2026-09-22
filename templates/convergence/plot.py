@@ -50,11 +50,18 @@ def load_data(path: str | Path) -> pd.DataFrame:
     return frame.sort_values(["algorithm", "iteration"]).reset_index(drop=True)
 
 
+def build_running_best(values, objective_direction: str = "minimize"):
+    """Return the cumulative objective best for the requested direction."""
+
+    return running_best(values, goal=objective_direction)
+
+
 def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
-    """Build current-objective and historical-best curves for minimization."""
+    """Build current-objective and historical-best curves."""
 
     validate_numeric_frame(frame, ["iteration", "objective"])
     palette = get_palette(str(config["palette_name"]))
+    objective_direction = str(config.get("objective_direction", "minimize"))
     with figure_style(str(config["style_name"]), canvas="standard"):
         with plt.rc_context(
             {
@@ -75,7 +82,9 @@ def build_figure(frame: pd.DataFrame, config: dict[str, object]) -> plt.Figure:
                 color = colors.get(
                     algorithm, palette.category_cycle[index % len(palette.category_cycle)]
                 )
-                best = running_best(group["objective"].to_numpy(), goal="minimize")
+                best = build_running_best(
+                    group["objective"].to_numpy(), objective_direction
+                )
                 if bool(config["show_current_objective"]):
                     ax.plot(
                         group["iteration"],
@@ -142,7 +151,11 @@ def main(
         else PROJECT_ROOT / "examples" / "outputs" / str(CONFIG["figure_id"])
     )
     destination.mkdir(parents=True, exist_ok=True)
-    runtime_config = {**CONFIG, "data_status": manifest.data_status}
+    runtime_config = {
+        **CONFIG,
+        "data_status": manifest.data_status,
+        "objective_direction": manifest.objective_direction or "minimize",
+    }
     figure = build_figure(load_data(source), runtime_config)
     try:
         with figure_style(str(CONFIG["style_name"]), canvas="standard"):
@@ -155,8 +168,8 @@ def main(
                 provenance=build_data_provenance(
                     manifest,
                     {
-                    "objective_direction": manifest.objective_direction or "minimize",
-                    "historical_best": True,
+                        "objective_direction": manifest.objective_direction or "minimize",
+                        "historical_best": True,
                     },
                 ),
             )
