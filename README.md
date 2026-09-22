@@ -5,10 +5,10 @@ Scientific Figure Studio 是一个面向数学建模竞赛和科研论文的本�
 ## 当前内容
 
 - `figure_studio/`：统一视觉系统、导出验证、算法绘图辅助函数和个人图库管理。
-- `templates/`：算法收敛、预测误差、灵敏度、帕累托、空间路径和多面板综合图模板。
+- `templates/`：六类算法图表、三类 Python 科研插图和固定 Nature 上游适配示例。
 - `examples/data/`：明确标记的练习数据，不代表任何正式比赛结果。
 - `examples/outputs/`：每张示例图的 PDF、SVG、PNG、源码、配置和数据清单。
-- `.agents/skills/`：四个可显式调用的 Codex Skills。
+- `.agents/skills/`：四个项目图表/图库 Skills，以及一个 `scientific-illustration` 插图 Skill。
 - `figure_gallery/`：用户自己的科研图片参考图库。
 - `docs/`：中文快速入门、Skill 使用、图库维护和源码修改说明。
 
@@ -36,7 +36,7 @@ python templates/convergence/plot.py
 
 生成的文件位于 `examples/outputs/fig_01_convergence/`。修改该目录中的 `config.py` 或模板目录中的配置后，再运行同一脚本即可复现图片。
 
-六类示例的详细位置和实际视觉检查结果见 `docs/TEST_REPORT.md`。正式使用时，请先把真实数据复制到独立的数据目录，更新 manifest 和字段说明，再选择合适模板。
+六类图表和三类插图示例的详细位置和实际视觉检查结果见 `docs/TEST_REPORT.md`。正式使用时，请先把真实数据复制到独立的数据目录，更新 manifest 和字段说明，再选择合适模板。
 
 ## 示例预览
 
@@ -59,12 +59,21 @@ $figure-design-review
 $figure-reference-manager
 ```
 
-Skill 只负责工作流程和审查要求；最终图表仍由保存下来的 Python 源码生成。详见 [`docs/SKILLS_USAGE.md`](docs/SKILLS_USAGE.md)。
+`scientific-illustration` 负责流程图、模型架构、几何/三维/网络和图表组合示意图；固定上游 `nature-figure` 通过安装器按提交版本接入，不把无许可证确认的上游文件复制进仓库。Skill 只负责工作流程和审查要求；最终图表仍由保存下来的 Python 源码生成。详见 [`docs/SKILLS_USAGE.md`](docs/SKILLS_USAGE.md) 和 [`docs/UPSTREAM_NATURE_FIGURE.md`](docs/UPSTREAM_NATURE_FIGURE.md)。
 
 生成全部六张示例图：
 
 ```powershell
 python tools/generate_examples.py
+```
+
+三类科研插图和 Nature 适配示例：
+
+```powershell
+python templates/illustration/flowchart/plot.py
+python templates/illustration/architecture/plot.py
+python templates/illustration/composite/plot.py
+python templates/nature_adapter/plot.py
 ```
 
 ## 参考图库

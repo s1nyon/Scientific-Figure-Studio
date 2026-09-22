@@ -34,6 +34,22 @@ python templates/convergence/plot.py
 python tools/generate_examples.py
 ```
 
+生成结构化科研插图（示例结构）：
+
+```powershell
+python templates/illustration/flowchart/plot.py
+python templates/illustration/architecture/plot.py
+python templates/illustration/composite/plot.py
+```
+
+Nature 适配示例需要先按固定提交安装并校验上游目录：
+
+```powershell
+python tools/install_nature_figure.py --destination "$env:USERPROFILE\.codex\skills\nature-figure"
+python tools/verify_nature_figure.py --path "$env:USERPROFILE\.codex\skills\nature-figure"
+python templates/nature_adapter/plot.py
+```
+
 ## 3. 修改常见参数
 
 打开对应输出目录或模板目录的 `config.py`，优先修改：

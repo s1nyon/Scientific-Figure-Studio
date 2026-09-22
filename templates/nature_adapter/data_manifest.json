@@ -1,0 +1,16 @@
+{
+  "figure_id": "fig_07_nature_adapter",
+  "data_status": "illustrative practice data",
+  "data_file": "examples/data/convergence_practice.csv",
+  "fields": {
+    "algorithm": "Algorithm label",
+    "iteration": "Iteration count",
+    "objective": "Objective value in an arbitrary practice unit"
+  },
+  "units": {"iteration": "count", "objective": "practice unit"},
+  "objective_direction": "minimize",
+  "transformations": ["Historical best is the cumulative minimum per algorithm."],
+  "uncertainty": "No replicate runs are provided; no uncertainty band is shown.",
+  "unsupported_claims": ["algorithm superiority", "formal competition result", "experimental conclusion"],
+  "nature_skill_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1"
+}

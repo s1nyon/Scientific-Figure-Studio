@@ -29,6 +29,8 @@ LEGEND_LOCATION = "upper right"
 
 预测、灵敏度、Pareto、空间和综合图的 `config.py` 采用相同原则：先修改颜色、字号、线宽、画布、图例和坐标参数，再运行对应 `plot.py`。科学计算参数、目标方向、数据字段和单位必须同步写入 manifest，不能只改图的外观。
 
+流程图、架构图和组合插图也必须修改源码输入和 `config.py` 后重新渲染：流程/架构的节点与连接保存在 JSON，组合图的量化数据在 CSV、机制结构在独立 JSON。不要在源码中偷偷增加用户没有提供的模块、边、坐标或结论。
+
 ## 导出和版本一致性
 
 源码会同时导出 PNG、SVG、PDF，并生成 `figure.manifest.json`。不要直接编辑最终 PNG；如果需要微调，修改 `plot.py` 或 `config.py` 后重新运行。交付前确认图片、源码和 manifest 是同一次生成结果。

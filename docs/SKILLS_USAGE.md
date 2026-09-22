@@ -32,6 +32,16 @@ $figure-reference-manager
 请扫描 figure_gallery/00_inbox，分析能够实际打开的新增科研图片，生成设计档案并更新索引。保留原图，不编造用户评价；无法视觉分析的项目要标记为未验证。
 ```
 
+结构化科研插图：
+
+```text
+$scientific-illustration
+
+请根据保存的 JSON 节点、连接和坐标绘制流程图/模型架构/几何或三维示意图；不要把架构请求改成普通折线图，不要自行添加模块或数据。使用 Python、figure_studio.illustrations 和完整源码/config/manifest 交付，并实际查看 PNG。
+```
+
+固定 Nature 上游的安装、完整目录校验和许可证限制见 [`docs/UPSTREAM_NATURE_FIGURE.md`](UPSTREAM_NATURE_FIGURE.md)。本项目的 `templates/nature_adapter/plot.py` 只有在验证后的固定目录存在时才会运行。
+
 调用任何正式绘图 Skill 时，都要遵守项目根目录 `AGENTS.md`：图片和源码必须同步交付，正式图表必须实际运行并查看输出，数据不足时明确报告。
 
-当前仓库已验证四个 `SKILL.md` 的文件、元数据、引用目录和本地辅助结构；宿主 Codex 的运行时自动发现/显式调用行为需在安装本项目 Skills 的宿主环境中再确认。
+当前仓库已验证五个项目 `SKILL.md` 的文件、元数据、引用目录和本地辅助结构；宿主 Codex 的运行时自动发现/显式调用行为需在安装本项目 Skills 的宿主环境中再确认。
