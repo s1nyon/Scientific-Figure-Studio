@@ -13,8 +13,8 @@
       "kind": "py"
     },
     "data_manifest.json": {
-      "sha256": "0c3523593ebd8789b5e0688b0619ab6f5b2adfce3c0ecd3658028f4eff959bf9",
-      "bytes": 655,
+      "sha256": "8d660314fec842f9d2de6b55e65e53378692920cff99a21e90205d27fea88aec",
+      "bytes": 631,
       "kind": "json"
     },
     "convergence_practice.csv": {
@@ -28,8 +28,8 @@
       "kind": "png"
     },
     "figure.svg": {
-      "sha256": "de7aa615699b64ed6b91ee4f7cce7b375b34635c3251d5f14dccb5e7ab443659",
-      "bytes": 77814,
+      "sha256": "fe5156991d2a2eb7270914d8f2b82f7c475e30641adbffc8d5191382829e393a",
+      "bytes": 75443,
       "kind": "svg"
     },
     "figure.pdf": {
