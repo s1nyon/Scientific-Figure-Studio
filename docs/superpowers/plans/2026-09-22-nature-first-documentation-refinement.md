@@ -193,6 +193,6 @@
 
   Use the available image viewer at original and intended paper-insertion size. Record concrete findings for clipping, hierarchy, text, legend/labels, colors, units, and scientific annotations. If a source/config change is needed, rerun all formats and inspect again. Do not add the practice image to the gallery or accepted works.
 
-- [ ] **Step 6: Request review, commit final corrections, and prepare integration**
+- [x] **Step 6: Request review, commit final corrections, and prepare integration**
 
   Review the complete diff against the approved design and this plan, run `git diff --check` again, and request a code/documentation review before integration. Commit any final corrections with a focused message, push `docs/nature-first-workflow-refinement`, and only then merge into `main` if the protected-asset and verification results support it. Do not force-push or use destructive Git commands.
