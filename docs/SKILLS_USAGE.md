@@ -48,16 +48,11 @@ python tools/run_figure_task.py `
   --manifest-path path/to/data_manifest.json `
   --review-status not_reviewed `
   --host-skill-invocation-status not_verified `
+  --nature-skill-root "$env:USERPROFILE\.codex\skills\nature-figure" `
   --version-status candidate
 ```
 
-需要校验已安装固定 Nature 目录时，再提供：
-
-```powershell
-  --nature-skill-root "$env:USERPROFILE\.codex\skills\nature-figure"
-```
-
-实际可用参数还包括显式 `--overwrite`、重复的 `--review-note`、`--parent-run`、`--gallery-root` 和重复的 `--dependency`；只有确实需要时才使用。`design_receipt.json` 记录 runner 看到的 references 和执行状态，不伪装成宿主 Skill 动态调用证明。
+上例包含已验证的固定 Nature 目录；没有 `nature_references` 时可省略同一命令中的 `--nature-skill-root`。实际可用参数还包括显式 `--overwrite`、重复的 `--review-note`、`--parent-run`、`--gallery-root` 和重复的 `--dependency`；只有确实需要时才使用。`design_receipt.json` 记录 runner 看到的 references 和执行状态，不伪装成宿主 Skill 动态调用证明。
 
 ## 可复制的最小任务示例
 

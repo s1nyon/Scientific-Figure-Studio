@@ -48,8 +48,8 @@ records = gallery.scan()
 matches = search_references(
     "figure_gallery",
     query="convergence",
-    chart_type="line chart",
-    application="algorithm comparison",
+    chart_type="algorithm convergence curve",
+    application="algorithm comparison and optimization trajectory",
     limit=3,
 )
 
@@ -89,7 +89,7 @@ python tools/record_gallery_analysis.py `
 已认可作品通过 `search_work_references()` 或以下 CLI 单独检索，不与普通图片 favorite 混合：
 
 ```powershell
-python tools/manage_figure_work.py works --gallery-root figure_gallery --query "算法" --limit 3
+python tools/manage_figure_work.py works --gallery-root figure_gallery --query "algorithm" --limit 3
 ```
 
 Round 04 Design A 位于 `05_my_work/round_04_design_a_accepted/`，是用户明确认可的算法收敛图视觉参考。它使用 `illustrative practice data`，不证明顶刊质量、科学结果有效性、普遍算法优势或全局审美偏好；其适用场景和限制以 [accepted reference case](../../../figure_gallery/05_my_work/round_04_design_a_accepted/accepted_reference_case.md) 为准。不要自动把它升级为模板。

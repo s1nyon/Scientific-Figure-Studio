@@ -49,8 +49,8 @@ from figure_studio.gallery import search_references
 matches = search_references(
     "figure_gallery",
     query="convergence",
-    chart_type="line chart",
-    application="algorithm comparison",
+    chart_type="algorithm convergence curve",
+    application="algorithm comparison and optimization trajectory",
     limit=3,
 )
 ```

@@ -52,16 +52,11 @@ python tools/run_figure_task.py `
   --manifest-path path/to/data_manifest.json `
   --review-status not_reviewed `
   --host-skill-invocation-status not_verified `
+  --nature-skill-root "$env:USERPROFILE\.codex\skills\nature-figure" `
   --version-status candidate
 ```
 
-如果 Brief 声明了 Nature references，再增加：
-
-```powershell
-  --nature-skill-root "$env:USERPROFILE\.codex\skills\nature-figure"
-```
-
-`--nature-skill-root` 让 runner 检查已安装的固定目录；它不代表当前 Codex 宿主已经动态加载或调用了 Nature Skill。真实宿主调用、图片查看和精修必须分别记录。
+上例包含已验证的固定 Nature 目录；如果 Brief 没有声明 `nature_references`，可以省略同一命令中的 `--nature-skill-root`。该参数让 runner 检查已安装目录，不代表当前 Codex 宿主已经动态加载或调用了 Nature Skill。真实宿主调用、图片查看和精修必须分别记录。
 
 ## 4. 模板使用示例（可选）
 

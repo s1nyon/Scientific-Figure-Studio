@@ -60,10 +60,11 @@ python tools/run_figure_task.py `
   --output-dir path/to/candidate `
   --data-path path/to/data.csv `
   --manifest-path path/to/data_manifest.json `
+  --nature-skill-root "$env:USERPROFILE\.codex\skills\nature-figure" `
   --version-status candidate
 ```
 
-如果 Figure Brief 使用了 Nature references，按 [`docs/UPSTREAM_NATURE_FIGURE.md`](docs/UPSTREAM_NATURE_FIGURE.md) 安装并验证固定上游目录，再显式提供 `--nature-skill-root`。runner 的 `design_receipt.json` 记录执行 provenance，不伪装成宿主 Skill 调用证据。
+上例展示了含 Nature references 的任务；按 [`docs/UPSTREAM_NATURE_FIGURE.md`](docs/UPSTREAM_NATURE_FIGURE.md) 安装并验证固定目录。没有 Nature references 时可省略 `--nature-skill-root`。runner 的 `design_receipt.json` 记录执行 provenance，不伪装成宿主 Skill 调用证据。
 
 ## 可选模板示例
 
