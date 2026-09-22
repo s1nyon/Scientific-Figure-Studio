@@ -1,0 +1,18 @@
+{
+  "figure_id": "fig_09_illustration_architecture",
+  "structure_status": "illustrative example structure",
+  "evidence_note": "This architecture is a supplied example structure; it does not describe a user model.",
+  "modules": {
+    "input": {"x": 0.12, "y": 0.5, "label": "Input", "kind": "terminal"},
+    "encoder": {"x": 0.33, "y": 0.5, "label": "Encoder", "kind": "process"},
+    "solver": {"x": 0.55, "y": 0.5, "label": "Solver", "kind": "process"},
+    "decoder": {"x": 0.77, "y": 0.5, "label": "Decoder", "kind": "process"},
+    "output": {"x": 0.93, "y": 0.5, "label": "Output", "kind": "terminal"}
+  },
+  "connections": [
+    {"source": "input", "target": "encoder", "label": "features"},
+    {"source": "encoder", "target": "solver", "label": "latent state"},
+    {"source": "solver", "target": "decoder", "label": "solution"},
+    {"source": "decoder", "target": "output", "label": "prediction"}
+  ]
+}

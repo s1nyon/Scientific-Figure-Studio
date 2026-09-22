@@ -1,0 +1,17 @@
+{
+  "figure_id": "fig_10_illustration_composite",
+  "data_status": "illustrative practice data",
+  "structure_status": "illustrative example structure",
+  "data_file": "examples/data/illustration_composite.csv",
+  "structure_file": "examples/data/illustration_composite.json",
+  "fields": {
+    "panel": "hero or evidence panel selector",
+    "x": "Illustrative checkpoint (arbitrary practice unit)",
+    "y": "Illustrative response or residual (arbitrary practice unit)",
+    "series": "Series label from the input CSV"
+  },
+  "units": {"x": "practice unit", "y": "practice unit"},
+  "transformations": ["Rows are selected by panel and sorted by x for display only."],
+  "uncertainty": "No interval or statistical conclusion is shown; inputs are illustrative practice values.",
+  "unsupported_claims": ["experimental efficacy", "causal mechanism", "model superiority", "user architecture"]
+}

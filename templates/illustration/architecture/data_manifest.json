@@ -1,0 +1,14 @@
+{
+  "figure_id": "fig_09_illustration_architecture",
+  "data_status": "illustrative practice data",
+  "structure_status": "illustrative example structure",
+  "data_file": "examples/data/illustration_architecture.json",
+  "fields": {
+    "modules": "Explicit module IDs, positions, labels, and roles",
+    "connections": "Directed source and target module IDs with supplied interface labels"
+  },
+  "units": {"x": "normalized figure coordinate", "y": "normalized figure coordinate"},
+  "transformations": ["No module, connection, coordinate, or label is inferred by the template."],
+  "uncertainty": "This is an illustrative architecture and does not identify a user model or measured result.",
+  "unsupported_claims": ["model accuracy", "causal mechanism", "deployment readiness", "user architecture"]
+}

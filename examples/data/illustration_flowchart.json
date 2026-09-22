@@ -1,0 +1,21 @@
+{
+  "figure_id": "fig_08_illustration_flowchart",
+  "structure_status": "illustrative example structure",
+  "evidence_note": "This is an illustrative algorithm structure, not a measured workflow or performance result.",
+  "nodes": {
+    "input": {"x": 0.14, "y": 0.82, "label": "Input\ndata", "kind": "terminal"},
+    "prepare": {"x": 0.38, "y": 0.82, "label": "Prepare\nfeatures", "kind": "process"},
+    "check": {"x": 0.62, "y": 0.82, "label": "Quality\ncheck", "kind": "decision"},
+    "fit": {"x": 0.62, "y": 0.54, "label": "Fit model", "kind": "process"},
+    "revise": {"x": 0.38, "y": 0.28, "label": "Revise\nfeatures", "kind": "process"},
+    "report": {"x": 0.84, "y": 0.54, "label": "Report\noutput", "kind": "terminal"}
+  },
+  "edges": [
+    {"source": "input", "target": "prepare"},
+    {"source": "prepare", "target": "check"},
+    {"source": "check", "target": "fit", "label": "pass"},
+    {"source": "check", "target": "revise", "label": "review"},
+    {"source": "revise", "target": "prepare", "label": "update"},
+    {"source": "fit", "target": "report"}
+  ]
+}
