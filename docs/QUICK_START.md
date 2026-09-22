@@ -70,6 +70,9 @@ python tools/run_figure_task.py `
 ```powershell
 python templates/convergence/plot.py
 python tools/generate_examples.py
+python templates/illustration/flowchart/plot.py
+python templates/illustration/architecture/plot.py
+python templates/illustration/composite/plot.py
 ```
 
 这是模板示例，不是所有新 Figure 的默认入口。已有模板会在 `examples/outputs/` 生成 PDF、SVG、PNG 和源码快照；替换正式数据前，先检查字段、单位、目标方向和 manifest，不得把练习结果当作比赛结果。
