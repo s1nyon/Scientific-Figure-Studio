@@ -1,0 +1,50 @@
+{
+  "task": "Design a Nature-first convergence evidence Figure from an explicitly labelled practice dataset.",
+  "data_sources": ["convergence_practice.csv"],
+  "fields": {
+    "algorithm": "Method label",
+    "iteration": "Iteration count",
+    "objective": "Objective value"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "arbitrary practice unit"
+  },
+  "claim": "Across the supplied illustrative trajectories, objective values decrease over iterations, while the best-so-far view exposes transient regressions and endpoint improvement.",
+  "evidence_panels": [
+    {
+      "id": "a",
+      "role": "hero trajectory evidence",
+      "source": "observed objective and cumulative historical best"
+    },
+    {
+      "id": "b",
+      "role": "supporting endpoint evidence",
+      "source": "derived percentage decrease from first observation to final historical best"
+    }
+  ],
+  "archetype": "quantitative grid",
+  "backend": "Python",
+  "task_mode": "formal",
+  "nature_references": [
+    "SKILL.md",
+    "references/figure-contract.md",
+    "references/common-patterns.md",
+    "references/qa-contract.md"
+  ],
+  "renderer": "examples/outputs/fig_11_nature_first/plot.py",
+  "review_risks": [
+    "Practice data must not be presented as a competition result.",
+    "The derived endpoint panel must not be interpreted as uncertainty or statistical significance.",
+    "The legend, panel labels, and practice-data note must remain readable at final size."
+  ],
+  "design_requirements": [
+    "Use an asymmetric quantitative grid with panel a as the hero evidence.",
+    "Keep method colors consistent across both panels.",
+    "Use a quieter support panel and direct percentage annotations.",
+    "Show observed trajectories and historical-best trajectories without hiding regressions."
+  ],
+  "scientific_unknowns": [
+    "No replicate runs, confidence intervals, or formal baseline comparison are supplied."
+  ]
+}

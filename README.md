@@ -50,13 +50,20 @@ python templates/convergence/plot.py
 
 ## Skills
 
+普通科研数据图和综合 Figure 的默认顺序是 $nature-figure → $modern-scientific-figure：
+先由固定版本 Nature Skill 确定 Figure Contract、证据层级和构图，再使用 Python renderer
+实现和实际查看。流程图、模型架构、几何/三维/网络等专业插图由 scientific-illustration
+分流；现有模板只是可选实现素材。统一执行器 tools/run_figure_task.py 只负责运行已写好的
+Python renderer 和记录交付 provenance，不能代替 Codex Agent 调用 Nature Skill。
 在 Codex 中可以显式调用：
 
 ```text
+$nature-figure
 $modern-scientific-figure
 $algorithm-visualization
 $figure-design-review
 $figure-reference-manager
+$scientific-illustration
 ```
 
 `scientific-illustration` 负责流程图、模型架构、几何/三维/网络和图表组合示意图；固定上游 `nature-figure` 通过安装器按提交版本接入，不把无许可证确认的上游文件复制进仓库。Skill 只负责工作流程和审查要求；最终图表仍由保存下来的 Python 源码生成。详见 [`docs/SKILLS_USAGE.md`](docs/SKILLS_USAGE.md) 和 [`docs/UPSTREAM_NATURE_FIGURE.md`](docs/UPSTREAM_NATURE_FIGURE.md)。

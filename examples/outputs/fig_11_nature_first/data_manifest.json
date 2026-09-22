@@ -1,0 +1,27 @@
+{
+  "figure_id": "fig_11_nature_first",
+  "data_status": "illustrative practice data",
+  "data_file": "convergence_practice.csv",
+  "fields": {
+    "algorithm": "Method label",
+    "iteration": "Iteration count",
+    "objective": "Objective value in an arbitrary practice unit"
+  },
+  "units": {
+    "algorithm": "categorical label",
+    "iteration": "count",
+    "objective": "practice unit"
+  },
+  "objective_direction": "minimize",
+  "transformations": [
+    "The solid trajectory is the cumulative minimum (historical best) per method.",
+    "Panel b computes percentage decrease from the first observed objective to the final historical best."
+  ],
+  "uncertainty": "No replicate runs are provided; no uncertainty band or inferential statistic is shown.",
+  "unsupported_claims": [
+    "algorithm superiority",
+    "formal competition result",
+    "experimental conclusion"
+  ],
+  "nature_skill_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1"
+}

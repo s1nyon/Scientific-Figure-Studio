@@ -1,0 +1,35 @@
+{
+  "task": "Draw the explicitly supplied illustrative algorithm flowchart without adding modules or connections.",
+  "data_sources": ["illustration_flowchart.json"],
+  "fields": {
+    "nodes": "Explicit node IDs, positions, labels, and roles",
+    "edges": "Directed source and target IDs with optional branch labels"
+  },
+  "units": {
+    "x": "normalized figure coordinate",
+    "y": "normalized figure coordinate"
+  },
+  "claim": "The supplied illustrative algorithm structure contains an input, preparation, quality-check branch, fitting step, revision loop, and report output.",
+  "evidence_panels": [
+    {
+      "id": "a",
+      "role": "explicit structure schematic",
+      "source": "illustration_flowchart.json"
+    }
+  ],
+  "archetype": "schematic-led composite",
+  "backend": "Python",
+  "task_mode": "formal",
+  "nature_references": [],
+  "renderer": "templates.illustration.flowchart.plot",
+  "review_risks": [
+    "The structure is illustrative and must not be presented as a user's actual model.",
+    "Every arrow and branch label must match the JSON input."
+  ],
+  "design_requirements": [
+    "Do not add nodes, edges, labels, or model claims absent from the input."
+  ],
+  "scientific_unknowns": [
+    "No measured performance or user model architecture is supplied."
+  ]
+}

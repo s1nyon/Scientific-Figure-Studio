@@ -1,5 +1,27 @@
 # Skills 使用说明
 
+## 统一 Nature-first 入口
+
+普通科研数据图、论文级 Figure 和数据图表组合图，优先显式调用原版 $nature-figure，
+再调用项目统一入口 $modern-scientific-figure。Nature Skill 负责 Figure Contract、构图、
+证据层级和质量审查指导；项目入口负责数据检查、专业 Skill 分流、Python renderer 执行、
+实际图片查看和源码交付。不要先运行固定模板再补写 Nature 记录。
+
+    $nature-figure
+    $modern-scientific-figure
+
+    请使用 Python。根据 examples/data/convergence_practice.csv 设计一张练习收敛 Figure。
+    先写出一条可验证结论、面板证据关系和 QA 风险，再编写独立 plot.py/config.py；
+    实际导出 PNG、SVG、PDF，打开 PNG，修复问题后交付完整源码、manifest 和 Design Receipt。
+
+如果任务主要是流程图、模型架构、几何、三维或网络结构，使用 $scientific-illustration；
+如果同时包含量化图表，先让 $nature-figure 设计 Figure 的证据层级，再由专项 Skill 绘制结构面板。
+
+Python 任务执行器只负责确定性运行和交付检查：
+
+    python tools/run_figure_task.py --renderer path/to/plot.py --brief path/to/figure_brief.json --output-dir path/to/output --data-path path/to/data.csv --manifest-path path/to/data_manifest.json --nature-skill-root $HOME/.codex/skills/nature-figure
+
+它不能代替 Codex Agent 调用 Nature Skill。design_receipt.json 会明确记录这一边界。
 项目 Skills 位于 `.agents/skills/`。在支持项目级 Skills 的 Codex 环境中，可以显式调用 `$skill-name`；也可以直接描述任务，让系统根据 `description` 自动发现。显式调用示例：
 
 ```text

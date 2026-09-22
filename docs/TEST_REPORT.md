@@ -1,7 +1,7 @@
 # 测试与视觉验收报告
 
 验收日期：2026-09-22  
-项目目录：`E:\code\Scientific_Figure_Studio`  
+项目目录：仓库根目录
 数据状态：全部示例输入均明确标记为 `illustrative practice data`，不代表正式比赛、实验或用户模型结果。
 
 ## 环境
@@ -19,9 +19,10 @@
 
 | 检查 | 结果 |
 | --- | --- |
-| `conda run -n scientific-figure-studio python -m pytest -q` | **PASS：84 passed；提交后复跑 19.64s** |
+| `conda run --no-capture-output -n scientific-figure-studio pytest -q` | **PASS：110 passed；24.96s** |
 | `conda run -n scientific-figure-studio python -m ruff check .` | **PASS：All checks passed** |
 | `conda run -n scientific-figure-studio python tools/validate_skills.py` | **PASS：Validated 5 project Skill(s)** |
+| `conda run --no-capture-output -n scientific-figure-studio python tools/verify_nature_figure.py --path "$env:USERPROFILE\\.codex\\skills\\nature-figure"` | **PASS：固定提交精确匹配，30 个文件** |
 | `python tools/generate_examples.py` | **PASS：fig_01–fig_06 全部重新渲染** |
 | `python tools/generate_phase2_examples.py` | **PASS：fig_07–fig_10 全部重新渲染** |
 | `python tools/update_gallery.py` | **PASS：空图库扫描，0 张图片，0 个待分析项** |
@@ -37,9 +38,9 @@
 - 完整文件数：30；包含 `SKILL.md`、README、11 个 references、15 个 PNG 资源、evals 和 `.gitignore`
 - 未发现可识别的 `LICENSE`、`COPYING` 或 `NOTICE`，因此仓库采用固定 SHA 安装器，不把上游文件复制进公开项目
 - `fig_07` 的 [`nature_context.json`](../examples/outputs/fig_07_nature_adapter/nature_context.json) 实际记录了 commit、完整树数量，并读取了 `SKILL.md`、`figure-contract.md`、`common-patterns.md`、`qa-contract.md` 四个上游文件及其哈希
-- 项目适配器实际参与了 `fig_07` 的 Python 绘图；上游 R 轨道保留在安装内容中，但本项目正式绘图、预览、导出和 QA 统一使用 Python
+- 项目适配器实际参与了 `fig_07` 的 Python 绘图；这证明固定上游文件被读取并记录，但不等同于已经证明上游设计决策改变了该图的结构。上游 R 轨道保留在安装内容中，但本项目正式绘图、预览、导出和 QA 统一使用 Python
 
-本地完整树读取、校验和适配器参与绘图已经验证；当前 Codex 进程是否刷新并自动发现新安装的 `nature-figure` Skill 尚未验证，不能将其混写为宿主运行时动态 Skill 调用成功。
+本地完整树读取、校验和适配器参与绘图已经验证；上面关于 `fig_07` 的结论仍只表示适配器层证据。P0 又在真实 Codex 会话中显式加载 `$nature-figure`，读取上述四个参考文件并据此完成 Test A 的 Figure Contract、面板层级、配色、Python 实现和视觉审查；该宿主调用证据记录在 Test A 的 `design_receipt.json` 和本报告 P0 部分。Python pytest 仍不能伪造或独立证明宿主 Skill 调用。
 
 ## 导出文件检查
 
@@ -75,6 +76,30 @@
 
 另外实际运行并检查了中文、英文、数字和数学符号字体测试；没有缺字方框或明显裁切。
 
+## 第三阶段 P0 实际验收
+
+2026-09-22 在 feature/nature-first-workflow 分支实际完成并查看了三个场景：
+
+- Test A：examples/outputs/fig_11_nature_first/。先在 Codex 会话中读取固定 Nature Skill
+  的 SKILL.md、figure-contract、common-patterns 和 qa-contract，再编写独立 Python
+  renderer；生成 PNG/SVG/PDF，查看初版，修复中文字体方框，按自然语言反馈修改颜色、网格和图例，
+  再次生成并查看最终图。Design Receipt 记录了固定 commit、reference 哈希、Figure Contract、
+  renderer 和人工宿主 Skill 调用状态。
+- Test B：examples/outputs/fig_12_unified_flowchart/。统一 runner 选择
+  scientific-illustration 路径，只绘制 illustration_flowchart.json 声明的节点、连接和分支；
+  PNG/SVG/PDF 实际生成并查看。
+- Test C：Test A 的 before_revision 快照、figure_before_after.png 和其 manifest 实际生成并查看；
+  restore 命令已执行，恢复后的 config.py SHA-256 与快照一致。
+
+本轮新增 P0 行为测试与既有回归测试全部通过；当前全量测试为 110 项。它们验证 Brief、runner、
+固定 Nature context 记录、显式覆盖保护、SVG 导出格式、快照恢复、原生比例对比和三个交付目录契约。
+自动测试不被当作宿主 Skill 调用证明。
+
+此外，使用交付包中的 Python renderer 独立复现 Test A/B：两组均实际生成 PNG、SVG、PDF；Test A PNG 为
+2160 × 1320、SVG 含 38 个 `<text>` 节点，Test B PNG 为 2160 × 1290、SVG 含 16 个 `<text>` 节点，
+PDF 均为 1 页。流程图模板同时补充了外部 `data_path` 的直接运行测试；Test B 交付 manifest
+已规范为包内 JSON，并实际验证不依赖仓库外部数据路径即可独立运行。
+
 ## 配置生效与图库保护
 
 - 实际修改 `fig_08` 输出目录中的 `config.py`：`FIGURE_WIDTH` 从 7.20 改为 7.80，PNG 宽度由 2160 变为 2340；随后重新运行生成器恢复规范配置并再次渲染为 2160 宽度。
@@ -83,6 +108,6 @@
 
 ## 未验证与限制
 
-- 宿主 Codex 的动态 Skill 索引刷新和 `$nature-figure` 运行时显式调用仍需在重新加载项目 Skills 的宿主环境中确认；本地固定目录加载和实际适配绘图已验证。
+- P0 的一次由 `$nature-figure` 显式加载并参与设计的真实任务已完成；宿主 Skill 的运行状态仍通过 Codex 会话记录和人工审查确认，不能由 Python pytest 自动证明。后续正式比赛任务仍需针对真实数据重新完成 Figure Contract 和视觉检查。
 - 当前个人图库没有用户新增图片，因此没有产生任何个人审美结论；视觉分析字段对新图片默认保持 `not_analyzed`。
 - 四类新插图使用的是明确标记的示例结构/练习数据。真实模型架构、几何约束、三维空间数据和正式研究数据需要用户提供后再绘制。

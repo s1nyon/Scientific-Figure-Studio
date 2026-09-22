@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T07:42:46.399651+00:00",
+  "before": {
+    "size_px": [
+      2160,
+      1320
+    ],
+    "aspect_ratio": 1.63636364,
+    "mode": "RGBA",
+    "sha256": "6dce616eceb1db7b9e9b19e186e2adac4d6a3d8405423d3d9a5d28d95ae0284c"
+  },
+  "after": {
+    "size_px": [
+      2160,
+      1320
+    ],
+    "aspect_ratio": 1.63636364,
+    "mode": "RGBA",
+    "sha256": "c416ca5c9768c9182f926b8f75f461ba8afe212ae6a987af652eae7673cd5763"
+  },
+  "preserves_native_aspect": true,
+  "output": "figure_before_after.png"
+}

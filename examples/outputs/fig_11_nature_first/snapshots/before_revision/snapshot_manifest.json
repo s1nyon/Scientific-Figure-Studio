@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T06:25:22.509241+00:00",
+  "files": {
+    "plot.py": {
+      "sha256": "51c7ae0f1187bf1f8bdd92ec0dff01684cbf8d9816fc3f324a7269898bde45f8",
+      "bytes": 11725,
+      "kind": "py"
+    },
+    "config.py": {
+      "sha256": "8f9f7f4a7c7e5b50bb59515dcd31599cbce7b939cea51e6fe65e6556157d45ea",
+      "bytes": 1047,
+      "kind": "py"
+    },
+    "figure_brief.json": {
+      "sha256": "827b5c06350eeacbbb81510cd7d2c12fdb4a09eaf199801251c07e6c0521544b",
+      "bytes": 1932,
+      "kind": "json"
+    },
+    "data_manifest.json": {
+      "sha256": "8835b790ac4fdcfceb918092c3fefad52be14f5734c395ced6f656c0c50a11fe",
+      "bytes": 954,
+      "kind": "json"
+    },
+    "convergence_practice.csv": {
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513,
+      "kind": "csv"
+    },
+    "figure.png": {
+      "sha256": "6dce616eceb1db7b9e9b19e186e2adac4d6a3d8405423d3d9a5d28d95ae0284c",
+      "bytes": 197631,
+      "kind": "png"
+    },
+    "figure.svg": {
+      "sha256": "55fdd8cf2edf3988cacf608905c3d4dbe917cb5eb9f6b649b996be1e8ebf62c7",
+      "bytes": 91394,
+      "kind": "svg"
+    },
+    "figure.pdf": {
+      "sha256": "06ae9bb02e0c1c3d8033d5eab2835b6aa34986ed6cafe3584d2bec03a79ee69c",
+      "bytes": 30670,
+      "kind": "pdf"
+    }
+  }
+}
