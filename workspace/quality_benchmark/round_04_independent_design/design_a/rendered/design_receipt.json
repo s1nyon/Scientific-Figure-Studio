@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T11:43:49.538924+00:00",
+  "backend": "Python",
+  "design": {
+    "claim": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values and Proposed ends at the lowest displayed objective; no speed or stability claim is made.",
+    "archetype": "quantitative grid",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero trajectory evidence",
+        "question": "What objective paths and terminal values are directly observed over the displayed window?"
+      }
+    ],
+    "design_requirements": [],
+    "renderer": "plot.py",
+    "template_reuse": false
+  },
+  "references": {
+    "gallery": [
+      {
+        "relative_path": "02_algorithm/nature_optimization_fig3.png",
+        "sha256": "d0a97477b54e31f397e7373f5a6d613af6cf0fe11d8eb1bdc72849066463be79",
+        "favorite": false,
+        "chart_type": "multi-panel algorithm benchmark figure",
+        "application": "algorithm comparison and convergence benchmarking",
+        "visual_analysis_status": "agent_reviewed"
+      }
+    ],
+    "code": [
+      "figure_studio/style.py",
+      "figure_studio/palettes.py",
+      "figure_studio/analysis.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/style.py",
+        "path": "figure_studio/style.py",
+        "sha256": "68a1be09d8529a915f35f8a9b3982cfcbe383af42a7ff4fef020dc74e23272e7",
+        "bytes": 2618
+      },
+      {
+        "reference": "figure_studio/palettes.py",
+        "path": "figure_studio/palettes.py",
+        "sha256": "57c1cf94b1aeaced5139d7b2854a608f76b7d26f3115ff8d6dfa41a51627dc66",
+        "bytes": 3444
+      },
+      {
+        "reference": "figure_studio/analysis.py",
+        "path": "figure_studio/analysis.py",
+        "sha256": "35e54c94946b85de30db717fd0d5e934e4285eb0f34ed7689a67accded276c39",
+        "bytes": 2099
+      }
+    ],
+    "user_note": "The supplied journal reference was used for visual methods only; no reference data or claims were reused."
+  },
+  "figure_brief": {
+    "task": "Generate an independent minimal trajectory figure from the raw illustrative convergence table.",
+    "data_sources": [
+      "examples/data/convergence_practice.csv"
+    ],
+    "fields": {
+      "algorithm": "algorithm identity",
+      "iteration": "optimization iteration",
+      "objective": "current objective value"
+    },
+    "units": {
+      "iteration": "count",
+      "objective": "unspecified practice unit"
+    },
+    "claim": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values and Proposed ends at the lowest displayed objective; no speed or stability claim is made.",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero trajectory evidence",
+        "question": "What objective paths and terminal values are directly observed over the displayed window?"
+      }
+    ],
+    "archetype": "quantitative grid",
+    "backend": "Python",
+    "task_mode": "ordinary",
+    "nature_references": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/common-patterns.md",
+      "references/nature-2026-observations.md",
+      "references/qa-contract.md"
+    ],
+    "renderer": "round_04_design_a_minimal_renderer",
+    "review_risks": [
+      "A single panel may hide the exact signed update sequence.",
+      "The practice label Proposed must not be interpreted as validated superiority.",
+      "No uncertainty or speed claim may be inferred from line shape."
+    ],
+    "design_requirements": [],
+    "scientific_unknowns": [
+      "No replicate runs or seeds are available.",
+      "No stopping criterion or threshold is supplied.",
+      "The input does not establish performance outside ten displayed iterations."
+    ],
+    "gallery_references": [
+      "02_algorithm/nature_optimization_fig3.png"
+    ],
+    "code_references": [
+      "figure_studio/style.py",
+      "figure_studio/palettes.py",
+      "figure_studio/analysis.py"
+    ],
+    "user_reference_note": "The supplied journal reference was used for visual methods only; no reference data or claims were reused."
+  },
+  "nature": {
+    "requested": true,
+    "skill_name": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/common-patterns.md",
+      "references/nature-2026-observations.md",
+      "references/qa-contract.md"
+    ],
+    "reference_sha256": {
+      "SKILL.md": "b4fd8daf9b5b4fa8b048e89234c9afadcca25aa2ee696521380671b286bd5f5f",
+      "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+      "references/design-theory.md": "0a7b3a8a964635fa1c7a59d82640e0adb31a6e9845beae77bc6e87503f8597c1",
+      "references/common-patterns.md": "a2f9d839d4284dc2a8dcac0e5682446db037ff197aa2b4b5e995128eeadf6a1e",
+      "references/nature-2026-observations.md": "e4f7800316740297ae3573b2f1830a2d150e3e306546144f6c0547806431c307",
+      "references/qa-contract.md": "5323f234fa5319784ce4b06e4eba1d242ba39a72ce83198f9e2ba126eb500339"
+    },
+    "host_skill_invocation_required": true,
+    "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+    "adapter_read_is_not_host_invocation_proof": true
+  },
+  "review": {
+    "status": "not_reviewed",
+    "notes": [
+      "Round 04 independent Design A draft; awaiting user selection."
+    ],
+    "visual_review_is_manual": true
+  },
+  "task_manifest": "task_manifest.json"
+}

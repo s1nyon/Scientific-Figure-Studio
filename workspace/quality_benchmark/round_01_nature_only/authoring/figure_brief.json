@@ -1,0 +1,68 @@
+{
+  "task": "Design a publication-oriented convergence evidence figure from the supplied illustrative practice trajectories.",
+  "data_sources": ["examples/data/convergence_practice.csv"],
+  "fields": {
+    "algorithm": "algorithm identity",
+    "iteration": "optimization iteration",
+    "objective": "current objective value"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "arbitrary practice unit"
+  },
+  "claim": "Within the displayed illustrative trajectories, the algorithms exhibit distinct convergence profiles: Proposed reaches the lowest shown terminal objective, while the stepwise panel exposes one temporary regression that is hidden by the running-best trace.",
+  "evidence_panels": [
+    {
+      "id": "a",
+      "role": "hero convergence evidence",
+      "question": "How do current objective values and direction-aware historical best values evolve?"
+    },
+    {
+      "id": "b",
+      "role": "update-behavior evidence",
+      "question": "Which destination iterations improve or regress under minimization?"
+    },
+    {
+      "id": "c",
+      "role": "displayed-window summary",
+      "question": "What are the exact start, end, and net objective changes over the shown window?"
+    }
+  ],
+  "archetype": "quantitative grid",
+  "backend": "Python",
+  "task_mode": "ordinary",
+  "nature_references": [
+    "SKILL.md",
+    "references/figure-contract.md",
+    "references/design-theory.md",
+    "references/common-patterns.md",
+    "references/nature-2026-observations.md",
+    "references/qa-contract.md"
+  ],
+  "renderer": "custom_round_01_nature_convergence_renderer",
+  "review_risks": [
+    "The single trajectory per algorithm cannot support uncertainty or statistical claims.",
+    "The word Proposed must not be interpreted as a validated superiority claim.",
+    "The heatmap sign convention must remain explicit because the objective is minimized.",
+    "Labels and endpoint annotations must remain readable at approximately 183 mm final width."
+  ],
+  "design_requirements": [
+    "Use an asymmetric hero layout with one dominant trajectory panel and two quieter evidence panels.",
+    "Keep one stable algorithm color mapping across all panels and use redundant line/marker encodings.",
+    "Use direct endpoint labels in the hero panel to reduce legend eye travel.",
+    "Reserve the warm accent for signed update direction and annotations, not for an algorithm identity.",
+    "Show the illustrative-data status and absence of replicate-based uncertainty in the figure bundle."
+  ],
+  "scientific_unknowns": [
+    "No repeated runs, seeds, benchmark context, or real-unit interpretation are provided.",
+    "No stopping criterion or target threshold is defined.",
+    "The table does not establish performance outside the displayed ten iterations."
+  ],
+  "gallery_references": [],
+  "code_references": [
+    "figure_studio/style.py",
+    "figure_studio/palettes.py",
+    "figure_studio/analysis.py"
+  ],
+  "user_reference_note": "No personal figure-gallery image was used or modified for this test."
+}

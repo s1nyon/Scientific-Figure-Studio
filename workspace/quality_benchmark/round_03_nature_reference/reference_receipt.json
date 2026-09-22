@@ -1,0 +1,16 @@
+{
+  "reference_status": "viewed_and_analyzed",
+  "relative_gallery_path": "figure_gallery/02_algorithm/nature_optimization_fig3.png",
+  "sha256": "d0a97477b54e31f397e7373f5a6d613af6cf0fe11d8eb1bdc72849066463be79",
+  "dimensions_px": [1242, 1200],
+  "paper": "Deep active optimization for complex systems",
+  "journal": "Nature Computational Science",
+  "doi": "10.1038/s43588-025-00858-x",
+  "paper_url": "https://www.nature.com/articles/s43588-025-00858-x",
+  "opened_locally": true,
+  "used_for": ["visual grouping", "short panel titles", "direct labeling", "restrained local annotation"],
+  "reference_data_reused": false,
+  "reference_image_embedded": false,
+  "favorite_status_changed": false,
+  "source_image_modified": false
+}

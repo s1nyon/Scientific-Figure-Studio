@@ -1,0 +1,20 @@
+{
+  "02_algorithm/nature_optimization_fig3.png": {
+    "favorite": false,
+    "style": "algorithm_research",
+    "chart_type": "multi-panel algorithm benchmark figure",
+    "application": "algorithm comparison and convergence benchmarking",
+    "tags": "",
+    "source": "",
+    "user_evaluation": ""
+  },
+  "05_my_work/round_04_design_a_accepted/round_04_design_a_minimal.png": {
+    "favorite": false,
+    "style": "algorithm_research",
+    "chart_type": "algorithm convergence curve",
+    "application": "algorithm comparison and optimization trajectory",
+    "tags": "accepted reference;algorithm convergence;optimization trajectory;minimal scientific figure;Python source available",
+    "source": "Scientific Figure Studio Round 04 independent design test — Design A",
+    "user_evaluation": "User explicitly accepted the overall Design A visual direction as a personal Accepted Reference Case; this is not a top-journal certification, scientific-result validation, universal template, or global aesthetic preference."
+  }
+}

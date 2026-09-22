@@ -1,0 +1,92 @@
+{
+  "created_utc": "2026-09-22T12:05:46.964515+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 600,
+  "figure_size_inches": [
+    7.2,
+    3.55
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "<external-input>/convergence_practice.csv",
+    "resolved_data_path": "<external-input>/convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Algorithm label: Proposed, Adaptive, or Baseline",
+      "iteration": "Integer iteration index from 1 to 10",
+      "objective": "Objective value to minimize; no physical unit is supplied"
+    },
+    "units": {},
+    "transformations": [
+      "Rows are sorted by algorithm and iteration for deterministic rendering only.",
+      "No observations are removed, smoothed, interpolated, normalized, aggregated, or winsorized.",
+      "Historical best is computed only for the quiet open-marker annotation.",
+      "Adjacent changes and net changes are documented but not drawn as extra panels in Design A."
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
+    "figure_design": {
+      "round": 4,
+      "option": "A",
+      "hero_panel": "a",
+      "support_panels": [],
+      "uncertainty_band": false,
+      "historical_figure_inputs_used_before_draft": false
+    },
+    "nature_context": {
+      "adapter_version": "0.1.0",
+      "skill_name": "nature-figure",
+      "source_repository": "https://github.com/lth0/codexSkill",
+      "archive_url": "https://codeload.github.com/lth0/codexSkill/zip/1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+      "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+      "tree_file_count": 30,
+      "skill_root": "C:\\Users\\Administrator\\.codex\\skills\\nature-figure",
+      "references_loaded": [
+        "SKILL.md",
+        "references/figure-contract.md",
+        "references/common-patterns.md",
+        "references/qa-contract.md"
+      ],
+      "reference_sha256": {
+        "SKILL.md": "b4fd8daf9b5b4fa8b048e89234c9afadcca25aa2ee696521380671b286bd5f5f",
+        "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+        "references/common-patterns.md": "a2f9d839d4284dc2a8dcac0e5682446db037ff197aa2b4b5e995128eeadf6a1e",
+        "references/qa-contract.md": "5323f234fa5319784ce4b06e4eba1d242ba39a72ce83198f9e2ba126eb500339"
+      },
+      "reference_characters": {
+        "SKILL.md": 10917,
+        "references/figure-contract.md": 3970,
+        "references/common-patterns.md": 9848,
+        "references/qa-contract.md": 4736
+      },
+      "project_backend": "Python",
+      "upstream_r_track_preserved": true
+    },
+    "objective_summary": {
+      "Proposed": {
+        "start": 1.84,
+        "end": 0.9,
+        "net_change": -0.9400000000000001
+      },
+      "Adaptive": {
+        "start": 2.1,
+        "end": 1.01,
+        "net_change": -1.09
+      },
+      "Baseline": {
+        "start": 2.4,
+        "end": 1.6,
+        "net_change": -0.7999999999999998
+      }
+    }
+  },
+  "outputs": {
+    "png": "round_04_design_a_minimal.png",
+    "svg": "round_04_design_a_minimal.svg",
+    "pdf": "round_04_design_a_minimal.pdf"
+  }
+}

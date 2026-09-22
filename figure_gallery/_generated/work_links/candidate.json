@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "work_id": "candidate",
+  "status": "accepted",
+  "path_base": "gallery_root",
+  "accepted_directory": "05_my_work/round_04_design_a_accepted",
+  "candidate_directory": "../workspace/quality_benchmark/round_04_independent_design/design_a/candidate",
+  "user_evaluation": "User explicitly accepted Round 04 Design A as a personal Accepted Reference Case for future algorithm-convergence figure retrieval. This records visual design value only; it is not a top-journal certification, a scientific-result validation, a universal template, or a global aesthetic preference.",
+  "visual_design_reference": "design_receipt.json",
+  "code_reference": {
+    "entrypoint": "plot.py",
+    "configuration": "config.py",
+    "version_manifest": "version_manifest.json",
+    "task_manifest": "task_manifest.json",
+    "reproduction_manifest": "reproduction_manifest.json"
+  },
+  "source_hashes": {
+    "plot.py": "ec31bfbcf8fa45a3742cec8d7632f4416c4b1588512a5f6c15e64b6ba847602f",
+    "figure_brief.json": "d29fa03d9e922315c5394cd6cd2625a1a80113d5d0812bdac3c529776f2c5f3b",
+    "config.py": "ded9753c87ba1f0d8fee4cdb3a0735e8c5f2339dc0800cb582e46647ece5d9ee",
+    "data_manifest.json": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+    "convergence_practice.csv": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "nature_context.json": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+    "reproduction_manifest.json": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+    "accepted_reference_case.md": "3720e19290d437367fdfc70cccf4bd6108f3a130c11a1f0e07e4a312a376dd74"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.2",
+  "run_id": "rendered",
+  "created_utc": "2026-09-22T11:43:49.548924+00:00",
+  "status": "workspace",
+  "parent_run": null,
+  "source_hashes": {
+    "plot.py": "ec31bfbcf8fa45a3742cec8d7632f4416c4b1588512a5f6c15e64b6ba847602f",
+    "figure_brief.json": "d29fa03d9e922315c5394cd6cd2625a1a80113d5d0812bdac3c529776f2c5f3b",
+    "config.py": "ded9753c87ba1f0d8fee4cdb3a0735e8c5f2339dc0800cb582e46647ece5d9ee",
+    "data_manifest.json": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+    "convergence_practice.csv": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "nature_context.json": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+    "reproduction_manifest.json": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24"
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "ec31bfbcf8fa45a3742cec8d7632f4416c4b1588512a5f6c15e64b6ba847602f",
+      "bytes": 8925
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "d29fa03d9e922315c5394cd6cd2625a1a80113d5d0812bdac3c529776f2c5f3b",
+      "bytes": 3202
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "ded9753c87ba1f0d8fee4cdb3a0735e8c5f2339dc0800cb582e46647ece5d9ee",
+      "bytes": 1867
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+      "bytes": 3318
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+      "bytes": 882
+    }
+  },
+  "outputs": {
+    "png": {
+      "path": "round_04_design_a_minimal.png",
+      "sha256": "3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762",
+      "bytes": 326118
+    },
+    "svg": {
+      "path": "round_04_design_a_minimal.svg",
+      "sha256": "93baaa0e3a87a460345f69c13d783383a5374fe4a1aaa51e412fa91a25268e43",
+      "bytes": 63224
+    },
+    "pdf": {
+      "path": "round_04_design_a_minimal.pdf",
+      "sha256": "9d3ed492788d619048d994f057cfc11e84a430595a20861c2025ffff250c1ce0",
+      "bytes": 27574
+    }
+  },
+  "files": {
+    "source:plot.py": {
+      "path": "plot.py",
+      "sha256": "ec31bfbcf8fa45a3742cec8d7632f4416c4b1588512a5f6c15e64b6ba847602f",
+      "bytes": 8925
+    },
+    "source:figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "d29fa03d9e922315c5394cd6cd2625a1a80113d5d0812bdac3c529776f2c5f3b",
+      "bytes": 3202
+    },
+    "source:config.py": {
+      "path": "config.py",
+      "sha256": "ded9753c87ba1f0d8fee4cdb3a0735e8c5f2339dc0800cb582e46647ece5d9ee",
+      "bytes": 1867
+    },
+    "source:data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+      "bytes": 3318
+    },
+    "source:convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "source:nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "source:reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+      "bytes": 882
+    },
+    "output:png": {
+      "path": "round_04_design_a_minimal.png",
+      "sha256": "3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762",
+      "bytes": 326118
+    },
+    "output:svg": {
+      "path": "round_04_design_a_minimal.svg",
+      "sha256": "93baaa0e3a87a460345f69c13d783383a5374fe4a1aaa51e412fa91a25268e43",
+      "bytes": 63224
+    },
+    "output:pdf": {
+      "path": "round_04_design_a_minimal.pdf",
+      "sha256": "9d3ed492788d619048d994f057cfc11e84a430595a20861c2025ffff250c1ce0",
+      "bytes": 27574
+    }
+  },
+  "metadata": {
+    "task_manifest": "task_manifest.json",
+    "design_receipt": "design_receipt.json"
+  }
+}

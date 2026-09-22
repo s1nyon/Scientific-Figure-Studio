@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-09-22T10:25:47.282782+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 600,
+  "figure_size_inches": [
+    7.2,
+    5.1
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "<external-input>/convergence_practice.csv",
+    "resolved_data_path": "<external-input>/convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Algorithm label",
+      "iteration": "Iteration index (count)",
+      "objective": "Current objective value in arbitrary practice units"
+    },
+    "units": {
+      "algorithm": "categorical label",
+      "iteration": "count",
+      "objective": "arbitrary practice unit"
+    },
+    "transformations": [
+      "Rows are sorted by algorithm and iteration for rendering only; source values are not changed.",
+      "Historical best is the cumulative minimum of objective within each algorithm.",
+      "Stepwise update is objective[t] - objective[t-1] within each algorithm; negative values indicate improvement under minimization.",
+      "Net change is objective at iteration 10 minus objective at iteration 1; endpoint values remain in the original practice-unit scale."
+    ],
+    "uncertainty": "No replicate runs, seeds, or error estimates are provided; no uncertainty band, interval, or statistical test is shown.",
+    "unsupported_claims": [
+      "algorithm superiority or generalization",
+      "formal competition result",
+      "statistical significance",
+      "confidence or prediction intervals",
+      "causal explanation for the trajectory shapes"
+    ],
+    "objective_direction": "minimize",
+    "nature_context_file": "nature_context.json",
+    "nature_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "nature_references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "project_backend": "Python",
+    "upstream_r_track_preserved": true,
+    "figure_design": {
+      "hero_panel": "a",
+      "support_panels": [
+        "b",
+        "c"
+      ],
+      "current_vs_historical_best": true,
+      "uncertainty_band": false
+    }
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

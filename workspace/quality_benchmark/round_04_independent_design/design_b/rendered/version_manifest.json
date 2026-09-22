@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.2",
+  "run_id": "rendered",
+  "created_utc": "2026-09-22T11:43:49.672190+00:00",
+  "status": "workspace",
+  "parent_run": null,
+  "source_hashes": {
+    "plot.py": "1921e5698e80e6ab1dc023551bb5ab050654208b47e56f336554e3de17ed9d0b",
+    "figure_brief.json": "6ef8e6a926ee794d29b534989ceac4e3da784a599dea4c6a800459c7391aad25",
+    "config.py": "ea66886f3c093936e0a07ddd75ae81d5e8b6110873425cdd59112727da844630",
+    "data_manifest.json": "1d9d54a0ab3c94bc889f5c6594d91828c8b4f1f25d15fdd276a553b8fdeaecee",
+    "convergence_practice.csv": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "nature_context.json": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+    "reproduction_manifest.json": "cf7fbe604e66238616cdd2b0a1c0b87f981faf30b1920d0419fbe86ad07a7612"
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "1921e5698e80e6ab1dc023551bb5ab050654208b47e56f336554e3de17ed9d0b",
+      "bytes": 11164
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "6ef8e6a926ee794d29b534989ceac4e3da784a599dea4c6a800459c7391aad25",
+      "bytes": 3757
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "ea66886f3c093936e0a07ddd75ae81d5e8b6110873425cdd59112727da844630",
+      "bytes": 2142
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "1d9d54a0ab3c94bc889f5c6594d91828c8b4f1f25d15fdd276a553b8fdeaecee",
+      "bytes": 3465
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "cf7fbe604e66238616cdd2b0a1c0b87f981faf30b1920d0419fbe86ad07a7612",
+      "bytes": 900
+    }
+  },
+  "outputs": {
+    "png": {
+      "path": "round_04_design_b_path_endpoint.png",
+      "sha256": "3e7da2012d523612207038837aa64ff739bd68ac19711b6fbb6a879385cd54fd",
+      "bytes": 378402
+    },
+    "svg": {
+      "path": "round_04_design_b_path_endpoint.svg",
+      "sha256": "5efb3799b14b4d4159fdb416d491ef8e278bff6c226c17190423ca1f11cbb4c9",
+      "bytes": 78955
+    },
+    "pdf": {
+      "path": "round_04_design_b_path_endpoint.pdf",
+      "sha256": "7b41280b4485510fc312c51d70a5953087b24148eec8906a44af20b8e40c4bfe",
+      "bytes": 32514
+    }
+  },
+  "files": {
+    "source:plot.py": {
+      "path": "plot.py",
+      "sha256": "1921e5698e80e6ab1dc023551bb5ab050654208b47e56f336554e3de17ed9d0b",
+      "bytes": 11164
+    },
+    "source:figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "6ef8e6a926ee794d29b534989ceac4e3da784a599dea4c6a800459c7391aad25",
+      "bytes": 3757
+    },
+    "source:config.py": {
+      "path": "config.py",
+      "sha256": "ea66886f3c093936e0a07ddd75ae81d5e8b6110873425cdd59112727da844630",
+      "bytes": 2142
+    },
+    "source:data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "1d9d54a0ab3c94bc889f5c6594d91828c8b4f1f25d15fdd276a553b8fdeaecee",
+      "bytes": 3465
+    },
+    "source:convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "source:nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "source:reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "cf7fbe604e66238616cdd2b0a1c0b87f981faf30b1920d0419fbe86ad07a7612",
+      "bytes": 900
+    },
+    "output:png": {
+      "path": "round_04_design_b_path_endpoint.png",
+      "sha256": "3e7da2012d523612207038837aa64ff739bd68ac19711b6fbb6a879385cd54fd",
+      "bytes": 378402
+    },
+    "output:svg": {
+      "path": "round_04_design_b_path_endpoint.svg",
+      "sha256": "5efb3799b14b4d4159fdb416d491ef8e278bff6c226c17190423ca1f11cbb4c9",
+      "bytes": 78955
+    },
+    "output:pdf": {
+      "path": "round_04_design_b_path_endpoint.pdf",
+      "sha256": "7b41280b4485510fc312c51d70a5953087b24148eec8906a44af20b8e40c4bfe",
+      "bytes": 32514
+    }
+  },
+  "metadata": {
+    "task_manifest": "task_manifest.json",
+    "design_receipt": "design_receipt.json"
+  }
+}

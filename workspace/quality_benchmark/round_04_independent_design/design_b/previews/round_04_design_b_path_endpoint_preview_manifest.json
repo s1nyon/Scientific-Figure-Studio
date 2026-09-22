@@ -1,0 +1,26 @@
+{
+  "source_sha256": "3e7da2012d523612207038837aa64ff739bd68ac19711b6fbb6a879385cd54fd",
+  "previews": [
+    {
+      "source": "round_04_design_b_path_endpoint.png",
+      "output": "round_04_design_b_path_endpoint_single_column_89mm.png",
+      "width_mm": 89.0,
+      "dpi": 300,
+      "width_px": 1051,
+      "height_px": 591,
+      "cropped": false,
+      "method": "Pillow LANCZOS downsample of the final rendered PNG"
+    },
+    {
+      "source": "round_04_design_b_path_endpoint.png",
+      "output": "round_04_design_b_path_endpoint_double_column_180mm.png",
+      "width_mm": 180.0,
+      "dpi": 300,
+      "width_px": 2126,
+      "height_px": 1196,
+      "cropped": false,
+      "method": "Pillow LANCZOS downsample of the final rendered PNG"
+    }
+  ],
+  "input_preserved": true
+}

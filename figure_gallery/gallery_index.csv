@@ -1,1 +1,47 @@
-relative_path,sha256,width,height,mode,file_size,modified_utc,dominant_color,mean_luminance,grayscale_estimate,whitespace_estimate,is_duplicate,favorite,style,chart_type,application,tags,source,user_evaluation,analysis_date,visual_analysis_status,visual_analysis_date,visual_analysis_by,visual_analysis_notes
+relative_path,sha256,width,height,mode,file_size,modified_utc,availability,content_changed,previous_sha256,preference_review_status,dominant_color,mean_luminance,grayscale_estimate,whitespace_estimate,is_duplicate,favorite,style,chart_type,application,tags,source,user_evaluation,analysis_date,visual_analysis_status,visual_analysis_date,visual_analysis_by,visual_analysis_notes,visual_analysis_viewed,visual_analysis_receipt
+02_algorithm/nature_optimization_fig3.png,d0a97477b54e31f397e7373f5a6d613af6cf0fe11d8eb1bdc72849066463be79,1242,1200,RGB,513689,2026-09-22T11:04:27.052462+00:00,present,false,,not_required,#FFFFFF,243.8495,false,0.6290,false,false,algorithm_research,multi-panel algorithm benchmark figure,algorithm comparison and convergence benchmarking,,,,2026-09-22,agent_reviewed,2026-09-22T11:20:58.106183+00:00,codex-round-03,"{
+  ""application"": ""algorithm comparison and convergence benchmarking"",
+  ""chart_type"": ""multi-panel algorithm benchmark figure"",
+  ""not_transferable"": [
+    ""ten-panel structure"",
+    ""UMAP spatial panel"",
+    ""global optimum boxes"",
+    ""uncertainty ribbons without replicate data""
+  ],
+  ""observable_encoding"": ""restrained white-background plots with consistent line colors, markers, direct labels, compact legends, and local arrow callouts"",
+  ""observable_structure"": ""ten labeled panels grouped into three horizontal evidence bands with pale separators"",
+  ""transferable_methods"": [
+    ""evidence grouping"",
+    ""short panel titles"",
+    ""direct labels"",
+    ""restrained local annotation""
+  ]
+}",true,"{""dimensions_px"": ""1242x1200"", ""path"": ""figure_gallery/02_algorithm/nature_optimization_fig3.png"", ""sha256"": ""d0a97477b54e31f397e7373f5a6d613af6cf0fe11d8eb1bdc72849066463be79"", ""viewer"": ""view_image""}"
+05_my_work/round_04_design_a_accepted/round_04_design_a_minimal.png,3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762,4320,2130,RGBA,326118,2026-09-22T12:05:46.712980+00:00,present,false,,not_required,#FFFFFF,249.2935,false,0.8670,false,false,algorithm_research,algorithm convergence curve,algorithm comparison and optimization trajectory,accepted reference;algorithm convergence;optimization trajectory;minimal scientific figure;Python source available,Scientific Figure Studio Round 04 independent design test — Design A,"User explicitly accepted the overall Design A visual direction as a personal Accepted Reference Case; this is not a top-journal certification, scientific-result validation, universal template, or global aesthetic preference.",2026-09-22,agent_reviewed,2026-09-22T12:06:58.092184+00:00,codex-round-04-acceptance,"{
+  ""annotation"": ""endpoint labels show algorithm names and displayed terminal values; one local callout marks the observed Proposed temporary increase"",
+  ""applicable_scenarios"": [
+    ""small algorithm sets"",
+    ""short or medium iteration windows"",
+    ""trend-focused convergence or trajectory comparisons""
+  ],
+  ""application"": ""algorithm comparison and optimization trajectory"",
+  ""borrowable_methods"": [
+    ""single-panel focus for a small number of trajectories"",
+    ""direct endpoint labels when line endings are separated"",
+    ""paired color and marker encodings"",
+    ""quiet local annotation for a data-supported event""
+  ],
+  ""chart_type"": ""algorithm convergence curve"",
+  ""color_relationship"": ""three restrained categorical colors remain consistent across lines and endpoint labels; marker shapes add redundant category encoding"",
+  ""composition"": ""single full-width quantitative panel with a clear left-to-right iteration reading order"",
+  ""data_status"": ""illustrative practice data; no new scientific conclusion is inferred from the pixels"",
+  ""information_hierarchy"": ""current objective paths are primary; endpoint labels and the single local event are secondary; the practice-data footer is provenance metadata"",
+  ""not_transferable"": [
+    ""not a default layout for dense multi-algorithm plots"",
+    ""not a substitute for uncertainty displays when repeated runs exist"",
+    ""not a template for multi-condition, multi-objective, architecture, spatial, or 3-D figures"",
+    ""the x-axis extension to 12 is label space for this image, not a general rule""
+  ],
+  ""typography"": ""bold compact title, readable sans-serif axis text, direct endpoint labels, and a small provenance footer; exact font family is not inferred from pixels"",
+  ""whitespace"": ""open right-side label margin and restrained grid lines support direct labeling without a legend""
+}",true,"{""detail"": ""high"", ""image_path"": ""figure_gallery/05_my_work/round_04_design_a_accepted/round_04_design_a_minimal.png"", ""opened"": true, ""original_asset_modified"": false, ""purpose"": ""Verify the accepted image before recording visual observations"", ""tool"": ""view_image""}"

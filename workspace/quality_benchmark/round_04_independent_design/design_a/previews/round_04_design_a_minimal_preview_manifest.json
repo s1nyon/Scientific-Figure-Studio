@@ -1,0 +1,26 @@
+{
+  "source_sha256": "3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762",
+  "previews": [
+    {
+      "source": "round_04_design_a_minimal.png",
+      "output": "round_04_design_a_minimal_single_column_89mm.png",
+      "width_mm": 89.0,
+      "dpi": 300,
+      "width_px": 1051,
+      "height_px": 518,
+      "cropped": false,
+      "method": "Pillow LANCZOS downsample of the final rendered PNG"
+    },
+    {
+      "source": "round_04_design_a_minimal.png",
+      "output": "round_04_design_a_minimal_double_column_180mm.png",
+      "width_mm": 180.0,
+      "dpi": 300,
+      "width_px": 2126,
+      "height_px": 1048,
+      "cropped": false,
+      "method": "Pillow LANCZOS downsample of the final rendered PNG"
+    }
+  ],
+  "input_preserved": true
+}
