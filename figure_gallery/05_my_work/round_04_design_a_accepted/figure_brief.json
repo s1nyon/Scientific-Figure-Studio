@@ -1,7 +1,7 @@
 {
   "figure_id": "round_04_design_a_minimal",
   "task": "Generate an independent minimal trajectory figure from the raw illustrative convergence table.",
-  "data_sources": ["examples/data/convergence_practice.csv"],
+  "data_sources": ["convergence_practice.csv"],
   "fields": {
     "algorithm": "algorithm identity",
     "iteration": "optimization iteration",

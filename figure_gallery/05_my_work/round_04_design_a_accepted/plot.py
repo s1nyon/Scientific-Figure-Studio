@@ -21,7 +21,7 @@ from figure_studio.nature_adapter import require_nature_context
 from figure_studio.palettes import get_palette
 from figure_studio.style import figure_style
 
-PROJECT_ROOT = Path(__file__).resolve().parents[4]
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_SKILL_ROOT = Path(r"C:\Users\Administrator\.codex\skills\nature-figure")
 
 
@@ -177,7 +177,9 @@ def main(
     """Render Design A through the project runner."""
 
     output = Path(output_dir or Path(__file__).parent).resolve()
-    data = Path(data_path or PROJECT_ROOT / "examples/data/convergence_practice.csv").resolve()
+    data = Path(
+        data_path or Path(__file__).with_name(CONFIG["data_file"])
+    ).resolve()
     manifest_file = Path(manifest_path or Path(__file__).with_name("data_manifest.json")).resolve()
     manifest = load_manifest(manifest_file).with_data_path(data, PROJECT_ROOT)
     nature_context = require_nature_context(skill_root or DEFAULT_SKILL_ROOT)

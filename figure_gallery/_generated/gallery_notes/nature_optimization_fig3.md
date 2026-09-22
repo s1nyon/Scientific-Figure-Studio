@@ -5,6 +5,7 @@
 - Dimensions: 1242 × 1200 px
 - Analysis status: viewed locally and recorded for round-03 controlled reference use
 - User preference/favorite status: unchanged
+- Provenance: user-supplied reference image; original publication URL and license information were not provided, so source/license status is unknown.
 
 ## Observable methods
 

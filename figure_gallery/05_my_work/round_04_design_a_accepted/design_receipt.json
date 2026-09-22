@@ -57,7 +57,7 @@
   "figure_brief": {
     "task": "Generate an independent minimal trajectory figure from the raw illustrative convergence table.",
     "data_sources": [
-      "examples/data/convergence_practice.csv"
+      "convergence_practice.csv"
     ],
     "fields": {
       "algorithm": "algorithm identity",

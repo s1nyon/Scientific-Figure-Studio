@@ -36,7 +36,7 @@ X_LIM = (0.72, 12.30)
 TITLE = "Objective trajectory"
 DATA_STATUS_NOTE = "illustrative practice data · no replicate runs or uncertainty estimates"
 OUTPUT_FORMATS = ("png", "svg", "pdf")
-DATA_FILE = "../../../../examples/data/convergence_practice.csv"
+DATA_FILE = "convergence_practice.csv"
 
 CONFIG = {
     "figure_id": FIGURE_ID,
