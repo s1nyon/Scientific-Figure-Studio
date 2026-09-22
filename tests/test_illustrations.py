@@ -13,6 +13,30 @@ def test_flow_edges_reject_unknown_endpoints():
         )
 
 
+def test_flow_nodes_reject_duplicate_ids():
+    from figure_studio.illustrations import validate_flow_edges
+
+    with pytest.raises(ValueError, match="duplicate"):
+        validate_flow_edges(
+            [{"id": "node"}, {"id": "node"}],
+            [],
+        )
+
+
+def test_architecture_connections_reject_unknown_modules():
+    from figure_studio.illustrations import draw_architecture
+
+    figure, axis = plt.subplots()
+    with pytest.raises(ValueError, match="unknown"):
+        draw_architecture(
+            axis,
+            {"input": {"x": 0.2, "y": 0.5}},
+            [{"source": "input", "target": "missing"}],
+            {},
+        )
+    plt.close(figure)
+
+
 def test_geometry_keeps_equal_aspect_ratio():
     from figure_studio.illustrations import draw_geometry
 
@@ -23,6 +47,7 @@ def test_geometry_keeps_equal_aspect_ratio():
         [{"points": ["A", "B", "C", "A"]}],
         {"line_color": "#123456"},
     )
+    assert {text.get_text() for text in axis.texts} >= {"A", "B", "C"}
     assert axis.get_aspect() in (1.0, "equal")
     plt.close(figure)
 
