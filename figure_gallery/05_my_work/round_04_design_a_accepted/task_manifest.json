@@ -27,8 +27,8 @@
   "source_files": {
     "plot.py": {
       "path": "plot.py",
-      "sha256": "4587dfa101e247c2694e794afc353a0ba82aa5197e87efeb2c0bd60d6282611e",
-      "bytes": 8929
+      "sha256": "764335e9a090e417fd7ab60d250d63750994fb11358c50829a0c24724096c6b2",
+      "bytes": 9007
     },
     "figure_brief.json": {
       "path": "figure_brief.json",

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -22,7 +23,12 @@ from figure_studio.palettes import get_palette
 from figure_studio.style import figure_style
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_SKILL_ROOT = Path(r"C:\Users\Administrator\.codex\skills\nature-figure")
+DEFAULT_SKILL_ROOT = Path(
+    os.environ.get(
+        "SFS_NATURE_SKILL_ROOT",
+        Path.home() / ".codex" / "skills" / "nature-figure",
+    )
+)
 
 
 def load_data(path: Path) -> pd.DataFrame:

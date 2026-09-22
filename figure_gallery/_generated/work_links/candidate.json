@@ -15,7 +15,7 @@
     "reproduction_manifest": "reproduction_manifest.json"
   },
   "source_hashes": {
-    "plot.py": "4587dfa101e247c2694e794afc353a0ba82aa5197e87efeb2c0bd60d6282611e",
+    "plot.py": "764335e9a090e417fd7ab60d250d63750994fb11358c50829a0c24724096c6b2",
     "figure_brief.json": "8cf36a09185931015201ce30f9447c87f4cc0a90c099e2aabe0d15782ed5b9e8",
     "config.py": "7496238ab72b21077dc10a927107dfe530836d5cb06495616943a18c26ff2743",
     "data_manifest.json": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
