@@ -7,6 +7,7 @@ SKILL_NAMES = (
     "algorithm-visualization",
     "figure-design-review",
     "figure-reference-manager",
+    "scientific-illustration",
 )
 
 

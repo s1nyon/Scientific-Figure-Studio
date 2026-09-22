@@ -57,3 +57,27 @@ def test_gallery_search_can_filter_favorites_without_inventing_them(tmp_path):
     index.write_index(records)
     result = index.search(favorite=True)
     assert [record.relative_path for record in result] == ["04_my_favorites/favorite.png"]
+
+
+def test_gallery_keeps_manual_evaluation_and_requires_explicit_agent_analysis(tmp_path):
+    image_path = tmp_path / "00_inbox" / "sample.png"
+    make_test_image(image_path)
+    index = GalleryIndex(tmp_path)
+    records = index.scan()
+    assert records[0].visual_analysis_status == "not_analyzed"
+
+    records[0].favorite = True
+    records[0].user_evaluation = "manual note that must survive"
+    index.write_index(records)
+    rescanned = index.scan()[0]
+
+    assert rescanned.favorite is True
+    assert rescanned.user_evaluation == "manual note that must survive"
+    assert rescanned.visual_analysis_status == "not_analyzed"
+
+    analyzed = index.record_agent_analysis(
+        "00_inbox/sample.png",
+        {"layout": "single panel", "uncertainties": ["font is unknown"]},
+    )
+    assert analyzed.visual_analysis_status == "agent_reviewed"
+    assert analyzed.user_evaluation == "manual note that must survive"
