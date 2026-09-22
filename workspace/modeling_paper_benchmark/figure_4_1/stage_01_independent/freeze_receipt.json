@@ -1,0 +1,36 @@
+{
+  "figure_id": "figure_4_1",
+  "stage": "stage_01_independent",
+  "frozen_at": "2026-09-22T22:51:42+08:00",
+  "source_pdf": {
+    "name": "F25107010057.pdf",
+    "sha256": "11c404320364c91212d6d4daedadfb37ad98b013f8d7a4d505998571e841ad8c",
+    "text_extraction_used": true,
+    "pdf_page_11_rendered_before_freeze": false,
+    "pdf_page_11_opened_before_freeze": false,
+    "embedded_figure_extracted_before_freeze": false
+  },
+  "design_status": "independent text-only draft frozen before original-image comparison",
+  "visual_review": {
+    "stage_1_png_opened": true,
+    "viewer": "view_image",
+    "observed": [
+      "left-to-right semantic spine is visible",
+      "four text-supported path features are legible",
+      "the unresolved-structure footer is visible",
+      "no obvious text overlap or clipping was observed at the displayed original-size preview"
+    ],
+    "paper_insertion_size_review": "pending final-stage QA"
+  },
+  "file_hashes_sha256": {
+    "plot.py": "E9D4DB5D37B4F53B6AF37BF5909AD6996580390424B4BF3B71D047EB087D6E08",
+    "config.py": "C2A9D692D887A3CB5F0EF3FD87C3B20C16BB74CCA49BDA2073709E90C57D78DD",
+    "structure_stage1.json": "181FA8F8769B4351754A3C06B6066741419D0736B23055BED828272EBDECCA23",
+    "figure_brief.json": "CB240907C786F7DAE191C5683FFCB4F6609310610E39A204363C34A61147DCFF",
+    "data_manifest.json": "195C7C71A12C444098D9B89982832743F5D818DADBD466FE9448254825979000",
+    "rendered/figure.png": "037F39E43EB7690F30C816034D4465D119B788744040666A88314DBEC86DE8DC",
+    "rendered/figure.svg": "72555AC0DBC0B1EC90B839A41B2B65E09429B7D22E124B27B3A34B82D6FCD364",
+    "rendered/figure.pdf": "CA3E35FD5B7D43F856E6C47C8A98F0ED8E7F78FF4C550F75C8145FC834E6B234"
+  },
+  "next_allowed_action": "Only after this receipt exists, render/open PDF page 11 for stage-2 comparison."
+}

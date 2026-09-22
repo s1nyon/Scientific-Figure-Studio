@@ -1,0 +1,22 @@
+{
+  "figure_id": "figure_4_1",
+  "stage": "stage_01_independent",
+  "source_files": [
+    {
+      "role": "provided paper PDF",
+      "name": "F25107010057.pdf",
+      "sha256": "11c404320364c91212d6d4daedadfb37ad98b013f8d7a4d505998571e841ad8c",
+      "read_mode": "text extraction only before stage-1 freeze",
+      "image_pages_viewed_before_freeze": false
+    }
+  ],
+  "structure_file": "structure_stage1.json",
+  "data_status": "formal input data",
+  "transformations": [
+    "PDF text extraction with pypdf; no smoothing, filtering, aggregation, interpolation, normalization of plotted data, or image extraction was used for stage 1.",
+    "The diagram contains declarative paper-derived labels, not fabricated measurements or model results."
+  ],
+  "target_direction": "not applicable to schematic structure",
+  "uncertainty_basis": "unknown structure is listed explicitly in figure_brief.json and structure_stage1.json",
+  "data_file": "structure_stage1.json"
+}

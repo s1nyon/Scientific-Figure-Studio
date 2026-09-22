@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "entrypoint": "plot.py",
+  "dependencies": [
+    "matplotlib==3.10.6",
+    "numpy==2.2.6",
+    "pypdf",
+    "figure_studio.illustrations"
+  ],
+  "project_independent": false,
+  "independence_status": "runner_delivery_not_certified_as_standalone",
+  "nature_skill_runtime_dependency": false,
+  "source_files": [
+    "config.py",
+    "data_manifest.json",
+    "figure_brief.json",
+    "nature_context.json",
+    "plot.py",
+    "structure_stage1.json"
+  ],
+  "output_files": [
+    "figure.pdf",
+    "figure.png",
+    "figure.svg"
+  ],
+  "reproduction_notes": "This is a runner delivery bundle. It preserves the exact source, inputs, configuration, and outputs used for this run. Use the explicit package_reproduction workflow for a separately certified repository-independent package."
+}

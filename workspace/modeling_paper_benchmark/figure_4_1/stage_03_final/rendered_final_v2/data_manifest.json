@@ -1,0 +1,29 @@
+{
+  "figure_id": "figure_4_1",
+  "stage": "stage_03_final",
+  "source_files": [
+    {
+      "role": "provided paper PDF",
+      "name": "F25107010057.pdf",
+      "sha256": "11c404320364c91212d6d4daedadfb37ad98b013f8d7a4d505998571e841ad8c",
+      "read_mode": "text extraction plus post-freeze page-11 visual comparison",
+      "image_pages_viewed_before_stage_1_freeze": false
+    },
+    {
+      "role": "source comparison crop",
+      "name": "original_figure_4_1_crop.png",
+      "sha256": "E8D5E3B3875F2FD591978422C7BB37B83426F331A8019418C5075F3F95E218FB",
+      "read_mode": "opened after stage-1 freeze"
+    }
+  ],
+  "structure_file": "structure_final.json",
+  "data_status": "formal input data",
+  "transformations": [
+    "Paper text was extracted with pypdf for stage 1; the original page image was viewed only after the freeze receipt.",
+    "The final renderer adds no numerical result, uncertainty, or fabricated model performance.",
+    "The original branch-and-merge topology is retained; only labels, spacing, color grouping and explanatory annotations are redesigned."
+  ],
+  "target_direction": "not applicable to schematic structure",
+  "uncertainty_basis": "source-page comparison resolved the main branch topology; remaining limits are recorded in figure_brief.json",
+  "data_file": "structure_final.json"
+}

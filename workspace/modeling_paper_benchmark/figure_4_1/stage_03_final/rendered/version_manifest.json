@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.2",
+  "run_id": "rendered",
+  "created_utc": "2026-09-22T14:55:22.501376+00:00",
+  "status": "candidate",
+  "parent_run": null,
+  "source_hashes": {
+    "plot.py": "7da189a8eb9188554c94329c7fb6087604989d4f9b4fbab485b8087d7ee064fc",
+    "figure_brief.json": "17e2d4cf974687c75697a820ee6859df97b8e0e4b78fed6ff92039c5bc6d60f0",
+    "config.py": "8171df24d0fdf29d9f7bba60bc8dbe63780c5ccde0932bf786011ec9c3ed0d4a",
+    "data_manifest.json": "29f1dbf87af086da9a32eb2bbbbb7c9a913780e5f16ca1bd3a6d65e212a9a874",
+    "structure_final.json": "84af6265e17e5fd21d85fe8788b03e50524ca8ea854ea697cf3f40d800bd9b65",
+    "nature_context.json": "cc40f2549df94b0f9a6cb498c05a0cdcb39ab1603ec8ab9603bea42ec28bc148",
+    "reproduction_manifest.json": "a1c0b8763fbda957eb309b9401802fd8d2b1757d2e4d969e555d16fd71a4f124"
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "7da189a8eb9188554c94329c7fb6087604989d4f9b4fbab485b8087d7ee064fc",
+      "bytes": 9702
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "17e2d4cf974687c75697a820ee6859df97b8e0e4b78fed6ff92039c5bc6d60f0",
+      "bytes": 2417
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "8171df24d0fdf29d9f7bba60bc8dbe63780c5ccde0932bf786011ec9c3ed0d4a",
+      "bytes": 1950
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "29f1dbf87af086da9a32eb2bbbbb7c9a913780e5f16ca1bd3a6d65e212a9a874",
+      "bytes": 1356
+    },
+    "structure_final.json": {
+      "path": "structure_final.json",
+      "sha256": "84af6265e17e5fd21d85fe8788b03e50524ca8ea854ea697cf3f40d800bd9b65",
+      "bytes": 4375
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "cc40f2549df94b0f9a6cb498c05a0cdcb39ab1603ec8ab9603bea42ec28bc148",
+      "bytes": 1394
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "a1c0b8763fbda957eb309b9401802fd8d2b1757d2e4d969e555d16fd71a4f124",
+      "bytes": 852
+    }
+  },
+  "outputs": {
+    "png": {
+      "path": "figure.png",
+      "sha256": "17d65949fb2d463d87c187d058fe005756a5f7ac85ddf67be68c8d52df2e8399",
+      "bytes": 472056
+    },
+    "svg": {
+      "path": "figure.svg",
+      "sha256": "8b60c9838840486dd7fde5c2d592e6b044da8ecb0cedc37e6bfa5783ae25a55f",
+      "bytes": 23467
+    },
+    "pdf": {
+      "path": "figure.pdf",
+      "sha256": "33f372aa188ca14d9f45df49ffd0bb9801af60cf8a049a84af1946aea31b240e",
+      "bytes": 77915
+    }
+  },
+  "files": {
+    "source:plot.py": {
+      "path": "plot.py",
+      "sha256": "7da189a8eb9188554c94329c7fb6087604989d4f9b4fbab485b8087d7ee064fc",
+      "bytes": 9702
+    },
+    "source:figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "17e2d4cf974687c75697a820ee6859df97b8e0e4b78fed6ff92039c5bc6d60f0",
+      "bytes": 2417
+    },
+    "source:config.py": {
+      "path": "config.py",
+      "sha256": "8171df24d0fdf29d9f7bba60bc8dbe63780c5ccde0932bf786011ec9c3ed0d4a",
+      "bytes": 1950
+    },
+    "source:data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "29f1dbf87af086da9a32eb2bbbbb7c9a913780e5f16ca1bd3a6d65e212a9a874",
+      "bytes": 1356
+    },
+    "source:structure_final.json": {
+      "path": "structure_final.json",
+      "sha256": "84af6265e17e5fd21d85fe8788b03e50524ca8ea854ea697cf3f40d800bd9b65",
+      "bytes": 4375
+    },
+    "source:nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "cc40f2549df94b0f9a6cb498c05a0cdcb39ab1603ec8ab9603bea42ec28bc148",
+      "bytes": 1394
+    },
+    "source:reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "a1c0b8763fbda957eb309b9401802fd8d2b1757d2e4d969e555d16fd71a4f124",
+      "bytes": 852
+    },
+    "output:png": {
+      "path": "figure.png",
+      "sha256": "17d65949fb2d463d87c187d058fe005756a5f7ac85ddf67be68c8d52df2e8399",
+      "bytes": 472056
+    },
+    "output:svg": {
+      "path": "figure.svg",
+      "sha256": "8b60c9838840486dd7fde5c2d592e6b044da8ecb0cedc37e6bfa5783ae25a55f",
+      "bytes": 23467
+    },
+    "output:pdf": {
+      "path": "figure.pdf",
+      "sha256": "33f372aa188ca14d9f45df49ffd0bb9801af60cf8a049a84af1946aea31b240e",
+      "bytes": 77915
+    }
+  },
+  "metadata": {
+    "task_manifest": "task_manifest.json",
+    "design_receipt": "design_receipt.json"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "figure_id": "figure_4_1",
+  "stage": "stage_03_final",
+  "generated_at": "2026-09-22T23:00:00+08:00",
+  "design_contract": {
+    "claim": "问题一通过路径刻画、特征提取、趣味性评价和路线规划，将园林游赏趣味性转化为最优游线与评分。",
+    "archetype": "schematic-led composite",
+    "backend": "Python",
+    "target_size": "180 mm wide; reviewed at 89 mm and 180 mm",
+    "renderer": "plot.py",
+    "structure_source": "structure_final.json"
+  },
+  "skill_roles": {
+    "nature_figure": {
+      "loaded": true,
+      "references": [
+        "references/figure-contract.md",
+        "references/design-theory.md",
+        "references/qa-contract.md",
+        "references/nature-2026-observations.md"
+      ],
+      "contribution": "claim/evidence contract, schematic-led hierarchy, restrained palette, export and QA requirements"
+    },
+    "scientific_illustration": {
+      "loaded": true,
+      "contribution": "explicit node/edge structure, directed-edge validation, branch-and-merge topology, editable Python renderer"
+    },
+    "modern_scientific_figure": {
+      "loaded": true,
+      "contribution": "project-unified Figure Brief, runner packaging, provenance and output contract"
+    },
+    "figure_design_review": {
+      "loaded": true,
+      "contribution": "actual PNG inspection at source-size preview and paper insertion sizes, followed by source-level layout correction"
+    },
+    "figure_reference_manager": {
+      "loaded": true,
+      "gallery_scan": "2 indexed images; no flowchart match returned for the scientific-workflow query",
+      "gallery_references_used": [],
+      "contribution": "confirmed that no directly matching private-gallery reference should drive this figure; no gallery original was modified"
+    }
+  },
+  "stage_history": {
+    "stage_01": "frozen before source-page rasterization; stage-1 linear chain was based on text only",
+    "stage_02": "PDF page 11 / printed page 10 opened after freeze; original branch-and-merge topology recorded",
+    "stage_03": "feature hub split restored; evaluation-system link and final merge restored; visual hierarchy redesigned"
+  },
+  "comparison_changes": [
+    "Added the confirmed branch from feature extraction to initial route planning.",
+    "Separated the interest-model node from the evaluation-system node.",
+    "Added the confirmed interest-model → evaluation-system edge.",
+    "Merged initial route planning and evaluation-system results into optimal-route planning.",
+    "Kept paper-supported feature and genetic-algorithm annotations without adding later RF/RNN/SVM/ensemble branches."
+  ],
+  "visual_review": {
+    "files_opened": [
+      "figure.png",
+      "qa_single_column_89mm.png",
+      "qa_double_column_180mm.png",
+      "before_after.png",
+      "../stage_02_comparison/original_figure_4_1_crop.png"
+    ],
+    "observations": [
+      "main reading order is left-to-right across the input and feature spine",
+      "branch arrows and the two-way merge are distinct at 89 mm and 180 mm previews",
+      "no text overlap, clipping or footer occlusion remains",
+      "Chinese module titles and formula labels remain visible at 89 mm",
+      "SVG contains editable text nodes and PDF contains one non-empty vector page"
+    ],
+    "remaining_visual_limits": [
+      "the footer is provenance-oriented and may be removed if the manuscript caption already carries the same structural explanation",
+      "the final visual style is a project benchmark result, not a claim of journal acceptance or universal template quality"
+    ]
+  },
+  "status_matrix": {
+    "A_program": "verified: renderer, runner package, Ruff, JSON/compile checks and artifact validators passed",
+    "B_science": "verified against paper text plus the opened original Figure 4-1 topology",
+    "C_visual": "verified by opening final PNG and 89 mm/180 mm/Before-After previews",
+    "D_user_acceptance": "pending user review",
+    "E_personal_collection": "not requested and not recorded"
+  },
+  "source_and_output_hashes": {
+    "plot.py": "93D05C2369C686F6B2B0049E492DED19B64AAA2B134478186C5A9753E2992271",
+    "config.py": "8171DF24D0FDF29D9F7BBA60BC8DBE63780C5CCDE0932BF786011EC9C3ED0D4A",
+    "structure_final.json": "992B741C082D0FF78D8FAA6AEAE31D50702418538406423E2FC441FCF9A7D8F2",
+    "figure_brief.json": "17E2D4CF974687C75697A820EE6859DF97B8E0E4B78FED6FF92039C5BC6D60F0",
+    "data_manifest.json": "2A93B11EEA42E88A480BD8783F42F472D8FEA2FCC0BEA539DB4CDA872C8AB996",
+    "figure.png": "77615FBDCB58CF7805FDC49782F6E555DAE8979AA4E3AE621C5AD9350996231F",
+    "figure.svg": "A9C8E34A9138BA15EB2468CD94DF31851F94F31265A76F0805523908FF0A3391",
+    "figure.pdf": "44F80DB76CA642D6365685F035C25EF77EF4A1F84A4CC6880F7F8A50361D5D0D",
+    "qa_single_column_89mm.png": "C0BFAC36423B51F6ACC0FE4A7922BBC8707F947DE89321A6A9EC94EB07E08589",
+    "qa_double_column_180mm.png": "0B32C4A546495E0B85FEB83750BDE91BCA1BF4A7711241463E744DD10CECAB0E",
+    "before_after.png": "A1B1848696F1F4A3C8522BC685A5B4A774C593AB169CD33FAB4C88878028D8EC"
+  },
+  "runner_bundle": "rendered_final_v2/"
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T14:55:54.858546+00:00",
+  "backend": "Python",
+  "design": {
+    "claim": "问题一通过路径刻画、特征提取、趣味性评价和路线规划，将园林游赏趣味性转化为最优游线与评分。",
+    "archetype": "schematic-led composite",
+    "evidence_panels": [
+      {
+        "id": "workflow",
+        "role": "single schematic panel with a text-supported branch-and-merge topology"
+      }
+    ],
+    "design_requirements": [],
+    "renderer": "plot.py",
+    "template_reuse": false
+  },
+  "references": {
+    "gallery": [],
+    "code": [
+      "figure_studio/illustrations.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/illustrations.py",
+        "path": "figure_studio/illustrations.py",
+        "sha256": "8e726b534157bc2aab830e2b4efa8f3ea8e8a0f83ada7f35dd77b3fc0b2b8afe",
+        "bytes": 16191
+      }
+    ],
+    "user_note": "Approved direction 1; no current gallery image matched a scientific workflow, so no gallery asset was used as a direct reference."
+  },
+  "figure_brief": {
+    "task": "paper Figure 4-1 source-compared final workflow",
+    "data_sources": [
+      "provided paper PDF text and verified Figure 4-1 source-page raster comparison; hashes are recorded in data_manifest.json"
+    ],
+    "fields": {
+      "input": "园林矢量图数据",
+      "preprocessing": "路径提取、几何要素与中心线处理",
+      "discretization": "路线离散化与路径点序列",
+      "features": "路径长度 L、转折点 T、交叉点 C、异景程度 Δ",
+      "model": "趣味性评价模型与归一化特征",
+      "evaluation": "评价体系与模型评价结果",
+      "output": "最优游线规划与评分"
+    },
+    "units": {
+      "scenic_change_sampling": "1 m stated in paper section 4.3.2",
+      "visibility_radius": "15 m stated in paper section 4.3.2",
+      "path_length": "distance unit of source data; not printed as a quantitative axis",
+      "visibility_signature": "binary vector [water, stone, plants, building]"
+    },
+    "claim": "问题一通过路径刻画、特征提取、趣味性评价和路线规划，将园林游赏趣味性转化为最优游线与评分。",
+    "evidence_panels": [
+      {
+        "id": "workflow",
+        "role": "single schematic panel with a text-supported branch-and-merge topology"
+      }
+    ],
+    "archetype": "schematic-led composite",
+    "backend": "Python",
+    "task_mode": "formal",
+    "nature_references": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/nature-2026-observations.md"
+    ],
+    "renderer": "plot.py",
+    "review_risks": [
+      "branch and merge arrows must remain unambiguous after paper-size reduction",
+      "Chinese module titles must remain readable without reproducing the source figure's sparse labels",
+      "the compact genetic-algorithm note must not imply an extra branch absent from Figure 4-1",
+      "SVG/PDF text and vector structure must remain usable for manual editing"
+    ],
+    "design_requirements": [],
+    "scientific_unknowns": [
+      "The schematic does not assign a numerical unit to path length; this is intentionally omitted from the drawing.",
+      "The source text describes later model families, but the verified Figure 4-1 image does not draw them; they are excluded."
+    ],
+    "gallery_references": [],
+    "code_references": [
+      "figure_studio/illustrations.py"
+    ],
+    "user_reference_note": "Approved direction 1; no current gallery image matched a scientific workflow, so no gallery asset was used as a direct reference."
+  },
+  "nature": {
+    "requested": true,
+    "skill_name": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/nature-2026-observations.md"
+    ],
+    "reference_sha256": {
+      "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+      "references/design-theory.md": "0a7b3a8a964635fa1c7a59d82640e0adb31a6e9845beae77bc6e87503f8597c1",
+      "references/nature-2026-observations.md": "e4f7800316740297ae3573b2f1830a2d150e3e306546144f6c0547806431c307"
+    },
+    "host_skill_invocation_required": true,
+    "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+    "adapter_read_is_not_host_invocation_proof": true
+  },
+  "review": {
+    "status": "not_reviewed",
+    "notes": [],
+    "visual_review_is_manual": true
+  },
+  "task_manifest": "task_manifest.json"
+}

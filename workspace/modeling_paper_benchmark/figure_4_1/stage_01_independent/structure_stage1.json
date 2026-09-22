@@ -1,0 +1,107 @@
+{
+  "version": "stage-01-independent-text-only-v1",
+  "data_status": "formal input data",
+  "layout": "horizontal semantic spine",
+  "nodes": [
+    {
+      "id": "source_data",
+      "kind": "terminal",
+      "x": 0.075,
+      "y": 0.56,
+      "width": 0.12,
+      "height": 0.30,
+      "title": "数据输入",
+      "body": ["园林矢量 / CAD", "园路 · 假山 · 水体", "植物 · 建筑"],
+      "role": "formal paper input"
+    },
+    {
+      "id": "path_digitization",
+      "kind": "process",
+      "x": 0.225,
+      "y": 0.56,
+      "width": 0.15,
+      "height": 0.30,
+      "title": "路径数字化",
+      "body": ["图层分离 → 几何提取", "中心线生成 → 折线重采样"],
+      "role": "pre-processing"
+    },
+    {
+      "id": "graph_path",
+      "kind": "process",
+      "x": 0.385,
+      "y": 0.56,
+      "width": 0.14,
+      "height": 0.30,
+      "title": "路径图 G=(V,E)",
+      "body": ["节点：入口 / 出口", "转折点 · 交叉点 · 景点", "边权：欧氏距离"],
+      "role": "graph abstraction"
+    },
+    {
+      "id": "path_features",
+      "kind": "process",
+      "x": 0.55,
+      "y": 0.56,
+      "width": 0.15,
+      "height": 0.30,
+      "title": "路径特征",
+      "body": ["L  路径长度", "T  转折点 · C  交叉点", "Δ  异景程度"],
+      "note": "1 m 采样 · 可见性签名 · L1 差异",
+      "role": "feature extraction"
+    },
+    {
+      "id": "score_model",
+      "kind": "process",
+      "x": 0.715,
+      "y": 0.56,
+      "width": 0.14,
+      "height": 0.30,
+      "title": "趣味性评分",
+      "body": ["归一化特征 f_i", "score = Σ w_i f_i", "重复率反向处理"],
+      "role": "weighted linear model"
+    },
+    {
+      "id": "optimization",
+      "kind": "process",
+      "x": 0.865,
+      "y": 0.56,
+      "width": 0.15,
+      "height": 0.30,
+      "title": "权重优化与路线选择",
+      "body": ["遗传算法优化权重", "扰动 / 筛选候选路径"],
+      "role": "optimization and planning"
+    },
+    {
+      "id": "optimal_route",
+      "kind": "terminal",
+      "x": 0.935,
+      "y": 0.22,
+      "width": 0.12,
+      "height": 0.16,
+      "title": "输出",
+      "body": ["最优游线", "趣味性评分"],
+      "role": "paper-reported output"
+    }
+  ],
+  "edges": [
+    {"source": "source_data", "target": "path_digitization"},
+    {"source": "path_digitization", "target": "graph_path"},
+    {"source": "graph_path", "target": "path_features"},
+    {"source": "path_features", "target": "score_model"},
+    {"source": "score_model", "target": "optimization"},
+    {"source": "optimization", "target": "optimal_route", "label": "最优解"}
+  ],
+  "unknowns": [
+    "RF / RNN / SVM / 集成模型是否在图 4-1 展开为并行分支",
+    "原图是否以反馈箭头表示路径规划迭代",
+    "原图的具体模块命名与空间布局"
+  ],
+  "source_evidence": [
+    {"pdf_page": 6, "paper_page": 5, "claim": "问题一包含路径刻画、趣味性指标计算和最优化路径三个子问题"},
+    {"pdf_page": 10, "paper_page": 9, "claim": "问题一分析：图结构、路径特征、加权评分、遗传算法和路径优化"},
+    {"pdf_page": 14, "paper_page": 13, "claim": "数据预处理层次和路径生成流程"},
+    {"pdf_page": 15, "paper_page": 14, "claim": "路径长度、转折点、交叉点特征定义"},
+    {"pdf_page": 22, "paper_page": 21, "claim": "异景程度的等间距采样和二元签名差异"},
+    {"pdf_page": 23, "paper_page": 22, "claim": "趣味性评分的加权线性组合与归一化"},
+    {"pdf_page": 29, "paper_page": 28, "claim": "多模型优化与最优路线输出"}
+  ]
+}

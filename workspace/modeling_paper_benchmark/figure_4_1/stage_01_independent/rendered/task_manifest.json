@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T14:51:12.126613+00:00",
+  "backend": "Python",
+  "renderer": "workspace/modeling_paper_benchmark/figure_4_1/stage_01_independent/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": "nature_context.json",
+  "reproduction_manifest": "reproduction_manifest.json",
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "cb240907c786f7dae191c5683ffcb4f6609310610e39a204363c34a61147dcff",
+      "bytes": 2265
+    },
+    "data": {
+      "path": "structure_stage1.json",
+      "sha256": "181fa8f8769b4351754a3c06b6066741419d0736b23055bed828272ebdecca23",
+      "bytes": 3679
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "91ccc6d6976c318fe7d731a6291fefdcc259bd37de1ada06e290d7260f48a348",
+      "bytes": 991
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "e9d4db5d37b4f53b6af37bf5909ad6996580390424b4bf3b71d047eb087d6e08",
+      "bytes": 8151
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "cb240907c786f7dae191c5683ffcb4f6609310610e39a204363c34a61147dcff",
+      "bytes": 2265
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "c2a9d692d887a3cb5f0ef3fd87c3b20c16bb74cca49bda2073709e90c57d78dd",
+      "bytes": 1967
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "91ccc6d6976c318fe7d731a6291fefdcc259bd37de1ada06e290d7260f48a348",
+      "bytes": 991
+    },
+    "structure_stage1.json": {
+      "path": "structure_stage1.json",
+      "sha256": "181fa8f8769b4351754a3c06b6066741419d0736b23055bed828272ebdecca23",
+      "bytes": 3679
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "cc40f2549df94b0f9a6cb498c05a0cdcb39ab1603ec8ab9603bea42ec28bc148",
+      "bytes": 1394
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "6ea6de9832a3bc43d7c2d3100d11964becf475b3d19a271d98915dd185ed1de4",
+      "bytes": 843
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  },
+  "references": {
+    "gallery": [],
+    "code": [
+      "figure_studio/illustrations.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/illustrations.py",
+        "path": "figure_studio/illustrations.py",
+        "sha256": "8e726b534157bc2aab830e2b4efa8f3ea8e8a0f83ada7f35dd77b3fc0b2b8afe",
+        "bytes": 16191
+      }
+    ]
+  },
+  "version": {
+    "status": "workspace",
+    "run_id": "rendered",
+    "parent_run": null
+  }
+}

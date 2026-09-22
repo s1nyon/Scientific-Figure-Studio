@@ -1,0 +1,25 @@
+{
+  "figure_id": "figure_4_1",
+  "stage": "stage_02_comparison",
+  "source_pdf": {
+    "name": "F25107010057.pdf",
+    "sha256": "11c404320364c91212d6d4daedadfb37ad98b013f8d7a4d505998571e841ad8c",
+    "pdf_page_number": 11,
+    "printed_page_number": 10,
+    "caption": "图 4-1 问题一思路流程图"
+  },
+  "stage_1_freeze_receipt": "../stage_01_independent/freeze_receipt.json",
+  "render_method": "PyMuPDF page rasterization for source inspection; no embedded image extraction",
+  "view_receipt": {
+    "viewer": "view_image",
+    "page_image": "original_pdf_page_11.png",
+    "crop_image": "original_figure_4_1_crop.png",
+    "page_image_dimensions_px": "1489x2105",
+    "crop_dimensions_px": "1250x900",
+    "page_image_sha256": "EE44902EAE10695B7641F91C0DF031CE6ECB29F9639BDB797FFB11364877D09A",
+    "crop_image_sha256": "E8D5E3B3875F2FD591978422C7BB37B83426F331A8019418C5075F3F95E218FB"
+  },
+  "comparison_status": "source image opened after stage-1 freeze",
+  "scientific_action": "correct stage-1 linearization to the original branch-and-merge topology",
+  "original_pdf_modified": false
+}

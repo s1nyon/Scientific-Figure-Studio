@@ -1,0 +1,122 @@
+{
+  "version": "stage-03-final-source-compared-v1",
+  "data_status": "formal input data",
+  "layout": "horizontal semantic spine with confirmed branch-and-merge topology",
+  "nodes": [
+    {
+      "id": "source_data",
+      "kind": "terminal",
+      "x": 0.11,
+      "y": 0.78,
+      "width": 0.16,
+      "height": 0.18,
+      "title": "园林矢量图数据输入",
+      "body": ["CAD / 矢量图", "园路 · 景观要素"],
+      "role": "formal paper input"
+    },
+    {
+      "id": "preprocessing",
+      "kind": "process",
+      "x": 0.31,
+      "y": 0.78,
+      "width": 0.17,
+      "height": 0.18,
+      "title": "数据预处理",
+      "body": ["提取路径", "几何要素与中心线"],
+      "role": "pre-processing"
+    },
+    {
+      "id": "route_discretization",
+      "kind": "process",
+      "x": 0.51,
+      "y": 0.78,
+      "width": 0.16,
+      "height": 0.18,
+      "title": "路线离散化",
+      "body": ["折线重采样", "形成路径点序列"],
+      "role": "pre-processing"
+    },
+    {
+      "id": "feature_hub",
+      "kind": "process",
+      "x": 0.73,
+      "y": 0.78,
+      "width": 0.18,
+      "height": 0.18,
+      "title": "获得关键特征",
+      "body": ["L · T · C", "Δ 异景程度"],
+      "note": "可见性签名 · L1 差异",
+      "role": "feature extraction"
+    },
+    {
+      "id": "initial_route",
+      "kind": "process",
+      "x": 0.24,
+      "y": 0.43,
+      "width": 0.20,
+      "height": 0.18,
+      "title": "初步路径规划",
+      "body": ["入口 → 出口", "候选游线"],
+      "role": "optimization and planning"
+    },
+    {
+      "id": "interest_model",
+      "kind": "process",
+      "x": 0.51,
+      "y": 0.43,
+      "width": 0.22,
+      "height": 0.18,
+      "title": "构建“趣味性”评价模型",
+      "body": ["score = Σ w_i f_i", "特征归一化"],
+      "note": "遗传算法优化权重",
+      "role": "weighted linear model"
+    },
+    {
+      "id": "evaluation_system",
+      "kind": "process",
+      "x": 0.79,
+      "y": 0.43,
+      "width": 0.18,
+      "height": 0.18,
+      "title": "评价体系",
+      "body": ["趣味性评分", "模型评价结果"],
+      "role": "paper-reported output"
+    },
+    {
+      "id": "optimal_route",
+      "kind": "terminal",
+      "x": 0.51,
+      "y": 0.22,
+      "width": 0.24,
+      "height": 0.16,
+      "title": "最优游线规划",
+      "body": ["候选路径 + 评价结果", "最优游线与评分"],
+      "role": "paper-reported output"
+    }
+  ],
+  "edges": [
+    {"source": "source_data", "target": "preprocessing", "route": "horizontal"},
+    {"source": "preprocessing", "target": "route_discretization", "route": "horizontal"},
+    {"source": "route_discretization", "target": "feature_hub", "route": "horizontal"},
+    {"source": "feature_hub", "target": "initial_route", "route": "down_left"},
+    {"source": "feature_hub", "target": "interest_model", "route": "down"},
+    {"source": "feature_hub", "target": "evaluation_system", "route": "down_right"},
+    {"source": "interest_model", "target": "evaluation_system", "route": "horizontal", "label": "评价"},
+    {"source": "initial_route", "target": "optimal_route", "route": "merge_left"},
+    {"source": "evaluation_system", "target": "optimal_route", "route": "merge_right"}
+  ],
+  "comparison_decisions": [
+    "Retain the original branch from the feature hub to initial route planning.",
+    "Retain the original separate interest-model and evaluation-system nodes.",
+    "Retain the original evaluation arrow from the interest model to the evaluation system.",
+    "Retain the original merge of initial route planning and evaluation system into optimal-route planning.",
+    "Add only text-supported feature names and a compact genetic-algorithm note; do not add RF/RNN/SVM/ensemble branches."
+  ],
+  "source_evidence": [
+    {"pdf_page": 11, "paper_page": 10, "claim": "original Figure 4-1 branch-and-merge topology"},
+    {"pdf_page": 10, "paper_page": 9, "claim": "graph abstraction, path features, weighted score, genetic algorithm and route optimization"},
+    {"pdf_page": 14, "paper_page": 13, "claim": "data preprocessing and path generation"},
+    {"pdf_page": 22, "paper_page": 21, "claim": "scenic-change sampling and visibility signatures"},
+    {"pdf_page": 23, "paper_page": 22, "claim": "weighted score and feature normalization"}
+  ]
+}

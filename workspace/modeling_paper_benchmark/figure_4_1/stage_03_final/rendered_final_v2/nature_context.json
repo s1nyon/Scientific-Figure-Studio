@@ -1,0 +1,29 @@
+{
+  "adapter_version": "0.1.0",
+  "skill_name": "nature-figure",
+  "source_repository": "https://github.com/lth0/codexSkill",
+  "archive_url": "https://codeload.github.com/lth0/codexSkill/zip/1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+  "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+  "tree_file_count": 30,
+  "skill_root": "<installed nature-figure skill>",
+  "references_loaded": [
+    "references/figure-contract.md",
+    "references/design-theory.md",
+    "references/nature-2026-observations.md"
+  ],
+  "reference_sha256": {
+    "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+    "references/design-theory.md": "0a7b3a8a964635fa1c7a59d82640e0adb31a6e9845beae77bc6e87503f8597c1",
+    "references/nature-2026-observations.md": "e4f7800316740297ae3573b2f1830a2d150e3e306546144f6c0547806431c307"
+  },
+  "reference_characters": {
+    "references/figure-contract.md": 3970,
+    "references/design-theory.md": 15432,
+    "references/nature-2026-observations.md": 5608
+  },
+  "project_backend": "Python",
+  "upstream_r_track_preserved": true,
+  "host_skill_invocation_required": true,
+  "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+  "host_skill_invocation_note": "This field is a manual Codex-session attestation; Python file verification is not proof of host Skill execution."
+}

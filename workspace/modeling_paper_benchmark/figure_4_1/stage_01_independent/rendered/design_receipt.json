@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T14:51:12.126613+00:00",
+  "backend": "Python",
+  "design": {
+    "claim": "问题一把园林游赏趣味性转化为可计算的路径特征与评分，并通过权重优化和路径规划得到最优游线及评分。",
+    "archetype": "schematic-led composite",
+    "evidence_panels": [
+      {
+        "id": "workflow",
+        "role": "single horizontal semantic spine; four text-supported path features; weighted score and genetic-algorithm optimization labels"
+      }
+    ],
+    "design_requirements": [],
+    "renderer": "plot.py",
+    "template_reuse": false
+  },
+  "references": {
+    "gallery": [],
+    "code": [
+      "figure_studio/illustrations.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/illustrations.py",
+        "path": "figure_studio/illustrations.py",
+        "sha256": "8e726b534157bc2aab830e2b4efa8f3ea8e8a0f83ada7f35dd77b3fc0b2b8afe",
+        "bytes": 16191
+      }
+    ],
+    "user_note": "Approved direction 1: horizontal semantic spine."
+  },
+  "figure_brief": {
+    "task": "paper figure 4-1 independent text-only workflow draft",
+    "data_sources": [
+      "provided paper PDF; SHA-256 and text-only access boundary are recorded in data_manifest.json"
+    ],
+    "fields": {
+      "input_layers": "园路、假山、水体、植物、建筑数据层",
+      "graph": "路径节点与边",
+      "path_length": "路径长度 L",
+      "turning_points": "转折点 T",
+      "intersections": "交叉点 C",
+      "scenic_change": "异景程度 Δ",
+      "score_inputs": "归一化特征与权重",
+      "output": "最优游线与评分"
+    },
+    "units": {
+      "path_length": "distance unit as defined by paper source data; exact unit not used in schematic",
+      "resampling": "1 m stated in section 4.3.2 for scenic-change analysis",
+      "visibility_radius": "15 m stated in section 4.3.2",
+      "visibility_signature": "binary vector [water, stone, plants, building]"
+    },
+    "claim": "问题一把园林游赏趣味性转化为可计算的路径特征与评分，并通过权重优化和路径规划得到最优游线及评分。",
+    "evidence_panels": [
+      {
+        "id": "workflow",
+        "role": "single horizontal semantic spine; four text-supported path features; weighted score and genetic-algorithm optimization labels"
+      }
+    ],
+    "archetype": "schematic-led composite",
+    "backend": "Python",
+    "task_mode": "formal",
+    "nature_references": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/nature-2026-observations.md"
+    ],
+    "renderer": "plot.py",
+    "review_risks": [
+      "the original image may contain additional branches or feedback not recoverable from text",
+      "Chinese labels may become unreadable after single-column reduction",
+      "equation text must not imply unverified numerical results",
+      "stage-1 source-image isolation must remain auditable"
+    ],
+    "design_requirements": [],
+    "scientific_unknowns": [
+      "Whether RF/RNN/SVM/ensemble model-family branches are drawn in Figure 4-1",
+      "Whether the path-planning step is connected by a feedback loop in the original figure",
+      "Exact original node labels, geometry, and arrow routing"
+    ],
+    "gallery_references": [],
+    "code_references": [
+      "figure_studio/illustrations.py"
+    ],
+    "user_reference_note": "Approved direction 1: horizontal semantic spine."
+  },
+  "nature": {
+    "requested": true,
+    "skill_name": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/nature-2026-observations.md"
+    ],
+    "reference_sha256": {
+      "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+      "references/design-theory.md": "0a7b3a8a964635fa1c7a59d82640e0adb31a6e9845beae77bc6e87503f8597c1",
+      "references/nature-2026-observations.md": "e4f7800316740297ae3573b2f1830a2d150e3e306546144f6c0547806431c307"
+    },
+    "host_skill_invocation_required": true,
+    "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+    "adapter_read_is_not_host_invocation_proof": true
+  },
+  "review": {
+    "status": "not_reviewed",
+    "notes": [],
+    "visual_review_is_manual": true
+  },
+  "task_manifest": "task_manifest.json"
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T14:58:34.648270+00:00",
+  "backend": "Python",
+  "renderer": "workspace/modeling_paper_benchmark/figure_4_1/stage_03_final/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": "nature_context.json",
+  "reproduction_manifest": "reproduction_manifest.json",
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "17e2d4cf974687c75697a820ee6859df97b8e0e4b78fed6ff92039c5bc6d60f0",
+      "bytes": 2417
+    },
+    "data": {
+      "path": "structure_final.json",
+      "sha256": "992b741c082d0ff78d8faa6aeae31d50702418538406423e2fc441fcf9a7d8f2",
+      "bytes": 4375
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "29f1dbf87af086da9a32eb2bbbbb7c9a913780e5f16ca1bd3a6d65e212a9a874",
+      "bytes": 1356
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "93d05c2369c686f6b2b0049e492ded19b64aaa2b134478186c5a9753e2992271",
+      "bytes": 9941
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "17e2d4cf974687c75697a820ee6859df97b8e0e4b78fed6ff92039c5bc6d60f0",
+      "bytes": 2417
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "8171df24d0fdf29d9f7bba60bc8dbe63780c5ccde0932bf786011ec9c3ed0d4a",
+      "bytes": 1950
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "29f1dbf87af086da9a32eb2bbbbb7c9a913780e5f16ca1bd3a6d65e212a9a874",
+      "bytes": 1356
+    },
+    "structure_final.json": {
+      "path": "structure_final.json",
+      "sha256": "992b741c082d0ff78d8faa6aeae31d50702418538406423e2fc441fcf9a7d8f2",
+      "bytes": 4375
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "cc40f2549df94b0f9a6cb498c05a0cdcb39ab1603ec8ab9603bea42ec28bc148",
+      "bytes": 1394
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "a1c0b8763fbda957eb309b9401802fd8d2b1757d2e4d969e555d16fd71a4f124",
+      "bytes": 852
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  },
+  "references": {
+    "gallery": [],
+    "code": [
+      "figure_studio/illustrations.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/illustrations.py",
+        "path": "figure_studio/illustrations.py",
+        "sha256": "8e726b534157bc2aab830e2b4efa8f3ea8e8a0f83ada7f35dd77b3fc0b2b8afe",
+        "bytes": 16191
+      }
+    ]
+  },
+  "version": {
+    "status": "candidate",
+    "run_id": "rendered_final_v2",
+    "parent_run": null
+  }
+}
