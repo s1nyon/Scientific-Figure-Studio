@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:17:19.856321+00:00",
+  "created_utc": "2026-09-22T09:06:05.224293+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/pareto_practice.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\pareto_practice.csv",
+    "resolved_data_path": "examples/data/pareto_practice.csv",
     "data_sha256": "d04fd0bae36ba865664904b3dd3c0660ba45b3f4bd23e0caf0321b2ca3e30f22",
     "fields": {
       "solution": "Feasible solution identifier",

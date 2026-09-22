@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T09:32:35.960247+00:00",
+  "backend": "Python",
+  "design": {
+    "claim": "The practice trajectories and their derived endpoint changes are shown with a dominant trajectory panel and a compact summary panel, without adding unsupported uncertainty claims.",
+    "archetype": "asymmetric mixed-modality figure",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero observed and historical-best trajectories"
+      },
+      {
+        "id": "b",
+        "role": "derived endpoint evidence"
+      }
+    ],
+    "design_requirements": [
+      "Keep the hero trajectory panel visually dominant.",
+      "Reuse the reference's restrained blue-teal-neutral relationship without copying its scientific content.",
+      "Keep panel labels, axis units, provenance note, and editable vector text visible."
+    ],
+    "renderer": "plot.py",
+    "template_reuse": false
+  },
+  "references": {
+    "gallery": [
+      {
+        "relative_path": "02_algorithm/nature_first_reference.png",
+        "sha256": "514faa6b86a43643ae37114a5c6e5e8abd7a06b21dd4fc5d939c11fd107b0a38",
+        "favorite": false,
+        "chart_type": "multi-panel quantitative practice figure",
+        "application": "algorithm comparison; convergence evidence",
+        "visual_analysis_status": "agent_reviewed"
+      }
+    ],
+    "code": [
+      "examples/outputs/p1_independent_reproduction/complex_nature_first/plot.py"
+    ],
+    "code_records": [
+      {
+        "reference": "examples/outputs/p1_independent_reproduction/complex_nature_first/plot.py",
+        "path": "examples/outputs/p1_independent_reproduction/complex_nature_first/plot.py",
+        "sha256": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+        "bytes": 6676
+      }
+    ],
+    "user_note": "Acceptance fixture selected as a design reference; this record does not assert a personal user preference."
+  },
+  "figure_brief": {
+    "task": "Use a checked reference design to produce an independently reproducible algorithm evidence Figure.",
+    "data_sources": [
+      "convergence_practice.csv"
+    ],
+    "fields": {
+      "iteration": "iteration index",
+      "objective": "objective value",
+      "algorithm": "method label"
+    },
+    "units": {
+      "iteration": "count",
+      "objective": "practice unit",
+      "endpoint_change": "percent"
+    },
+    "claim": "The practice trajectories and their derived endpoint changes are shown with a dominant trajectory panel and a compact summary panel, without adding unsupported uncertainty claims.",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero observed and historical-best trajectories"
+      },
+      {
+        "id": "b",
+        "role": "derived endpoint evidence"
+      }
+    ],
+    "archetype": "asymmetric mixed-modality figure",
+    "backend": "Python",
+    "task_mode": "formal",
+    "nature_references": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "renderer": "examples/reproduction_sources/p1_complex/plot.py",
+    "review_risks": [
+      "illustrative practice data; no replicate runs or uncertainty basis",
+      "the gallery image is a design reference, not a source of scientific values",
+      "font family is controlled by the standalone renderer and may differ by environment"
+    ],
+    "design_requirements": [
+      "Keep the hero trajectory panel visually dominant.",
+      "Reuse the reference's restrained blue-teal-neutral relationship without copying its scientific content.",
+      "Keep panel labels, axis units, provenance note, and editable vector text visible."
+    ],
+    "scientific_unknowns": [
+      "formal experiment design is unknown",
+      "the practice data do not support statistical inference"
+    ],
+    "gallery_references": [
+      "02_algorithm/nature_first_reference.png"
+    ],
+    "code_references": [
+      "examples/outputs/p1_independent_reproduction/complex_nature_first/plot.py"
+    ],
+    "user_reference_note": "Acceptance fixture selected as a design reference; this record does not assert a personal user preference."
+  },
+  "nature": {
+    "requested": true,
+    "skill_name": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "reference_sha256": {
+      "SKILL.md": "b4fd8daf9b5b4fa8b048e89234c9afadcca25aa2ee696521380671b286bd5f5f",
+      "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+      "references/common-patterns.md": "a2f9d839d4284dc2a8dcac0e5682446db037ff197aa2b4b5e995128eeadf6a1e",
+      "references/qa-contract.md": "5323f234fa5319784ce4b06e4eba1d242ba39a72ce83198f9e2ba126eb500339"
+    },
+    "host_skill_invocation_required": true,
+    "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+    "adapter_read_is_not_host_invocation_proof": true
+  },
+  "review": {
+    "status": "passed",
+    "notes": [
+      "Viewed at rendered PNG size; hero panel remains dominant, labels and provenance note are readable, and no clipping was observed."
+    ],
+    "visual_review_is_manual": true
+  },
+  "task_manifest": "task_manifest.json"
+}

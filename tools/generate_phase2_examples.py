@@ -54,7 +54,13 @@ def _project_version() -> str:
 
 
 def _run_copied_script(script_path: Path, destination: Path, skill_root: Path | None) -> None:
-    command = [sys.executable, str(script_path), "--output-dir", str(destination)]
+    command = [
+        sys.executable,
+        str(script_path),
+        "--output-dir",
+        str(destination),
+        "--overwrite",
+    ]
     if skill_root is not None:
         command.extend(["--skill-root", str(skill_root)])
     environment = os.environ.copy()

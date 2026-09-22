@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 import shutil
+import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -13,13 +13,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+from .artifacts import commit_staged_directory, directory_status, sha256
+
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    return sha256(path)
 
 
 def _image_info(path: Path) -> dict[str, Any]:
@@ -39,11 +37,17 @@ def snapshot_artifacts(
 ) -> dict[str, Any]:
     """Copy a pre-edit source/output set into a recoverable snapshot directory."""
 
-    destination = Path(snapshot_dir).expanduser().resolve()
+    raw_destination = Path(snapshot_dir).expanduser()
+    if raw_destination.is_symlink():
+        raise ValueError(f"snapshot directory must not be a symlink: {raw_destination}")
+    destination = raw_destination.resolve()
     destination.mkdir(parents=True, exist_ok=True)
     files: dict[str, dict[str, Any]] = {}
     for raw_path in paths:
-        source = Path(raw_path).expanduser().resolve()
+        raw_source = Path(raw_path).expanduser()
+        if raw_source.is_symlink():
+            raise FileNotFoundError(f"snapshot source does not exist: {raw_source}")
+        source = raw_source.resolve()
         if not source.is_file():
             raise FileNotFoundError(f"snapshot source does not exist: {source}")
         name = source.name
@@ -72,25 +76,85 @@ def snapshot_artifacts(
     return record
 
 
-def restore_snapshot(snapshot_dir: str | Path, destination_dir: str | Path) -> dict[str, Path]:
-    """Restore files from a snapshot without deleting unrelated destination files."""
+def restore_snapshot(
+    snapshot_dir: str | Path,
+    destination_dir: str | Path | None = None,
+    *,
+    overwrite: bool = False,
+) -> dict[str, Path]:
+    """Restore verified files into a new directory or an explicitly writable workspace."""
 
-    source_dir = Path(snapshot_dir).expanduser().resolve()
+    raw_source_dir = Path(snapshot_dir).expanduser()
+    if raw_source_dir.is_symlink():
+        raise ValueError(f"snapshot directory must not be a symlink: {raw_source_dir}")
+    source_dir = raw_source_dir.resolve()
     manifest_path = source_dir / "snapshot_manifest.json"
-    if not manifest_path.is_file():
+    if manifest_path.is_symlink() or not manifest_path.is_file():
         raise FileNotFoundError(f"snapshot manifest does not exist: {manifest_path}")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    destination = Path(destination_dir).expanduser().resolve()
-    destination.mkdir(parents=True, exist_ok=True)
-    restored: dict[str, Path] = {}
-    for name in manifest.get("files", {}):
-        source = source_dir / name
-        if not source.is_file():
-            raise FileNotFoundError(f"snapshot file does not exist: {source}")
-        target = destination / name
-        shutil.copy2(source, target)
-        restored[name] = target
-    return restored
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("files"), dict):
+        raise ValueError("snapshot manifest requires a files object")
+
+    verified: list[tuple[str, Path, dict[str, object]]] = []
+    for raw_name, raw_record in manifest["files"].items():
+        raw_path = Path(raw_name) if isinstance(raw_name, str) else Path(".")
+        if (
+            not isinstance(raw_name, str)
+            or raw_path.is_absolute()
+            or ".." in raw_path.parts
+        ):
+            raise ValueError(f"unsafe snapshot file name: {raw_name}")
+        if not isinstance(raw_record, dict):
+            raise ValueError(f"snapshot record must be an object: {raw_name}")
+        raw_source = source_dir / raw_name
+        if raw_source.is_symlink():
+            raise ValueError(f"snapshot file is a symlink: {raw_name}")
+        source = raw_source.resolve()
+        if not source.is_relative_to(source_dir) or not source.is_file():
+            raise ValueError(f"snapshot file escapes snapshot directory: {raw_name}")
+        expected_hash = raw_record.get("sha256")
+        if not isinstance(expected_hash, str) or _sha256(source) != expected_hash:
+            raise ValueError(f"snapshot hash mismatch: {raw_name}")
+        expected_bytes = raw_record.get("bytes")
+        if expected_bytes is not None and source.stat().st_size != expected_bytes:
+            raise ValueError(f"snapshot byte count mismatch: {raw_name}")
+        verified.append((raw_name, source, raw_record))
+
+    if destination_dir is None:
+        destination = source_dir.parent / (
+            f"{source_dir.name}_recovery_{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
+        )
+        suffix = 0
+        while destination.exists():
+            suffix += 1
+            destination = source_dir.parent / (
+                f"{source_dir.name}_recovery_{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}_{suffix}"
+            )
+    else:
+        raw_destination = Path(destination_dir).expanduser()
+        if raw_destination.is_symlink():
+            raise ValueError(f"restore destination must not be a symlink: {raw_destination}")
+        destination = raw_destination.resolve()
+    if directory_status(destination) in {"accepted", "candidate"}:
+        raise PermissionError(f"refusing to restore into immutable version: {destination}")
+    if destination.exists() and destination.is_symlink():
+        raise ValueError(f"restore destination must not be a symlink: {destination}")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+
+    staging_parent = Path(
+        tempfile.mkdtemp(prefix=f".{destination.name}.restore-", dir=destination.parent)
+    )
+    staging = staging_parent / "restored"
+    try:
+        staging.mkdir()
+        for name, source, _record in verified:
+            target = staging / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+        commit_staged_directory(staging, destination, overwrite=overwrite)
+    finally:
+        shutil.rmtree(staging_parent, ignore_errors=True)
+    return {name: destination / name for name, _source, _record in verified}
 
 
 def build_before_after_comparison(

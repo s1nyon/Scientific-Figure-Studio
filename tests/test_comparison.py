@@ -3,6 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
 from PIL import Image
 
 from figure_studio.comparison import (
@@ -30,7 +31,7 @@ def test_snapshot_and_restore_preserve_source_and_configuration(tmp_path):
     config.write_text("COLOR = 'orange'\n", encoding="utf-8")
     Image.new("RGB", (120, 80), "black").save(figure)
 
-    restore_snapshot(snapshot, working)
+    restore_snapshot(snapshot, working, overwrite=True)
 
     assert record["files"]["plot.py"]["sha256"]
     assert plot.read_text(encoding="utf-8") == "version = 'before'\n"
@@ -86,3 +87,55 @@ def test_revision_cli_requires_explicit_comparison_overwrite(tmp_path):
     assert first.returncode == 0, first.stderr
     assert second.returncode != 0
     assert overwrite.returncode == 0, overwrite.stderr
+
+
+def test_restore_default_writes_an_independent_recovery_directory(tmp_path):
+    source = tmp_path / "source.txt"
+    source.write_text("before\n", encoding="utf-8")
+    snapshot = tmp_path / "snapshots" / "before"
+    snapshot_artifacts([source], snapshot)
+
+    restored = restore_snapshot(snapshot)
+
+    recovery = restored["source.txt"]
+    assert recovery != source
+    assert recovery.read_text(encoding="utf-8") == "before\n"
+    assert source.read_text(encoding="utf-8") == "before\n"
+
+
+def test_restore_rejects_tampered_snapshot_before_writing_destination(tmp_path):
+    source = tmp_path / "source.txt"
+    source.write_text("before\n", encoding="utf-8")
+    snapshot = tmp_path / "snapshots" / "before"
+    snapshot_artifacts([source], snapshot)
+    (snapshot / "source.txt").write_text("tampered\n", encoding="utf-8")
+    destination = tmp_path / "destination"
+
+    with pytest.raises(ValueError, match="hash mismatch"):
+        restore_snapshot(snapshot, destination)
+
+    assert not destination.exists()
+
+
+def test_restore_rejects_path_traversal_in_snapshot_manifest(tmp_path):
+    snapshot = tmp_path / "snapshots" / "unsafe"
+    snapshot.mkdir(parents=True)
+    (snapshot / "snapshot_manifest.json").write_text(
+        json.dumps({"files": {"../outside.txt": {"sha256": "bad", "bytes": 1}}}),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="unsafe snapshot file name"):
+        restore_snapshot(snapshot, tmp_path / "destination")
+
+
+def test_restore_creates_missing_nested_destination_parent(tmp_path):
+    source = tmp_path / "source.txt"
+    source.write_text("before\n", encoding="utf-8")
+    snapshot = tmp_path / "snapshots" / "before"
+    snapshot_artifacts([source], snapshot)
+
+    destination = tmp_path / "new" / "nested" / "workspace"
+    restore_snapshot(snapshot, destination)
+
+    assert (destination / "source.txt").read_text(encoding="utf-8") == "before\n"

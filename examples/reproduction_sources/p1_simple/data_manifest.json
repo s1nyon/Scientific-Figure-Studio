@@ -1,0 +1,17 @@
+{
+  "figure_id": "p1_simple_convergence",
+  "data_status": "illustrative practice data",
+  "data_file": "convergence_practice.csv",
+  "fields": {
+    "iteration": "iteration index",
+    "objective": "objective value",
+    "algorithm": "method label"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "practice unit"
+  },
+  "objective_direction": "minimize",
+  "transformations": ["historical best is a cumulative minimum for visualization"],
+  "unsupported_claims": ["formal performance conclusion", "uncertainty estimate"]
+}

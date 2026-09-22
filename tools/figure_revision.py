@@ -27,7 +27,8 @@ def _parser() -> argparse.ArgumentParser:
 
     restore = subparsers.add_parser("restore", help="Restore a saved artifact snapshot")
     restore.add_argument("--snapshot-dir", required=True, type=Path)
-    restore.add_argument("--destination-dir", required=True, type=Path)
+    restore.add_argument("--destination-dir", type=Path)
+    restore.add_argument("--overwrite", action="store_true")
 
     compare = subparsers.add_parser("compare", help="Build a native-aspect Before/After PNG")
     compare.add_argument("--before", required=True, type=Path)
@@ -43,7 +44,11 @@ def main() -> None:
     if arguments.command == "snapshot":
         snapshot_artifacts(arguments.paths, arguments.snapshot_dir)
     elif arguments.command == "restore":
-        restore_snapshot(arguments.snapshot_dir, arguments.destination_dir)
+        restore_snapshot(
+            arguments.snapshot_dir,
+            arguments.destination_dir,
+            overwrite=arguments.overwrite,
+        )
     else:
         build_before_after_comparison(
             arguments.before,

@@ -1,0 +1,56 @@
+{
+  "task": "Use a checked reference design to produce an independently reproducible algorithm evidence Figure.",
+  "data_sources": ["convergence_practice.csv"],
+  "fields": {
+    "iteration": "iteration index",
+    "objective": "objective value",
+    "algorithm": "method label"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "practice unit",
+    "endpoint_change": "percent"
+  },
+  "claim": "The practice trajectories and their derived endpoint changes are shown with a dominant trajectory panel and a compact summary panel, without adding unsupported uncertainty claims.",
+  "evidence_panels": [
+    {
+      "id": "a",
+      "role": "hero observed and historical-best trajectories"
+    },
+    {
+      "id": "b",
+      "role": "derived endpoint evidence"
+    }
+  ],
+  "archetype": "asymmetric mixed-modality figure",
+  "backend": "Python",
+  "task_mode": "formal",
+  "nature_references": [
+    "SKILL.md",
+    "references/figure-contract.md",
+    "references/common-patterns.md",
+    "references/qa-contract.md"
+  ],
+  "renderer": "examples/reproduction_sources/p1_complex/plot.py",
+  "review_risks": [
+    "illustrative practice data; no replicate runs or uncertainty basis",
+    "the gallery image is a design reference, not a source of scientific values",
+    "font family is controlled by the standalone renderer and may differ by environment"
+  ],
+  "design_requirements": [
+    "Keep the hero trajectory panel visually dominant.",
+    "Reuse the reference's restrained blue-teal-neutral relationship without copying its scientific content.",
+    "Keep panel labels, axis units, provenance note, and editable vector text visible."
+  ],
+  "scientific_unknowns": [
+    "formal experiment design is unknown",
+    "the practice data do not support statistical inference"
+  ],
+  "gallery_references": [
+    "02_algorithm/nature_first_reference.png"
+  ],
+  "code_references": [
+    "examples/outputs/p1_independent_reproduction/complex_nature_first/plot.py"
+  ],
+  "user_reference_note": "Acceptance fixture selected as a design reference; this record does not assert a personal user preference."
+}

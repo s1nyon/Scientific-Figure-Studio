@@ -1,0 +1,16 @@
+{
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 180,
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "convergence_practice.csv",
+    "data_sha256": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+    "transformations": [
+      "historical best is a cumulative minimum for visualization"
+    ]
+  }
+}

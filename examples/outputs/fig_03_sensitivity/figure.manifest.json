@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:17:18.397642+00:00",
+  "created_utc": "2026-09-22T09:06:03.327409+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/sensitivity_practice.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\sensitivity_practice.csv",
+    "resolved_data_path": "examples/data/sensitivity_practice.csv",
     "data_sha256": "ec747a05d9c1557c40ec59150c85b50c627edc5b0fd63d224f45439f5ac52ece",
     "fields": {
       "parameter": "Parameter name",

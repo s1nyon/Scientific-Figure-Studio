@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T09:44:04.422402+00:00",
+  "entrypoint": "plot.py",
+  "files": {
+    "plot.py": {
+      "sha256": "74d6fef24b03707f6faabd6ed3a986116ab8fe1f2fe46abe56958aac29c0ed92",
+      "bytes": 3519
+    },
+    "config.py": {
+      "sha256": "072dcae0266be300fab975d6a8889da209d250bfe4d19b85c188a1d1abb41e01",
+      "bytes": 298
+    },
+    "data_manifest.json": {
+      "sha256": "42f57b16ad047237477460bdec544c19c80c917f514161f01464f04a006a7b06",
+      "bytes": 537
+    },
+    "figure_brief.json": {
+      "sha256": "e124faf1b85688944ce47846d81428bc034e3fcc8d58355b15df8a887418fe7c",
+      "bytes": 802
+    },
+    "README.md": {
+      "sha256": "6a85f7ce48db610732a570f0c3c7e5f77994fa3fb46a76560fe69840127338fb",
+      "bytes": 460
+    },
+    "convergence_practice.csv": {
+      "sha256": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+      "bytes": 270
+    },
+    "figure.png": {
+      "sha256": "8c19c3e54b28170372e9e19343e0dcb3f74cdd1ddfe113eb1c8546ab7c227316",
+      "bytes": 86116
+    },
+    "figure.svg": {
+      "sha256": "03ceea2f121e71476b0cae477db89a3bcf9fbcec367e00c6a1b6f635d57faf47",
+      "bytes": 43444
+    },
+    "figure.pdf": {
+      "sha256": "0119b6e74c92af026af9f64ff8deeb9c178e86516086794da345dfbc998cbedc",
+      "bytes": 16190
+    },
+    "figure.manifest.json": {
+      "sha256": "0b67a7e48819d19c0fab0994da14d85b48df60b8611764cdfc52012821acf720",
+      "bytes": 386
+    },
+    "standalone_runtime.py": {
+      "sha256": "31ca6c06e188c65f1dce13ce7951e3767dfa8684bff3401a71dd4c2bef942247",
+      "bytes": 4078
+    }
+  },
+  "dependencies": [
+    "matplotlib>=3.8",
+    "pandas>=2.1",
+    "numpy>=1.26"
+  ],
+  "project_independent": true,
+  "independence_status": "verified_outside_package_root",
+  "project_root_env_required": false,
+  "absolute_project_paths": false,
+  "metadata": {
+    "figure_type": "simple data chart",
+    "data_status": "illustrative practice data",
+    "nature_skill_runtime_dependency": false
+  },
+  "verification": {
+    "method": "subprocess_outside_package_root",
+    "environment_variables_removed": [
+      "SCIENTIFIC_FIGURE_STUDIO_ROOT",
+      "PYTHONPATH"
+    ],
+    "expected_outputs": [
+      "figure.png",
+      "figure.svg",
+      "figure.pdf"
+    ],
+    "python": "3.11"
+  }
+}

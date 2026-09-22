@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:21:34.507369+00:00",
+  "created_utc": "2026-09-22T09:06:04.662111+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/illustration_composite.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\illustration_composite.csv",
+    "resolved_data_path": "examples/data/illustration_composite.csv",
     "data_sha256": "25ec0b7a9cf1be4ba4e4b3f46dd5ed250c87abae72995601010130182b9d78f5",
     "fields": {
       "panel": "hero or evidence panel selector",

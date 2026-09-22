@@ -1,0 +1,24 @@
+{
+  "figure_id": "p1_complex_nature_first",
+  "data_status": "illustrative practice data",
+  "data_file": "convergence_practice.csv",
+  "fields": {
+    "iteration": "iteration index",
+    "objective": "objective value",
+    "algorithm": "method label"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "practice unit"
+  },
+  "objective_direction": "minimize",
+  "transformations": [
+    "historical best is a cumulative minimum",
+    "endpoint decrease is calculated from each method's first observation"
+  ],
+  "unsupported_claims": [
+    "formal superiority",
+    "uncertainty estimate",
+    "causal conclusion"
+  ]
+}

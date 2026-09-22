@@ -93,6 +93,18 @@ python tools/generate_phase2_examples.py
 
 把新图片放入 `figure_gallery/00_inbox/`，然后运行图库更新命令或调用 `$figure-reference-manager`。系统会生成哈希、主色和布局等有限的可观察信息，不会修改原图或自动推断你的喜好。详见 [`docs/GALLERY_WORKFLOW.md`](docs/GALLERY_WORKFLOW.md)。
 
+## P1 工作区、复现与认可作品
+
+正式任务先在独立 workspace 中运行。执行器会先完成输入、输出冲突和引用检查，再在临时目录生成 PNG、SVG、PDF、源码、配置、输入、设计回执和版本 manifest；renderer 失败或文件冲突时不会部分覆盖已有交付。验收前可生成不可静默修改的 candidate，只有用户明确提供评价后才能提升为 accepted：
+
+```powershell
+python tools/run_figure_task.py --renderer path/to/plot.py --brief path/to/figure_brief.json --output-dir path/to/candidate --version-status candidate
+python tools/manage_figure_work.py accept --candidate-dir path/to/candidate --accepted-dir path/to/accepted --user-note "用户明确认可这版作品"
+python tools/manage_figure_work.py clone --accepted-dir path/to/accepted --workspace-dir path/to/new-workspace
+```
+
+简单图和复杂 Figure 的独立复现包位于 `examples/outputs/p1_independent_reproduction/`，包内包含入口脚本、配置、输入、PDF/SVG/PNG、依赖和哈希 manifest；它们不通过项目根目录、`PYTHONPATH` 或 `SCIENTIFIC_FIGURE_STUDIO_ROOT` 运行。图库实际绘图入口可通过 Figure Brief 的 `gallery_references` 与 `code_references` 接入，Nature Skill 仍负责 Figure Contract 和审查，图库只提供经实际查看的设计参考。P1 实际验收证据见 [`docs/P1_ACCEPTANCE.md`](docs/P1_ACCEPTANCE.md)。
+
 ## 设计原则
 
 科学准确性优先于装饰。项目默认使用白色背景、深蓝灰文字、克制的蓝色主色、青绿色辅助色、暖橙色强调色和中性灰辅助元素；颜色会与线型、标记或标签配合使用。详细规则见 [`design_system/DESIGN_GUIDE.md`](design_system/DESIGN_GUIDE.md)。

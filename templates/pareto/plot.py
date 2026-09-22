@@ -136,6 +136,7 @@ def main(
     output_dir: str | Path | None = None,
     data_path: str | Path | None = None,
     manifest_path: str | Path | None = None,
+    overwrite: bool = False,
 ):
     """Generate Pareto artifacts and return their paths."""
 
@@ -168,7 +169,7 @@ def main(
                 destination / "figure",
                 formats=tuple(CONFIG["output_formats"]),
                 dpi=int(CONFIG["dpi"]),
-                overwrite=True,
+                overwrite=overwrite,
                 provenance=build_data_provenance(
                     manifest,
                     {
@@ -191,6 +192,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--data-path", type=Path, default=None)
     parser.add_argument("--manifest-path", type=Path, default=None)
+    parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
 
@@ -200,4 +202,5 @@ if __name__ == "__main__":
         output_dir=arguments.output_dir,
         data_path=arguments.data_path,
         manifest_path=arguments.manifest_path,
+        overwrite=arguments.overwrite,
     )

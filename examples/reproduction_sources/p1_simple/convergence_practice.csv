@@ -1,0 +1,16 @@
+algorithm,iteration,objective
+Proposed,0,2.40
+Proposed,1,1.95
+Proposed,2,1.72
+Proposed,3,1.30
+Proposed,4,1.02
+Adaptive,0,2.30
+Adaptive,1,2.05
+Adaptive,2,1.80
+Adaptive,3,1.55
+Adaptive,4,1.32
+Baseline,0,2.48
+Baseline,1,2.28
+Baseline,2,2.16
+Baseline,3,2.02
+Baseline,4,1.88

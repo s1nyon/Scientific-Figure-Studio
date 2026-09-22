@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "work_id": "candidate_work",
+  "status": "accepted",
+  "path_base": "gallery_root",
+  "accepted_directory": "../accepted_work",
+  "candidate_directory": "../candidate_work",
+  "user_evaluation": "Explicit P1 acceptance fixture: retain this Figure and its complete Python reproduction bundle as a reusable work.",
+  "visual_design_reference": "design_receipt.json",
+  "code_reference": {
+    "entrypoint": "plot.py",
+    "configuration": "config.py",
+    "version_manifest": "version_manifest.json",
+    "task_manifest": "task_manifest.json",
+    "reproduction_manifest": "reproduction_manifest.json"
+  },
+  "source_hashes": {
+    "plot.py": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+    "figure_brief.json": "f64d43648b6c8b5d12c0e6b6a98d9d1c64d50cb42a0b1184ef5ef74043b26afa",
+    "config.py": "0e886f34e36f1137541a80366302c1dfa47b34552ced2f7983479844c7298469",
+    "data_manifest.json": "0c3523593ebd8789b5e0688b0619ab6f5b2adfce3c0ecd3658028f4eff959bf9",
+    "convergence_practice.csv": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+    "nature_context.json": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+    "reproduction_manifest.json": "a32dfbba78b15444817c8898a7c687b4d18284debdce5c5c09d5c30fba200b22"
+  }
+}

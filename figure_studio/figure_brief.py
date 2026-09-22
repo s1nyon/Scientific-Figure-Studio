@@ -72,6 +72,9 @@ class FigureBrief:
     review_risks: tuple[str, ...]
     design_requirements: tuple[str, ...] = ()
     scientific_unknowns: tuple[str, ...] = ()
+    gallery_references: tuple[str, ...] = ()
+    code_references: tuple[str, ...] = ()
+    user_reference_note: str = ""
 
     def to_mapping(self) -> dict[str, Any]:
         """Return JSON-compatible data without exposing private implementation state."""
@@ -83,6 +86,8 @@ class FigureBrief:
         data["review_risks"] = list(self.review_risks)
         data["design_requirements"] = list(self.design_requirements)
         data["scientific_unknowns"] = list(self.scientific_unknowns)
+        data["gallery_references"] = list(self.gallery_references)
+        data["code_references"] = list(self.code_references)
         return data
 
 
@@ -122,9 +127,22 @@ def validate_figure_brief(value: Mapping[str, object] | FigureBrief) -> FigureBr
     scientific_unknowns = _string_tuple(
         value.get("scientific_unknowns", []), "scientific_unknowns"
     )
-    unsafe = [reference for reference in nature_references if not _safe_reference(reference)]
+    gallery_references = _string_tuple(value.get("gallery_references", []), "gallery_references")
+    code_references = _string_tuple(value.get("code_references", []), "code_references")
+    unsafe = [
+        reference
+        for reference in (*nature_references, *gallery_references, *code_references)
+        if not _safe_reference(reference)
+    ]
     if unsafe:
-        raise ValueError(f"nature_references must stay inside the fixed skill tree: {unsafe}")
+        raise ValueError(
+            "reference paths must be relative and stay inside their package: "
+            f"{unsafe}"
+        )
+
+    user_reference_note = value.get("user_reference_note", "")
+    if not isinstance(user_reference_note, str):
+        raise ValueError("user_reference_note must be a string")
 
     raw_panels = value["evidence_panels"]
     if not isinstance(raw_panels, (list, tuple)) or not raw_panels:
@@ -152,6 +170,9 @@ def validate_figure_brief(value: Mapping[str, object] | FigureBrief) -> FigureBr
         review_risks=review_risks,
         design_requirements=design_requirements,
         scientific_unknowns=scientific_unknowns,
+        gallery_references=gallery_references,
+        code_references=code_references,
+        user_reference_note=user_reference_note.strip(),
     )
 
 

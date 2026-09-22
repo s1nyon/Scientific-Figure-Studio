@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:17:16.872349+00:00",
+  "created_utc": "2026-09-22T09:06:01.293495+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/prediction_practice.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\prediction_practice.csv",
+    "resolved_data_path": "examples/data/prediction_practice.csv",
     "data_sha256": "08c264f82cf23ed6396c8f0a0317d403d76e84965de8418c4f41c13181968cef",
     "fields": {
       "sample": "Observation index (count)",
