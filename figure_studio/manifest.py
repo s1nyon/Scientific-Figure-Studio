@@ -147,16 +147,26 @@ def provenance_data_label(status: str) -> str | None:
     return None
 
 
+def _portable_data_reference(manifest: ManifestInfo) -> str:
+    """Return a provenance path that does not bind a delivery to one machine."""
+
+    requested = Path(manifest.data_file).expanduser()
+    if requested.is_absolute():
+        return f"<external-input>/{requested.name}"
+    return requested.as_posix()
+
+
 def build_data_provenance(
     manifest: ManifestInfo,
     extra: Mapping[str, object] | None = None,
 ) -> dict[str, object]:
     """Create a consistent provenance payload without changing the source file."""
 
+    data_reference = _portable_data_reference(manifest)
     provenance: dict[str, object] = {
         "data_status": manifest.data_status,
-        "data_file": manifest.data_file,
-        "resolved_data_path": str(manifest.data_path),
+        "data_file": data_reference,
+        "resolved_data_path": data_reference,
         "data_sha256": manifest.data_sha256,
         "fields": manifest.fields,
         "units": manifest.units,

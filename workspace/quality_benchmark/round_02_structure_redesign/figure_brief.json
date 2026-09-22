@@ -1,0 +1,117 @@
+{
+  "figure_id": "round_02_structure_redesign",
+  "task": "Redesign the round-01 convergence evidence figure into a clearer Nature-first research figure while keeping the supplied practice data and scientific meaning fixed.",
+  "data_sources": ["examples/data/convergence_practice.csv"],
+  "fields": {
+    "algorithm": "algorithm identity",
+    "iteration": "optimization iteration",
+    "objective": "current objective value"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "unspecified practice unit"
+  },
+  "title": "Displayed trajectories decrease overall; Proposed has one temporary increase at iteration 6",
+  "status": "illustrative practice data",
+  "data_source": "examples/data/convergence_practice.csv, carried forward unchanged from round 01",
+  "objective": "Show the observed objective trajectories and make the one local non-monotone update visible without implying unsupported speed, stability, or statistical superiority.",
+  "core_conclusion": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values; the Proposed trace ends at the lowest shown objective, while its only positive step is visible as a local deviation from its running best at iteration 6.",
+  "claim": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values; the Proposed trace ends at the lowest shown objective, while its only positive step is visible as a local deviation from its running best at iteration 6.",
+  "audience": "Readers of a mathematical modelling or algorithm research paper",
+  "canvas": {
+    "width_in": 7.2,
+    "height_in": 4.6,
+    "intended_placement": "double-column figure; single-column preview is a stress test rather than the target placement",
+    "exports": ["png", "svg", "pdf"]
+  },
+  "archetype": "quantitative grid",
+  "layout": [
+    {
+      "label": "a",
+      "role": "hero evidence",
+      "content": "Raw current objective for all three algorithms across iterations 1–10, with direct endpoint labels and a local current-versus-incumbent callout at Proposed iteration 6.",
+      "reading_order": 1
+    },
+    {
+      "label": "b",
+      "role": "supporting evidence",
+      "content": "Signed adjacent-step objective changes on the same iteration scale; a zero reference makes the positive Proposed step explicit.",
+      "reading_order": 2
+    }
+  ],
+  "evidence_panels": [
+    {
+      "id": "a",
+      "role": "hero convergence evidence",
+      "question": "How do the observed objective values evolve, and where does current differ from the running best?"
+    },
+    {
+      "id": "b",
+      "role": "signed update evidence",
+      "question": "Which adjacent updates decrease or increase the objective under minimization?"
+    }
+  ],
+  "backend": "Python",
+  "task_mode": "ordinary",
+  "nature_references": [
+    "SKILL.md",
+    "references/figure-contract.md",
+    "references/design-theory.md",
+    "references/common-patterns.md",
+    "references/nature-2026-observations.md",
+    "references/qa-contract.md"
+  ],
+  "encoding": {
+    "algorithm": "consistent restrained color plus marker shape across panels",
+    "current_objective": "solid line with filled marker",
+    "historical_best": "shown only at the single Proposed point where it differs from current; other historical-best values coincide with current and are not redundantly overplotted",
+    "delta_objective": "signed y-position relative to a zero reference",
+    "direction": "lower objective is better; negative delta is a decrease"
+  },
+  "uncertainty": {
+    "shown": false,
+    "reason": "The input has one deterministic practice trajectory per algorithm and no replicate or error estimate."
+  },
+  "design_decisions": [
+    "Removed the first-round endpoint dumbbell because it repeated the trajectory endpoints without adding a distinct evidence layer.",
+    "Replaced the first-round heatmap with a signed update strip to avoid a colorbar and dense cell-by-cell interpretation.",
+    "Used one figure-level conclusion sentence and direct endpoint labels instead of multiple competing titles and legends.",
+    "Kept the first-round data, objective direction, colors, and Nature skill version fixed for controlled comparison."
+  ],
+  "limitations": [
+    "This practice dataset cannot support general algorithm performance claims.",
+    "A single-column placement is likely to reduce text and marker legibility; double-column width is the intended use for this information density.",
+    "No convergence threshold or stability metric is asserted because none is specified by the input."
+  ],
+  "renderer": "custom_round_02_nature_structure_redesign_renderer",
+  "review_risks": [
+    "The single trajectory per algorithm cannot support uncertainty or statistical claims.",
+    "The label Proposed must not be interpreted as validated superiority.",
+    "The signed delta convention must remain explicit because the objective is minimized.",
+    "The double-column placement is the intended target; the single-column render is a readability stress test."
+  ],
+  "scientific_unknowns": [
+    "No repeated runs, seeds, benchmark context, or real-unit interpretation are provided.",
+    "No stopping criterion or target threshold is defined.",
+    "The table does not establish performance outside the displayed ten iterations."
+  ],
+  "gallery_references": [],
+  "code_references": [
+    "figure_studio/style.py",
+    "figure_studio/palettes.py",
+    "figure_studio/analysis.py"
+  ],
+  "user_reference_note": "No personal figure-gallery image was used or modified for this controlled comparison.",
+  "nature_skill": {
+    "skill": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/common-patterns.md",
+      "references/nature-2026-observations.md",
+      "references/qa-contract.md"
+    ],
+    "external_reference_images": false
+  }
+}

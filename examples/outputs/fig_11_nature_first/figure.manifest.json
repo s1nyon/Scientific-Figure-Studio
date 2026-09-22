@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-09-22T07:42:26.377581+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 300,
+  "figure_size_inches": [
+    7.2,
+    4.4
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "<external-input>/convergence_practice.csv",
+    "resolved_data_path": "<external-input>/convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Method label",
+      "iteration": "Iteration count",
+      "objective": "Objective value in an arbitrary practice unit"
+    },
+    "units": {
+      "algorithm": "categorical label",
+      "iteration": "count",
+      "objective": "practice unit"
+    },
+    "transformations": [
+      "The solid trajectory is the cumulative minimum (historical best) per method.",
+      "Panel b computes percentage decrease from the first observed objective to the final historical best."
+    ],
+    "uncertainty": "No replicate runs are provided; no uncertainty band or inferential statistic is shown.",
+    "unsupported_claims": [
+      "algorithm superiority",
+      "formal competition result",
+      "experimental conclusion"
+    ],
+    "objective_direction": "minimize",
+    "figure_archetype": "quantitative grid",
+    "panel_map": {
+      "a": "hero observed and historical-best trajectories",
+      "b": "derived endpoint decrease"
+    },
+    "design_method": "Nature Figure Contract completed before renderer selection"
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

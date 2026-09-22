@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:17:21.328159+00:00",
+  "created_utc": "2026-09-22T09:06:07.033769+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/spatial_practice.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\spatial_practice.csv",
+    "resolved_data_path": "examples/data/spatial_practice.csv",
     "data_sha256": "4895af73d4019ba539351f28c68a0b630601803727bb9cec92121798a8747977",
     "fields": {
       "record_type": "node, edge, obstacle, or path record",

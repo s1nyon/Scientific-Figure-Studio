@@ -50,13 +50,20 @@ python templates/convergence/plot.py
 
 ## Skills
 
+普通科研数据图和综合 Figure 的默认顺序是 $nature-figure → $modern-scientific-figure：
+先由固定版本 Nature Skill 确定 Figure Contract、证据层级和构图，再使用 Python renderer
+实现和实际查看。流程图、模型架构、几何/三维/网络等专业插图由 scientific-illustration
+分流；现有模板只是可选实现素材。统一执行器 tools/run_figure_task.py 只负责运行已写好的
+Python renderer 和记录交付 provenance，不能代替 Codex Agent 调用 Nature Skill。
 在 Codex 中可以显式调用：
 
 ```text
+$nature-figure
 $modern-scientific-figure
 $algorithm-visualization
 $figure-design-review
 $figure-reference-manager
+$scientific-illustration
 ```
 
 `scientific-illustration` 负责流程图、模型架构、几何/三维/网络和图表组合示意图；固定上游 `nature-figure` 通过安装器按提交版本接入，不把无许可证确认的上游文件复制进仓库。Skill 只负责工作流程和审查要求；最终图表仍由保存下来的 Python 源码生成。详见 [`docs/SKILLS_USAGE.md`](docs/SKILLS_USAGE.md) 和 [`docs/UPSTREAM_NATURE_FIGURE.md`](docs/UPSTREAM_NATURE_FIGURE.md)。
@@ -85,6 +92,18 @@ python tools/generate_phase2_examples.py
 ## 参考图库
 
 把新图片放入 `figure_gallery/00_inbox/`，然后运行图库更新命令或调用 `$figure-reference-manager`。系统会生成哈希、主色和布局等有限的可观察信息，不会修改原图或自动推断你的喜好。详见 [`docs/GALLERY_WORKFLOW.md`](docs/GALLERY_WORKFLOW.md)。
+
+## P1 工作区、复现与认可作品
+
+正式任务先在独立 workspace 中运行。执行器会先完成输入、输出冲突和引用检查，再在临时目录生成 PNG、SVG、PDF、源码、配置、输入、设计回执和版本 manifest；renderer 失败或文件冲突时不会部分覆盖已有交付。验收前可生成不可静默修改的 candidate，只有用户明确提供评价后才能提升为 accepted：
+
+```powershell
+python tools/run_figure_task.py --renderer path/to/plot.py --brief path/to/figure_brief.json --output-dir path/to/candidate --version-status candidate
+python tools/manage_figure_work.py accept --candidate-dir path/to/candidate --accepted-dir path/to/accepted --user-note "用户明确认可这版作品"
+python tools/manage_figure_work.py clone --accepted-dir path/to/accepted --workspace-dir path/to/new-workspace
+```
+
+简单图和复杂 Figure 的独立复现包位于 `examples/outputs/p1_independent_reproduction/`，包内包含入口脚本、配置、输入、PDF/SVG/PNG、依赖和哈希 manifest；它们不通过项目根目录、`PYTHONPATH` 或 `SCIENTIFIC_FIGURE_STUDIO_ROOT` 运行。图库实际绘图入口可通过 Figure Brief 的 `gallery_references` 与 `code_references` 接入，Nature Skill 仍负责 Figure Contract 和审查，图库只提供经实际查看的设计参考。P1 实际验收证据见 [`docs/P1_ACCEPTANCE.md`](docs/P1_ACCEPTANCE.md)。
 
 ## 设计原则
 

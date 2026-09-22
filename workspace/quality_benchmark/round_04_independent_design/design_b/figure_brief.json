@@ -1,0 +1,42 @@
+{
+  "figure_id": "round_04_design_b_path_endpoint",
+  "task": "Generate an independent asymmetric algorithm figure pairing observed paths with a compact endpoint-change summary.",
+  "data_sources": ["examples/data/convergence_practice.csv"],
+  "fields": {
+    "algorithm": "algorithm identity",
+    "iteration": "optimization iteration",
+    "objective": "current objective value"
+  },
+  "units": {
+    "iteration": "count",
+    "objective": "unspecified practice unit"
+  },
+  "title": "Objective path and displayed-window endpoint change",
+  "status": "illustrative practice data",
+  "data_source": "Original repository convergence practice data",
+  "objective": "Separate path shape from the arithmetic of the first and last observed values so neither is used as a proxy for the other.",
+  "core_conclusion": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values and Proposed ends at the lowest displayed objective; the right panel reports only the corresponding displayed-window changes.",
+  "claim": "Within the displayed illustrative trajectories, all three methods end below their displayed starting values and Proposed ends at the lowest displayed objective; no speed, stability, or general superiority claim is made.",
+  "audience": "Readers of a mathematical modelling or algorithm research paper",
+  "canvas": {"width_in": 7.2, "height_in": 4.05, "intended_placement": "double-column target; single-column stress test", "exports": ["png", "svg", "pdf"]},
+  "archetype": "asymmetric mixed-modality figure",
+  "layout": [
+    {"label": "a", "role": "hero evidence", "content": "Current objective paths over ten displayed iterations with direct endpoint labels.", "reading_order": 1},
+    {"label": "b", "role": "compact arithmetic support", "content": "First-to-last displayed objective change using open starts, filled ends, and signed net changes.", "reading_order": 2}
+  ],
+  "evidence_panels": [
+    {"id": "a", "role": "trajectory evidence", "question": "What paths are directly observed over the displayed iteration window?"},
+    {"id": "b", "role": "endpoint evidence", "question": "How far apart are the first and last displayed objective values?"}
+  ],
+  "backend": "Python",
+  "task_mode": "ordinary",
+  "nature_references": ["SKILL.md", "references/figure-contract.md", "references/design-theory.md", "references/common-patterns.md", "references/nature-2026-observations.md", "references/qa-contract.md"],
+  "gallery_references": ["02_algorithm/nature_optimization_fig3.png"],
+  "encoding": {"algorithm": "consistent color and marker shape", "current_objective": "solid path with filled endpoint", "endpoint_change": "open start to filled end connected by a color-coded segment", "direction": "lower objective is better"},
+  "uncertainty": {"shown": false, "reason": "One deterministic trajectory per algorithm and no uncertainty estimate are supplied."},
+  "renderer": "round_04_design_b_path_endpoint_renderer",
+  "review_risks": ["The endpoint summary is arithmetic within the displayed window, not a convergence-speed metric.", "The practice label Proposed must not be interpreted as validated superiority.", "The asymmetric layout must remain legible at double-column width and be reported as a stress test at single-column width."],
+  "scientific_unknowns": ["No replicate runs or seeds are available.", "No stopping criterion or threshold is supplied.", "The input does not establish performance outside ten displayed iterations."],
+  "code_references": ["figure_studio/style.py", "figure_studio/palettes.py", "figure_studio/analysis.py"],
+  "user_reference_note": "The supplied journal reference was used for visual methods only; no reference data or claims were reused."
+}

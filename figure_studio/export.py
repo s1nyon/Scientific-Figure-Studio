@@ -15,6 +15,15 @@ def _normalise_stem(output_stem: str | Path) -> Path:
     return path
 
 
+def _normalise_svg_line_end_whitespace(path: Path) -> None:
+    """Keep SVG source readable and free of Git trailing-whitespace warnings."""
+
+    lines = path.read_text(encoding="utf-8").splitlines()
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write("\n".join(line.rstrip() for line in lines))
+        handle.write("\n")
+
+
 def export_figure(
     fig: Any,
     output_stem: str | Path,
@@ -54,6 +63,8 @@ def export_figure(
             bbox_inches=None,
             facecolor=fig.get_facecolor(),
         )
+        if format_name == "svg":
+            _normalise_svg_line_end_whitespace(path)
 
     manifest = {
         "created_utc": datetime.now(UTC).isoformat(),

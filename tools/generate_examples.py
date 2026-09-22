@@ -44,7 +44,13 @@ def _template_config(template_name: str) -> dict[str, object]:
 
 
 def _run_copied_script(script_path: Path, destination: Path) -> None:
-    command = [sys.executable, str(script_path), "--output-dir", str(destination)]
+    command = [
+        sys.executable,
+        str(script_path),
+        "--output-dir",
+        str(destination),
+        "--overwrite",
+    ]
     environment = os.environ.copy()
     environment["SCIENTIFIC_FIGURE_STUDIO_ROOT"] = str(PROJECT_ROOT)
     result = subprocess.run(

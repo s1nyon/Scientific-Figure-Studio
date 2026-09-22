@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T10:25:47.401841+00:00",
+  "backend": "Python",
+  "renderer": "workspace/quality_benchmark/round_01_nature_only/authoring/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": "nature_context.json",
+  "reproduction_manifest": "reproduction_manifest.json",
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "3bfd9cdfd813702d4d1dc3c46012f99015b2ad6e9d15d7968b1296b999036f0f",
+      "bytes": 3050
+    },
+    "data": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "0d23cf1052cef4a4a3ef99ba10c8d48bb909841296ecdb046ed40fde08c18463",
+      "bytes": 1991
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "06ee5bccc12f2066f3e928590abc4bc54a5ebecb03527adf9d56aa6456b5c71b",
+      "bytes": 22681
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "3bfd9cdfd813702d4d1dc3c46012f99015b2ad6e9d15d7968b1296b999036f0f",
+      "bytes": 3050
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "3c50a52c4e7dd5a1e836241c72a7cd18ed0ebb5809dabea9e4bc5c0a2630bc25",
+      "bytes": 2822
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "0d23cf1052cef4a4a3ef99ba10c8d48bb909841296ecdb046ed40fde08c18463",
+      "bytes": 1991
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+      "bytes": 1486
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "06ea85e34e11e41e29d5b3f5816ecddf343b536aa606d818d17ec7f3eb57f463",
+      "bytes": 840
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  },
+  "references": {
+    "gallery": [],
+    "code": [
+      "figure_studio/style.py",
+      "figure_studio/palettes.py",
+      "figure_studio/analysis.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/style.py",
+        "path": "figure_studio/style.py",
+        "sha256": "68a1be09d8529a915f35f8a9b3982cfcbe383af42a7ff4fef020dc74e23272e7",
+        "bytes": 2618
+      },
+      {
+        "reference": "figure_studio/palettes.py",
+        "path": "figure_studio/palettes.py",
+        "sha256": "57c1cf94b1aeaced5139d7b2854a608f76b7d26f3115ff8d6dfa41a51627dc66",
+        "bytes": 3444
+      },
+      {
+        "reference": "figure_studio/analysis.py",
+        "path": "figure_studio/analysis.py",
+        "sha256": "35e54c94946b85de30db717fd0d5e934e4285eb0f34ed7689a67accded276c39",
+        "bytes": 2099
+      }
+    ]
+  },
+  "version": {
+    "status": "workspace",
+    "run_id": "round_01_nature_only",
+    "parent_run": null
+  }
+}

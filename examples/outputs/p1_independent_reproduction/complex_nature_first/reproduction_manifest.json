@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T09:44:07.546236+00:00",
+  "entrypoint": "plot.py",
+  "files": {
+    "plot.py": {
+      "sha256": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+      "bytes": 6676
+    },
+    "config.py": {
+      "sha256": "0e886f34e36f1137541a80366302c1dfa47b34552ced2f7983479844c7298469",
+      "bytes": 368
+    },
+    "data_manifest.json": {
+      "sha256": "dc59a1ff63b362e5d87013873907f1198a639ecbcb21e44cedb8ee16d91e58e8",
+      "bytes": 615
+    },
+    "figure_brief.json": {
+      "sha256": "9745112116df751f362c51af29cb8ebe02ceec6d6f4b5da47e2b411853711233",
+      "bytes": 885
+    },
+    "README.md": {
+      "sha256": "c00777ebe650d620620a8cde19014131ea0ad12392974ad2fc54fbe3017d8e84",
+      "bytes": 477
+    },
+    "convergence_practice.csv": {
+      "sha256": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+      "bytes": 270
+    },
+    "figure.png": {
+      "sha256": "514faa6b86a43643ae37114a5c6e5e8abd7a06b21dd4fc5d939c11fd107b0a38",
+      "bytes": 113178
+    },
+    "figure.svg": {
+      "sha256": "5edb57cb78be146774285b1db16aed4ff9020d540f9d4edef02457eed5a71f13",
+      "bytes": 77814
+    },
+    "figure.pdf": {
+      "sha256": "1d271d72ef493518022cf01eab5c24418bdf464cc4ec5cae9f2c336f46e4d22a",
+      "bytes": 29624
+    },
+    "figure.manifest.json": {
+      "sha256": "ceb6e47b9f005bd9e9c5d637820e26c194ec0cd32ab838b154b46ece7f2e342c",
+      "bytes": 432
+    }
+  },
+  "dependencies": [
+    "matplotlib>=3.8",
+    "pandas>=2.1",
+    "numpy>=1.26"
+  ],
+  "project_independent": true,
+  "independence_status": "verified_outside_package_root",
+  "project_root_env_required": false,
+  "absolute_project_paths": false,
+  "metadata": {
+    "figure_type": "complex multi-panel Figure",
+    "data_status": "illustrative practice data",
+    "nature_skill_runtime_dependency": false
+  },
+  "verification": {
+    "method": "subprocess_outside_package_root",
+    "environment_variables_removed": [
+      "SCIENTIFIC_FIGURE_STUDIO_ROOT",
+      "PYTHONPATH"
+    ],
+    "expected_outputs": [
+      "figure.png",
+      "figure.svg",
+      "figure.pdf"
+    ],
+    "python": "3.11"
+  }
+}

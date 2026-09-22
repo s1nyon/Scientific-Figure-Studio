@@ -1,11 +1,37 @@
 # Skills 使用说明
 
+## 统一 Nature-first 入口
+
+普通科研数据图、论文级 Figure 和数据图表组合图，优先显式调用原版 $nature-figure，
+再调用项目统一入口 $modern-scientific-figure。Nature Skill 负责 Figure Contract、构图、
+证据层级和质量审查指导；项目入口负责数据检查、专业 Skill 分流、Python renderer 执行、
+实际图片查看和源码交付。不要先运行固定模板再补写 Nature 记录。
+
+    $nature-figure
+    $modern-scientific-figure
+
+    请使用 Python。根据 examples/data/convergence_practice.csv 设计一张练习收敛 Figure。
+    先写出一条可验证结论、面板证据关系和 QA 风险，再编写独立 plot.py/config.py；
+    实际导出 PNG、SVG、PDF，打开 PNG，修复问题后交付完整源码、manifest 和 Design Receipt。
+
+如果任务主要是流程图、模型架构、几何、三维或网络结构，使用 $scientific-illustration；
+如果同时包含量化图表，先让 $nature-figure 设计 Figure 的证据层级，再由专项 Skill 绘制结构面板。
+
+Python 任务执行器只负责确定性运行和交付检查：
+
+    python tools/run_figure_task.py --renderer path/to/plot.py --brief path/to/figure_brief.json --output-dir path/to/output --data-path path/to/data.csv --manifest-path path/to/data_manifest.json --nature-skill-root $HOME/.codex/skills/nature-figure
+
+它不能代替 Codex Agent 调用 Nature Skill。design_receipt.json 会明确记录这一边界；runner 会先在
+独立 staging 目录完成输入检查、renderer、输出验证和完整性记录，再提交到工作区。候选版本可用
+`--version-status candidate` 创建，认可作品只能通过显式的 `tools/manage_figure_work.py accept`
+提升，普通 `--overwrite` 不会改写 candidate/accepted 目录。
 项目 Skills 位于 `.agents/skills/`。在支持项目级 Skills 的 Codex 环境中，可以显式调用 `$skill-name`；也可以直接描述任务，让系统根据 `description` 自动发现。显式调用示例：
 
 ```text
 $modern-scientific-figure
 
-请读取 data/results.csv，绘制适合数学建模论文的预测结果图。先检查字段和单位，检索个人图库中相关案例，使用项目统一视觉系统，并交付完整 Python 源码、config.py、data_manifest.json、PNG、SVG 和 PDF。
+请读取 data/results.csv，绘制适合数学建模论文的预测结果图。先检查字段和单位，按图表类型检索个人图库中少量相关案例；
+若指定参考图先实际打开并把视觉参考与代码参考分开记录，使用项目统一视觉系统，并交付完整 Python 源码、config.py、data_manifest.json、PNG、SVG 和 PDF。
 ```
 
 算法专项：
@@ -29,7 +55,8 @@ $figure-design-review
 ```text
 $figure-reference-manager
 
-请扫描 figure_gallery/00_inbox，分析能够实际打开的新增科研图片，生成设计档案并更新索引。保留原图，不编造用户评价；无法视觉分析的项目要标记为未验证。
+请扫描 figure_gallery/00_inbox，分析能够实际打开的新增科研图片，生成包含图表类型、构图、配色、字体层次、信息层级、留白、
+可借鉴方法和适用场景的设计档案并更新索引。保留原图，不编造用户评价；无法实际打开的项目要保持未分析，内容变化要保留历史并标记 stale。
 ```
 
 结构化科研插图：

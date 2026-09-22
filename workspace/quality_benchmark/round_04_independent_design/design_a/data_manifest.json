@@ -1,0 +1,75 @@
+{
+  "manifest_version": "1.0",
+  "figure_id": "round_04_design_a_minimal",
+  "data_status": "illustrative practice data",
+  "data_file": "../../../../examples/data/convergence_practice.csv",
+  "data_source": "Original repository exercise data; no historical figure source was used.",
+  "description": "Three illustrative algorithm trajectories over ten iterations; this is a practice dataset, not an experimental result.",
+  "fields": {
+    "algorithm": "Algorithm label: Proposed, Adaptive, or Baseline",
+    "iteration": "Integer iteration index from 1 to 10",
+    "objective": "Objective value to minimize; no physical unit is supplied"
+  },
+  "objective": {
+    "name": "objective",
+    "direction": "minimize",
+    "lower_is_better": true,
+    "unit": "unspecified practice unit"
+  },
+  "derived_quantities": {
+    "historical_best": "Cumulative minimum of objective within each algorithm trajectory.",
+    "delta_objective": "objective[t] - objective[t-1] for consecutive iterations; negative means a decrease under minimization, positive means a temporary increase.",
+    "net_change": "objective[last] - objective[first]; negative means the displayed trajectory ends below its starting value."
+  },
+  "transformations": [
+    "Rows are sorted by algorithm and iteration for deterministic rendering only.",
+    "No observations are removed, smoothed, interpolated, normalized, aggregated, or winsorized.",
+    "Historical best is computed only for the quiet open-marker annotation.",
+    "Adjacent changes and net changes are documented but not drawn as extra panels in Design A."
+  ],
+  "coverage": {
+    "algorithms": ["Proposed", "Adaptive", "Baseline"],
+    "iterations_per_algorithm": 10,
+    "replicates": 0,
+    "missing_values": false,
+    "duplicate_algorithm_iteration_pairs": false,
+    "uncertainty_available": false
+  },
+  "scientific_scope": {
+    "supported": [
+      "Observed current objective trajectories over the displayed ten iterations",
+      "Displayed terminal objective ordering",
+      "The single Proposed current-versus-running-best divergence"
+    ],
+    "not_supported": [
+      "Convergence speed or iterations-to-threshold comparisons",
+      "Stability, robustness, or general algorithm superiority",
+      "Statistical significance, confidence intervals, error bars, or uncertainty bands",
+      "Claims about real experiments or competition results"
+    ]
+  },
+  "nature_skill": {
+    "skill": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/common-patterns.md",
+      "references/nature-2026-observations.md",
+      "references/qa-contract.md"
+    ]
+  },
+  "reference_control": {
+    "reference_path": "02_algorithm/nature_optimization_fig3.png",
+    "reference_used_for": ["short titles", "direct labels", "restrained local emphasis"],
+    "reference_data_reused": false,
+    "reference_image_embedded": false,
+    "personal_gallery_favorite_changed": false
+  },
+  "design_control": {
+    "round": 4,
+    "option": "A",
+    "historical_figure_inputs_used_before_draft": false,
+    "public_library_modified": false
+  }
+}

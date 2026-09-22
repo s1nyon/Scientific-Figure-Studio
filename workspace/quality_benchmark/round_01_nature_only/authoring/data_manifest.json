@@ -1,0 +1,42 @@
+{
+  "figure_id": "round_01_nature_only",
+  "data_status": "illustrative practice data",
+  "data_file": "../../../../examples/data/convergence_practice.csv",
+  "source_description": "Repository-provided convergence practice table; not a real experiment or competition result.",
+  "fields": {
+    "algorithm": "Algorithm label",
+    "iteration": "Iteration index (count)",
+    "objective": "Current objective value in arbitrary practice units"
+  },
+  "units": {
+    "algorithm": "categorical label",
+    "iteration": "count",
+    "objective": "arbitrary practice unit"
+  },
+  "algorithms": ["Proposed", "Adaptive", "Baseline"],
+  "rows_per_algorithm": 10,
+  "objective_direction": "minimize",
+  "transformations": [
+    "Rows are sorted by algorithm and iteration for rendering only; source values are not changed.",
+    "Historical best is the cumulative minimum of objective within each algorithm.",
+    "Stepwise update is objective[t] - objective[t-1] within each algorithm; negative values indicate improvement under minimization.",
+    "Net change is objective at iteration 10 minus objective at iteration 1; endpoint values remain in the original practice-unit scale."
+  ],
+  "uncertainty": "No replicate runs, seeds, or error estimates are provided; no uncertainty band, interval, or statistical test is shown.",
+  "unsupported_claims": [
+    "algorithm superiority or generalization",
+    "formal competition result",
+    "statistical significance",
+    "confidence or prediction intervals",
+    "causal explanation for the trajectory shapes"
+  ],
+  "validation": {
+    "expected_columns": ["algorithm", "iteration", "objective"],
+    "missing_values": 0,
+    "duplicate_algorithm_iteration_pairs": 0,
+    "finite_numeric_values": true,
+    "iteration_range": [1, 10],
+    "objective_range": [0.9, 2.4]
+  },
+  "nature_skill_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1"
+}

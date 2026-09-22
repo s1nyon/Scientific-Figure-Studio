@@ -1,0 +1,19 @@
+{
+  "task": "Independently reproduce a small algorithm convergence chart.",
+  "data_sources": ["convergence_practice.csv"],
+  "fields": {
+    "iteration": "iteration index",
+    "objective": "objective value",
+    "algorithm": "method label"
+  },
+  "units": {"iteration": "count", "objective": "practice unit"},
+  "claim": "The supplied illustrative trajectories decrease over the displayed iterations.",
+  "evidence_panels": [{"id": "a", "role": "hero convergence evidence"}],
+  "archetype": "quantitative grid",
+  "backend": "Python",
+  "task_mode": "ordinary",
+  "nature_references": [],
+  "renderer": "plot.py",
+  "review_risks": ["illustrative practice data; no formal result or uncertainty estimate"],
+  "scientific_unknowns": ["formal experiment design and replicate variability are unknown"]
+}

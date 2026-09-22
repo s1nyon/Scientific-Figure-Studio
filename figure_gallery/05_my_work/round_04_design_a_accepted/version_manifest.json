@@ -1,0 +1,139 @@
+{
+  "schema_version": "0.2",
+  "run_id": "round_04_design_a_accepted",
+  "created_utc": "2026-09-22T12:06:08.219248+00:00",
+  "status": "accepted",
+  "parent_run": "candidate",
+  "source_hashes": {
+    "plot.py": "764335e9a090e417fd7ab60d250d63750994fb11358c50829a0c24724096c6b2",
+    "figure_brief.json": "8cf36a09185931015201ce30f9447c87f4cc0a90c099e2aabe0d15782ed5b9e8",
+    "config.py": "7496238ab72b21077dc10a927107dfe530836d5cb06495616943a18c26ff2743",
+    "data_manifest.json": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+    "convergence_practice.csv": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "nature_context.json": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+    "reproduction_manifest.json": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+    "accepted_reference_case.md": "3720e19290d437367fdfc70cccf4bd6108f3a130c11a1f0e07e4a312a376dd74"
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "764335e9a090e417fd7ab60d250d63750994fb11358c50829a0c24724096c6b2",
+      "bytes": 9007
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "8cf36a09185931015201ce30f9447c87f4cc0a90c099e2aabe0d15782ed5b9e8",
+      "bytes": 3188
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "7496238ab72b21077dc10a927107dfe530836d5cb06495616943a18c26ff2743",
+      "bytes": 1841
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+      "bytes": 3318
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+      "bytes": 882
+    },
+    "accepted_reference_case.md": {
+      "path": "accepted_reference_case.md",
+      "sha256": "3720e19290d437367fdfc70cccf4bd6108f3a130c11a1f0e07e4a312a376dd74",
+      "bytes": 3037
+    }
+  },
+  "outputs": {
+    "png": {
+      "path": "round_04_design_a_minimal.png",
+      "sha256": "3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762",
+      "bytes": 326118
+    },
+    "svg": {
+      "path": "round_04_design_a_minimal.svg",
+      "sha256": "b7ece70bf02d02eda72bc466f061259f905e91fc6997706ea73b75f7f15b7de7",
+      "bytes": 63224
+    },
+    "pdf": {
+      "path": "round_04_design_a_minimal.pdf",
+      "sha256": "69cf61427e1be6b253e6ebfad5053c324bf406513b4740d8c6544ab50b55e8ea",
+      "bytes": 27574
+    }
+  },
+  "files": {
+    "source:plot.py": {
+      "path": "plot.py",
+      "sha256": "764335e9a090e417fd7ab60d250d63750994fb11358c50829a0c24724096c6b2",
+      "bytes": 9007
+    },
+    "source:figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "8cf36a09185931015201ce30f9447c87f4cc0a90c099e2aabe0d15782ed5b9e8",
+      "bytes": 3188
+    },
+    "source:config.py": {
+      "path": "config.py",
+      "sha256": "7496238ab72b21077dc10a927107dfe530836d5cb06495616943a18c26ff2743",
+      "bytes": 1841
+    },
+    "source:data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "037197005f592be68d6eff4ba5d7e908b55d6b21e438d2e21fc302d7396e94d6",
+      "bytes": 3318
+    },
+    "source:convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "source:nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "ef7cdefa7b4d1c8a34e869114b2250d6fb6ae59d83d67d0ed8e620a78a26cc38",
+      "bytes": 1884
+    },
+    "source:reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "5b456c72fe8738478e1da37f331760831305917c62c153bfac25199a2addbb24",
+      "bytes": 882
+    },
+    "source:accepted_reference_case.md": {
+      "path": "accepted_reference_case.md",
+      "sha256": "3720e19290d437367fdfc70cccf4bd6108f3a130c11a1f0e07e4a312a376dd74",
+      "bytes": 3037
+    },
+    "output:png": {
+      "path": "round_04_design_a_minimal.png",
+      "sha256": "3cc302509503b0f80ceebb15bb021c8dcfc06808e2c7059b69db5a6e06b8f762",
+      "bytes": 326118
+    },
+    "output:svg": {
+      "path": "round_04_design_a_minimal.svg",
+      "sha256": "b7ece70bf02d02eda72bc466f061259f905e91fc6997706ea73b75f7f15b7de7",
+      "bytes": 63224
+    },
+    "output:pdf": {
+      "path": "round_04_design_a_minimal.pdf",
+      "sha256": "69cf61427e1be6b253e6ebfad5053c324bf406513b4740d8c6544ab50b55e8ea",
+      "bytes": 27574
+    }
+  },
+  "metadata": {
+    "task_manifest": "task_manifest.json",
+    "design_receipt": "design_receipt.json"
+  },
+  "accepted_utc": "2026-09-22T12:06:20.818141+00:00",
+  "user_note": "User explicitly accepted Round 04 Design A as a personal Accepted Reference Case for future algorithm-convergence figure retrieval. This records visual design value only; it is not a top-journal certification, a scientific-result validation, a universal template, or a global aesthetic preference."
+}

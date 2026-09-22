@@ -78,6 +78,8 @@ def test_gallery_keeps_manual_evaluation_and_requires_explicit_agent_analysis(tm
     analyzed = index.record_agent_analysis(
         "00_inbox/sample.png",
         {"layout": "single panel", "uncertainties": ["font is unknown"]},
+        viewed=True,
+        view_receipt={"method": "test_fixture_view", "path": "00_inbox/sample.png"},
     )
     assert analyzed.visual_analysis_status == "agent_reviewed"
     assert analyzed.user_evaluation == "manual note that must survive"

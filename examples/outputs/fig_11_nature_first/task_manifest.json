@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T07:42:26.389093+00:00",
+  "backend": "Python",
+  "renderer": "examples/outputs/fig_11_nature_first/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": "nature_context.json",
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "827b5c06350eeacbbb81510cd7d2c12fdb4a09eaf199801251c07e6c0521544b",
+      "bytes": 1932
+    },
+    "data": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "8835b790ac4fdcfceb918092c3fefad52be14f5734c395ced6f656c0c50a11fe",
+      "bytes": 954
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "6f3601efa56b2c92ee8786ce46c3e027dd41a8ae902428b6d12ca93d48bef1c5",
+      "bytes": 11866
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "827b5c06350eeacbbb81510cd7d2c12fdb4a09eaf199801251c07e6c0521544b",
+      "bytes": 1932
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "318296fa58c71f132087df7004795a144a7062d6f8fa322ed407fe0892742494",
+      "bytes": 1048
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "8835b790ac4fdcfceb918092c3fefad52be14f5734c395ced6f656c0c50a11fe",
+      "bytes": 954
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+      "bytes": 1486
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  }
+}

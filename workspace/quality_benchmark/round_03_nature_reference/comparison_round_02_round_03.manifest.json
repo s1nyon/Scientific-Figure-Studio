@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T11:23:57.442610+00:00",
+  "before": {
+    "size_px": [
+      4320,
+      2760
+    ],
+    "aspect_ratio": 1.56521739,
+    "mode": "RGBA",
+    "sha256": "32d32070418e2f703420886f7b1808e9211b94544d6ecd8f577d996c044c39e4"
+  },
+  "after": {
+    "size_px": [
+      4320,
+      2580
+    ],
+    "aspect_ratio": 1.6744186,
+    "mode": "RGBA",
+    "sha256": "87e59cfe3e6d6b474b6f9633f85795e183b2da818fb77f6154f5493edfe0a167"
+  },
+  "preserves_native_aspect": true,
+  "output": "comparison_round_02_round_03.png"
+}

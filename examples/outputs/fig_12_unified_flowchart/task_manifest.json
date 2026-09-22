@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T07:42:37.761159+00:00",
+  "backend": "Python",
+  "renderer": "templates/illustration/flowchart/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": null,
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "f8e9726080b3b2a419312a49a1ad55fb7793201c49c93527df8fdfb9484cce45",
+      "bytes": 1295
+    },
+    "data": {
+      "path": "illustration_flowchart.json",
+      "sha256": "4f3d6d7495c544b31bc28b671b48e8775de44a3fc501445384cba2cddcf162dc",
+      "bytes": 1079
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "fbe997561f0bf866c836eae2d5abad98181228f2a60fc943574d867cfa3de477",
+      "bytes": 813
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "d9344d39c56232771c67ab78dd2a376a39559f9d9545e7beed3209399691345e",
+      "bytes": 5514
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "f8e9726080b3b2a419312a49a1ad55fb7793201c49c93527df8fdfb9484cce45",
+      "bytes": 1295
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "3d624e8ea1be715ef9bf9ae6d26e11d36295d1e081150bc30ad33d7d611f7ae5",
+      "bytes": 1307
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "fbe997561f0bf866c836eae2d5abad98181228f2a60fc943574d867cfa3de477",
+      "bytes": 813
+    },
+    "illustration_flowchart.json": {
+      "path": "illustration_flowchart.json",
+      "sha256": "4f3d6d7495c544b31bc28b671b48e8775de44a3fc501445384cba2cddcf162dc",
+      "bytes": 1079
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  }
+}

@@ -27,6 +27,15 @@ def test_export_figure_refuses_implicit_overwrite(tmp_path):
     plt.close(fig)
 
 
+def test_export_figure_normalises_svg_line_end_whitespace(tmp_path):
+    fig, ax = plt.subplots()
+    ax.plot([0, 1], [0, 1])
+    outputs = export_figure(fig, tmp_path / "figure", formats=("svg",))
+    svg_lines = outputs["svg"].read_text(encoding="utf-8").splitlines()
+    assert all(line == line.rstrip() for line in svg_lines)
+    plt.close(fig)
+
+
 def test_validate_artifacts_reports_real_metadata(tmp_path):
     fig, ax = plt.subplots(figsize=(3.0, 2.0))
     ax.plot([0, 1], [0, 1])

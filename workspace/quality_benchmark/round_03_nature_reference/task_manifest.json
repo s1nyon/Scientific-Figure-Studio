@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.2",
+  "created_utc": "2026-09-22T11:23:29.674731+00:00",
+  "backend": "Python",
+  "renderer": "workspace/quality_benchmark/round_03_nature_reference/authoring/plot.py",
+  "renderer_source": "plot.py",
+  "figure_brief": "figure_brief.json",
+  "nature_context": "nature_context.json",
+  "reproduction_manifest": "reproduction_manifest.json",
+  "inputs": {
+    "figure_brief": {
+      "path": "figure_brief.json",
+      "sha256": "d24cc61c74e0f869e3336bbbadf35bc9e99bea23d1e6befd07365b8aae3553f2",
+      "bytes": 6025
+    },
+    "data": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "manifest": {
+      "path": "data_manifest.json",
+      "sha256": "04e4dc13899cb4dfde11d46110ce7f2ff6d89068f4e0fb7269d0b821be95c5bd",
+      "bytes": 3766
+    }
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "bd8ea995427212e0f1e1ef218921e6bc3a6238d7490b51f69d238bbc5f6bfa19",
+      "bytes": 19181
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "d24cc61c74e0f869e3336bbbadf35bc9e99bea23d1e6befd07365b8aae3553f2",
+      "bytes": 6025
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "abcd36981f580ba860638e4a93f171e64aa04dabf364450f5c9118fdd2c1cd6a",
+      "bytes": 2567
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "04e4dc13899cb4dfde11d46110ce7f2ff6d89068f4e0fb7269d0b821be95c5bd",
+      "bytes": 3766
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+      "bytes": 513
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+      "bytes": 1486
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "b99d1ca876953c9ca695c27d2ff5c3df94a3a5ef06c83f19f14c6ea3c734f6f1",
+      "bytes": 796
+    }
+  },
+  "outputs": {
+    "pdf": "figure.pdf",
+    "png": "figure.png",
+    "svg": "figure.svg"
+  },
+  "references": {
+    "gallery": [
+      {
+        "relative_path": "02_algorithm/nature_optimization_fig3.png",
+        "sha256": "d0a97477b54e31f397e7373f5a6d613af6cf0fe11d8eb1bdc72849066463be79",
+        "favorite": false,
+        "chart_type": "multi-panel algorithm benchmark figure",
+        "application": "algorithm comparison and convergence benchmarking",
+        "visual_analysis_status": "agent_reviewed"
+      }
+    ],
+    "code": [
+      "figure_studio/style.py",
+      "figure_studio/palettes.py",
+      "figure_studio/analysis.py"
+    ],
+    "code_records": [
+      {
+        "reference": "figure_studio/style.py",
+        "path": "figure_studio/style.py",
+        "sha256": "68a1be09d8529a915f35f8a9b3982cfcbe383af42a7ff4fef020dc74e23272e7",
+        "bytes": 2618
+      },
+      {
+        "reference": "figure_studio/palettes.py",
+        "path": "figure_studio/palettes.py",
+        "sha256": "57c1cf94b1aeaced5139d7b2854a608f76b7d26f3115ff8d6dfa41a51627dc66",
+        "bytes": 3444
+      },
+      {
+        "reference": "figure_studio/analysis.py",
+        "path": "figure_studio/analysis.py",
+        "sha256": "35e54c94946b85de30db717fd0d5e934e4285eb0f34ed7689a67accded276c39",
+        "bytes": 2099
+      }
+    ]
+  },
+  "version": {
+    "status": "workspace",
+    "run_id": "round_03_nature_reference",
+    "parent_run": "workspace/quality_benchmark/round_02_structure_redesign"
+  }
+}

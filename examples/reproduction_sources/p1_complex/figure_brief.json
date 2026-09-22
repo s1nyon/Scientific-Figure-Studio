@@ -1,0 +1,22 @@
+{
+  "task": "Independently reproduce a two-panel evidence Figure.",
+  "data_sources": ["convergence_practice.csv"],
+  "fields": {
+    "iteration": "iteration index",
+    "objective": "objective value",
+    "algorithm": "method label"
+  },
+  "units": {"iteration": "count", "objective": "practice unit"},
+  "claim": "The displayed practice trajectories and their derived endpoint changes are visible without adding uncertainty claims.",
+  "evidence_panels": [
+    {"id": "a", "role": "hero observed and historical-best trajectories"},
+    {"id": "b", "role": "derived endpoint evidence"}
+  ],
+  "archetype": "quantitative grid",
+  "backend": "Python",
+  "task_mode": "formal",
+  "nature_references": [],
+  "renderer": "plot.py",
+  "review_risks": ["illustrative practice data; no replicate runs or uncertainty basis"],
+  "scientific_unknowns": ["formal experiment design is unknown"]
+}

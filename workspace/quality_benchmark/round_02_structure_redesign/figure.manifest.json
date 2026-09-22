@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-09-22T10:51:55.639946+00:00",
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "dpi": 600,
+  "figure_size_inches": [
+    7.2,
+    4.6
+  ],
+  "provenance": {
+    "data_status": "illustrative practice data",
+    "data_file": "<external-input>/convergence_practice.csv",
+    "resolved_data_path": "<external-input>/convergence_practice.csv",
+    "data_sha256": "d0afc3f1920f0e5327c43ff2d5a08c3e7c220692106e7762e792d54ac4d5a459",
+    "fields": {
+      "algorithm": "Algorithm label: Proposed, Adaptive, or Baseline",
+      "iteration": "Integer iteration index from 1 to 10",
+      "objective": "Objective value to minimize; no physical unit is supplied"
+    },
+    "units": {},
+    "transformations": [
+      "Rows are sorted by algorithm and iteration for deterministic rendering only.",
+      "No observations are removed, smoothed, interpolated, normalized, aggregated, or winsorized.",
+      "Historical best is computed as the direction-aware cumulative minimum for annotation only.",
+      "Stepwise change is computed from adjacent raw objective values and is shown with its signed value."
+    ],
+    "uncertainty": null,
+    "unsupported_claims": [],
+    "nature_context_file": "nature_context.json",
+    "nature_commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "nature_references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "project_backend": "Python",
+    "upstream_r_track_preserved": true,
+    "figure_design": {
+      "hero_panel": "a",
+      "support_panels": [
+        "b"
+      ],
+      "current_vs_historical_best": "local divergence only",
+      "endpoint_summary_panel": false,
+      "delta_heatmap": false,
+      "uncertainty_band": false
+    }
+  },
+  "outputs": {
+    "png": "figure.png",
+    "svg": "figure.svg",
+    "pdf": "figure.pdf"
+  }
+}

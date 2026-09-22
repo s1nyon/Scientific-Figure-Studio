@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.2",
+  "run_id": "nature_gallery_task",
+  "created_utc": "2026-09-22T09:32:35.968247+00:00",
+  "status": "workspace",
+  "parent_run": null,
+  "source_hashes": {
+    "plot.py": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+    "figure_brief.json": "f64d43648b6c8b5d12c0e6b6a98d9d1c64d50cb42a0b1184ef5ef74043b26afa",
+    "config.py": "0e886f34e36f1137541a80366302c1dfa47b34552ced2f7983479844c7298469",
+    "data_manifest.json": "0c3523593ebd8789b5e0688b0619ab6f5b2adfce3c0ecd3658028f4eff959bf9",
+    "convergence_practice.csv": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+    "nature_context.json": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+    "reproduction_manifest.json": "a32dfbba78b15444817c8898a7c687b4d18284debdce5c5c09d5c30fba200b22"
+  },
+  "source_files": {
+    "plot.py": {
+      "path": "plot.py",
+      "sha256": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+      "bytes": 6676
+    },
+    "figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "f64d43648b6c8b5d12c0e6b6a98d9d1c64d50cb42a0b1184ef5ef74043b26afa",
+      "bytes": 2114
+    },
+    "config.py": {
+      "path": "config.py",
+      "sha256": "0e886f34e36f1137541a80366302c1dfa47b34552ced2f7983479844c7298469",
+      "bytes": 368
+    },
+    "data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "0c3523593ebd8789b5e0688b0619ab6f5b2adfce3c0ecd3658028f4eff959bf9",
+      "bytes": 655
+    },
+    "convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+      "bytes": 270
+    },
+    "nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+      "bytes": 1486
+    },
+    "reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "a32dfbba78b15444817c8898a7c687b4d18284debdce5c5c09d5c30fba200b22",
+      "bytes": 796
+    }
+  },
+  "outputs": {
+    "png": {
+      "path": "figure.png",
+      "sha256": "514faa6b86a43643ae37114a5c6e5e8abd7a06b21dd4fc5d939c11fd107b0a38",
+      "bytes": 113178
+    },
+    "svg": {
+      "path": "figure.svg",
+      "sha256": "313fff46bdec0ecdc36da0d68fdeceb1bc4b5a2fb0ac4eba40bfba084e4db7fd",
+      "bytes": 77814
+    },
+    "pdf": {
+      "path": "figure.pdf",
+      "sha256": "18ac667188e3fb9465a126d7a67c6cb366451656bba6b82a61655ae4eda7aa26",
+      "bytes": 29624
+    }
+  },
+  "files": {
+    "source:plot.py": {
+      "path": "plot.py",
+      "sha256": "ca480c55d4cd16acd1d17a90a087eb8305e503c4be7630c3ca77c1f699191ad2",
+      "bytes": 6676
+    },
+    "source:figure_brief.json": {
+      "path": "figure_brief.json",
+      "sha256": "f64d43648b6c8b5d12c0e6b6a98d9d1c64d50cb42a0b1184ef5ef74043b26afa",
+      "bytes": 2114
+    },
+    "source:config.py": {
+      "path": "config.py",
+      "sha256": "0e886f34e36f1137541a80366302c1dfa47b34552ced2f7983479844c7298469",
+      "bytes": 368
+    },
+    "source:data_manifest.json": {
+      "path": "data_manifest.json",
+      "sha256": "0c3523593ebd8789b5e0688b0619ab6f5b2adfce3c0ecd3658028f4eff959bf9",
+      "bytes": 655
+    },
+    "source:convergence_practice.csv": {
+      "path": "convergence_practice.csv",
+      "sha256": "cba9abeab5fdfb0068a1290604acfd08dbd6a9804bf6e629c95f6d4f3b5a7128",
+      "bytes": 270
+    },
+    "source:nature_context.json": {
+      "path": "nature_context.json",
+      "sha256": "f2f6d5afde9ba2f53dbb1fe47c7f0d6b786c69563d4d167cde4f8ec43e20312d",
+      "bytes": 1486
+    },
+    "source:reproduction_manifest.json": {
+      "path": "reproduction_manifest.json",
+      "sha256": "a32dfbba78b15444817c8898a7c687b4d18284debdce5c5c09d5c30fba200b22",
+      "bytes": 796
+    },
+    "output:png": {
+      "path": "figure.png",
+      "sha256": "514faa6b86a43643ae37114a5c6e5e8abd7a06b21dd4fc5d939c11fd107b0a38",
+      "bytes": 113178
+    },
+    "output:svg": {
+      "path": "figure.svg",
+      "sha256": "313fff46bdec0ecdc36da0d68fdeceb1bc4b5a2fb0ac4eba40bfba084e4db7fd",
+      "bytes": 77814
+    },
+    "output:pdf": {
+      "path": "figure.pdf",
+      "sha256": "18ac667188e3fb9465a126d7a67c6cb366451656bba6b82a61655ae4eda7aa26",
+      "bytes": 29624
+    }
+  },
+  "metadata": {
+    "task_manifest": "task_manifest.json",
+    "design_receipt": "design_receipt.json"
+  }
+}

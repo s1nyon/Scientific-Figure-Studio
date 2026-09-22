@@ -1,0 +1,74 @@
+{
+  "manifest_version": "1.0",
+  "figure_id": "round_02_structure_redesign",
+  "data_status": "illustrative practice data",
+  "data_file": "convergence_practice.csv",
+  "data_source": "Repository exercise data carried forward unchanged from round 01",
+  "description": "Three illustrative algorithm trajectories over ten iterations; this is a practice dataset, not an experimental result.",
+  "fields": {
+    "algorithm": "Algorithm label: Proposed, Adaptive, or Baseline",
+    "iteration": "Integer iteration index from 1 to 10",
+    "objective": "Objective value to minimize; no physical unit is supplied"
+  },
+  "objective": {
+    "name": "objective",
+    "direction": "minimize",
+    "lower_is_better": true,
+    "unit": "unspecified practice unit"
+  },
+  "derived_quantities": {
+    "historical_best": "Cumulative minimum of objective within each algorithm trajectory.",
+    "delta_objective": "objective[t] - objective[t-1] for consecutive iterations; negative means a decrease under minimization, positive means a temporary increase.",
+    "net_change": "objective[last] - objective[first]; negative means the displayed trajectory ends below its starting value."
+  },
+  "transformations": [
+    "Rows are sorted by algorithm and iteration for deterministic rendering only.",
+    "No observations are removed, smoothed, interpolated, normalized, aggregated, or winsorized.",
+    "Historical best is computed as the direction-aware cumulative minimum for annotation only.",
+    "Stepwise change is computed from adjacent raw objective values and is shown with its signed value."
+  ],
+  "coverage": {
+    "algorithms": [
+      "Proposed",
+      "Adaptive",
+      "Baseline"
+    ],
+    "iterations_per_algorithm": 10,
+    "replicates": 0,
+    "missing_values": false,
+    "duplicate_algorithm_iteration_pairs": false,
+    "uncertainty_available": false
+  },
+  "scientific_scope": {
+    "supported": [
+      "Within the displayed illustrative trajectories, all three algorithms end below their displayed starting values.",
+      "The Proposed trajectory has one positive step at iteration 6 and ends at the lowest displayed terminal objective.",
+      "The signed update plot separates overall change from the local non-monotone step."
+    ],
+    "not_supported": [
+      "Convergence speed or iterations-to-threshold comparisons",
+      "Stability or robustness claims",
+      "General algorithm superiority or generalization",
+      "Statistical significance, confidence intervals, error bars, or uncertainty bands",
+      "Claims about real experiments or competition results"
+    ]
+  },
+  "nature_skill": {
+    "skill": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "references/figure-contract.md",
+      "references/design-theory.md",
+      "references/common-patterns.md",
+      "references/nature-2026-observations.md",
+      "references/qa-contract.md"
+    ]
+  },
+  "design_control": {
+    "round": 2,
+    "comparison_baseline": "workspace/quality_benchmark/round_01_nature_only/figure.png",
+    "external_reference_images_used": false,
+    "personal_gallery_used": false,
+    "public_library_modified": false
+  }
+}

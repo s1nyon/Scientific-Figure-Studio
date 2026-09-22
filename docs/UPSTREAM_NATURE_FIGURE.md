@@ -43,7 +43,9 @@ primitives 和自动测试。
 `figure_studio.nature_adapter` 只接受通过完整树校验的安装目录，会读取上游
 `SKILL.md`、`references/figure-contract.md`、`references/common-patterns.md` 和
 `references/qa-contract.md`，并把 commit、reference 哈希和适配器版本写入
-`nature_context.json`。这证明原版内容在生成时被实际读取并参与适配。
+`nature_context.json`。这证明原版文件在生成时被实际读取并参与适配记录；它本身
+还不能证明上游设计规则已经改变了图形结构或绘图决策，后者需要真实的
+`$nature-figure` 任务调用和可追溯的 Figure Design Receipt。
 
 `templates/nature_adapter/plot.py` 是项目适配示例；它不会修改上游文件，也不会把上游正文
 复制到仓库。`tools/generate_phase2_examples.py` 会把模板源码、配置、manifest、练习输入和

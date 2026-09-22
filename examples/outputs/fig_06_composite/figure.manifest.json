@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-09-22T04:17:23.248576+00:00",
+  "created_utc": "2026-09-22T09:06:09.296496+00:00",
   "formats": [
     "png",
     "svg",
@@ -13,7 +13,7 @@
   "provenance": {
     "data_status": "illustrative practice data",
     "data_file": "examples/data/composite_practice.csv",
-    "resolved_data_path": "E:\\code\\Scientific_Figure_Studio\\examples\\data\\composite_practice.csv",
+    "resolved_data_path": "examples/data/composite_practice.csv",
     "data_sha256": "f1c89484eaf0b55b86c899a939e7861a7715ba47dc29119211cf4955d5d3f13c",
     "fields": {},
     "units": {

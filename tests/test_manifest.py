@@ -76,3 +76,19 @@ def test_manifest_reports_hash_and_practice_label(tmp_path: Path):
     assert loaded.objective_direction == "maximize"
     assert provenance_data_label(loaded.data_status)
     assert provenance_data_label("formal input data") is None
+
+
+def test_data_provenance_redacts_external_absolute_paths(tmp_path: Path):
+    from figure_studio.manifest import build_data_provenance, load_manifest
+
+    data_path = tmp_path / "formal.csv"
+    data_path.write_text("x\n1\n", encoding="utf-8")
+    loaded = load_manifest(
+        {"data_status": "formal input data", "data_file": str(data_path)},
+        base_dir=Path.cwd(),
+    )
+
+    provenance = build_data_provenance(loaded)
+
+    assert provenance["data_file"] == "<external-input>/formal.csv"
+    assert provenance["resolved_data_path"] == "<external-input>/formal.csv"

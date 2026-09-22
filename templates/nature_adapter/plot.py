@@ -132,6 +132,7 @@ def main(
     data_path: str | Path | None = None,
     manifest_path: str | Path | None = None,
     skill_root: str | Path | None = None,
+    overwrite: bool = False,
 ):
     """Load verified Nature references, render, and return artifact paths."""
 
@@ -170,7 +171,7 @@ def main(
                 destination / "figure",
                 formats=tuple(CONFIG["output_formats"]),
                 dpi=int(CONFIG["dpi"]),
-                overwrite=True,
+                overwrite=overwrite,
                 provenance=build_data_provenance(
                     manifest,
                     {
@@ -194,6 +195,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--data-path", type=Path, default=None)
     parser.add_argument("--manifest-path", type=Path, default=None)
     parser.add_argument("--skill-root", type=Path, default=None)
+    parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
 
@@ -204,4 +206,5 @@ if __name__ == "__main__":
         data_path=arguments.data_path,
         manifest_path=arguments.manifest_path,
         skill_root=arguments.skill_root,
+        overwrite=arguments.overwrite,
     )

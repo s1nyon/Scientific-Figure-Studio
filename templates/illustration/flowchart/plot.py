@@ -83,18 +83,24 @@ def main(
     output_dir: str | Path | None = None,
     data_path: str | Path | None = None,
     manifest_path: str | Path | None = None,
+    overwrite: bool = False,
 ):
     """Generate flowchart artifacts and return their paths."""
 
     manifest_file = Path(manifest_path) if manifest_path else Path(__file__).with_name(
         "data_manifest.json"
     )
-    manifest = load_manifest(
-        manifest_file,
-        base_dir=manifest_file.parent if manifest_path else PROJECT_ROOT,
-    )
     if data_path is not None:
-        manifest = manifest.with_data_path(data_path, PROJECT_ROOT)
+        raw_manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+        if not isinstance(raw_manifest, dict):
+            raise ValueError("manifest JSON must contain an object")
+        raw_manifest["data_file"] = str(data_path)
+        manifest = load_manifest(raw_manifest, base_dir=PROJECT_ROOT)
+    else:
+        manifest = load_manifest(
+            manifest_file,
+            base_dir=manifest_file.parent if manifest_path else PROJECT_ROOT,
+        )
     source = manifest.data_path
     destination = (
         Path(output_dir)
@@ -112,7 +118,7 @@ def main(
                 destination / "figure",
                 formats=tuple(CONFIG["output_formats"]),
                 dpi=int(CONFIG["dpi"]),
-                overwrite=True,
+                overwrite=overwrite,
                 provenance=build_data_provenance(
                     manifest,
                     {
@@ -133,6 +139,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=None)
     parser.add_argument("--data-path", type=Path, default=None)
     parser.add_argument("--manifest-path", type=Path, default=None)
+    parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
 
@@ -142,4 +149,5 @@ if __name__ == "__main__":
         output_dir=arguments.output_dir,
         data_path=arguments.data_path,
         manifest_path=arguments.manifest_path,
+        overwrite=arguments.overwrite,
     )

@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-09-22T07:42:26.390093+00:00",
+  "backend": "Python",
+  "design": {
+    "claim": "Across the supplied illustrative trajectories, objective values decrease over iterations, while the best-so-far view exposes transient regressions and endpoint improvement.",
+    "archetype": "quantitative grid",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero trajectory evidence",
+        "source": "observed objective and cumulative historical best"
+      },
+      {
+        "id": "b",
+        "role": "supporting endpoint evidence",
+        "source": "derived percentage decrease from first observation to final historical best"
+      }
+    ],
+    "design_requirements": [
+      "Use an asymmetric quantitative grid with panel a as the hero evidence.",
+      "Keep method colors consistent across both panels.",
+      "Use a quieter support panel and direct percentage annotations.",
+      "Show observed trajectories and historical-best trajectories without hiding regressions."
+    ],
+    "renderer": "plot.py",
+    "template_reuse": false
+  },
+  "figure_brief": {
+    "task": "Design a Nature-first convergence evidence Figure from an explicitly labelled practice dataset.",
+    "data_sources": [
+      "convergence_practice.csv"
+    ],
+    "fields": {
+      "algorithm": "Method label",
+      "iteration": "Iteration count",
+      "objective": "Objective value"
+    },
+    "units": {
+      "iteration": "count",
+      "objective": "arbitrary practice unit"
+    },
+    "claim": "Across the supplied illustrative trajectories, objective values decrease over iterations, while the best-so-far view exposes transient regressions and endpoint improvement.",
+    "evidence_panels": [
+      {
+        "id": "a",
+        "role": "hero trajectory evidence",
+        "source": "observed objective and cumulative historical best"
+      },
+      {
+        "id": "b",
+        "role": "supporting endpoint evidence",
+        "source": "derived percentage decrease from first observation to final historical best"
+      }
+    ],
+    "archetype": "quantitative grid",
+    "backend": "Python",
+    "task_mode": "formal",
+    "nature_references": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "renderer": "examples/outputs/fig_11_nature_first/plot.py",
+    "review_risks": [
+      "Practice data must not be presented as a competition result.",
+      "The derived endpoint panel must not be interpreted as uncertainty or statistical significance.",
+      "The legend, panel labels, and practice-data note must remain readable at final size."
+    ],
+    "design_requirements": [
+      "Use an asymmetric quantitative grid with panel a as the hero evidence.",
+      "Keep method colors consistent across both panels.",
+      "Use a quieter support panel and direct percentage annotations.",
+      "Show observed trajectories and historical-best trajectories without hiding regressions."
+    ],
+    "scientific_unknowns": [
+      "No replicate runs, confidence intervals, or formal baseline comparison are supplied."
+    ]
+  },
+  "nature": {
+    "requested": true,
+    "skill_name": "nature-figure",
+    "commit": "1930963cbc004da9ac8e3af7944d4f0a3488d3e1",
+    "references_loaded": [
+      "SKILL.md",
+      "references/figure-contract.md",
+      "references/common-patterns.md",
+      "references/qa-contract.md"
+    ],
+    "reference_sha256": {
+      "SKILL.md": "b4fd8daf9b5b4fa8b048e89234c9afadcca25aa2ee696521380671b286bd5f5f",
+      "references/figure-contract.md": "d989b4ebdb3aeab14c09e261980756abe72a67bc5eb866e1b91cdaac9c5d5201",
+      "references/common-patterns.md": "a2f9d839d4284dc2a8dcac0e5682446db037ff197aa2b4b5e995128eeadf6a1e",
+      "references/qa-contract.md": "5323f234fa5319784ce4b06e4eba1d242ba39a72ce83198f9e2ba126eb500339"
+    },
+    "host_skill_invocation_required": true,
+    "host_skill_invocation_status": "explicitly_loaded_in_codex_session",
+    "adapter_read_is_not_host_invocation_proof": true
+  },
+  "review": {
+    "status": "passed",
+    "notes": [],
+    "visual_review_is_manual": true
+  },
+  "task_manifest": "task_manifest.json"
+}

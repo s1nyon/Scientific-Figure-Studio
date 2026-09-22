@@ -1,0 +1,16 @@
+{
+  "image_type": "multi-panel quantitative practice figure",
+  "composition": "asymmetric two-column layout: a larger trajectory panel on the left and a narrower endpoint-evidence panel on the right, with a/b labels",
+  "color_relationship": "deep blue, teal, and neutral gray methods on white; light grid lines remain subordinate",
+  "font_hierarchy": "bold figure title, panel titles, axis labels, legend, and endpoint labels; exact font family is unknown",
+  "annotation_style": "legend identifies trajectories and numeric labels sit at horizontal-bar endpoints",
+  "information_hierarchy": "observed and historical-best trajectories are primary evidence; derived endpoint change is secondary evidence",
+  "whitespace": "moderate outer margins and clear separation between panels; exact insertion-size readability still depends on target layout",
+  "reusable_methods": [
+    "use an asymmetric hero-plus-summary panel ratio",
+    "keep auxiliary grid lines light",
+    "pair color with direct labels and panel roles"
+  ],
+  "applicable_scenarios": ["algorithm comparison", "convergence evidence"],
+  "do_not_copy": "Do not copy the illustrative data, numerical labels, or scientific claim into a new task."
+}
