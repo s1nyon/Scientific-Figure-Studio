@@ -46,7 +46,7 @@ The plan covers the spec's upstream, manifest, gallery, six-template, illustrati
 def test_pinned_nature_tree_contract_requires_complete_install(tmp_path):
     result = verify_nature_tree(tmp_path / "nature-figure")
     assert result.commit == PINNED_COMMIT
-    assert result.file_count == 29
+    assert result.file_count == 30
 ~~~
 
 Also assert that the adapter rejects a tree whose SKILL.md exists but whose references/assets are missing.
@@ -95,6 +95,7 @@ git commit -m "test: define phase two nature data gallery and illustration contr
 **Files:**
 - Create: tools/install_nature_figure.py
 - Create: tools/verify_nature_figure.py
+- Create: tools/nature_figure_lock.py
 - Create: figure_studio/nature_adapter.py
 - Create: docs/UPSTREAM_NATURE_FIGURE.md
 - Modify: tests/test_nature_integration.py
@@ -107,7 +108,7 @@ git commit -m "test: define phase two nature data gallery and illustration contr
 
 - [ ] Step 1: Implement exact-tree constants and verifier
 
-Store the pinned commit, codeload URL, expected relative paths, and expected SHA-256 hashes in tools/nature_figure_lock.py or a shared figure_studio module. The verifier must reject missing, extra, or hash-mismatched files and return the commit plus file count. It must not inspect or modify project gallery files.
+Store the pinned commit, codeload URL, expected 30 relative paths, and expected SHA-256 hashes in tools/nature_figure_lock.py. The verifier must reject missing, extra, or hash-mismatched files and return the commit plus file count. It must not inspect or modify project gallery files.
 
 - [ ] Step 2: Run integration tests and verify GREEN for local verification fixtures
 
@@ -123,7 +124,7 @@ Read SKILL.md, references/figure-contract.md, references/common-patterns.md, and
 
 - [ ] Step 5: Write the upstream record
 
-Document the fixed URL, commit date, 29-file tree, no-license-file finding, Python dependencies described by upstream files, installation commands for Windows/PowerShell and Python, verification command, and the distinction between local source loading and a Codex session's Skill index refresh.
+Document the fixed URL, commit date, 30-file tree, no-license-file finding, Python dependencies described by upstream files, installation commands for Windows/PowerShell and Python, verification command, and the distinction between local source loading and a Codex session's Skill index refresh.
 
 - [ ] Step 6: Run focused tests and commit
 
@@ -574,4 +575,3 @@ Repeat pytest, Ruff, Skill validation, upstream verification, git diff --check, 
 - [ ] Step 4: Report completion without overstating host behavior
 
 State exactly which functions and commands were executed, which PNGs were opened, which checks passed or failed, and which Codex runtime behaviors remain dependent on restarting or refreshing the Skill index.
-
