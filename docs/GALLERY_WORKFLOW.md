@@ -12,11 +12,13 @@
 python tools/update_gallery.py
 ```
 
-扫描器使用相对路径和 SHA-256 识别新增、变化和重复图片，把程序估计写入 `gallery_index.csv`，把设计笔记写入 `figure_gallery/_generated/gallery_notes/`。空图库会得到空索引，绘图仍使用默认设计系统。
+扫描器使用相对路径和 SHA-256 识别新增、变化和重复图片，把程序估计写入 `gallery_index.csv`，把确定性设计笔记写入 `figure_gallery/_generated/gallery_notes/`。新图片的 `visual_analysis_status` 是 `not_analyzed`；空图库会得到空索引，绘图仍使用默认设计系统。
 
 ## 设计档案与评价
 
 每张图的笔记只能写可观察事实：类型、布局、留白、颜色关系、字体层级、线条和标注方法。不能从图片推断原始数据、科研结论或字体精确名称。来源、版权说明和用户评价由用户补充；用户明确认可后再把图片复制或移动到 favorites，移动操作由用户自行完成。
+
+如果 Agent 实际打开了图片并完成视觉检查，使用 `GalleryIndex.record_agent_analysis()` 显式写入观察。记录保存在 `_generated/gallery_visual_analysis/`，重新扫描不会覆盖它；没有实际查看的图片不能标记为 `agent_reviewed`。
 
 ## 检索
 
@@ -29,7 +31,7 @@ gallery = GalleryIndex("figure_gallery")
 gallery.scan()
 matches = gallery.search(query="convergence", style="algorithm_research")
 for record in matches:
-    print(record.relative_path, record.style_tags)
+    print(record.relative_path, record.style)
 ```
 
 绘图时把检索结果作为设计参考输入，借鉴信息层级和可复现的视觉方法；不要复制参考图中的数据或结论。

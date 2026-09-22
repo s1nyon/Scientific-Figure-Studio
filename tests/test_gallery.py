@@ -81,3 +81,13 @@ def test_gallery_keeps_manual_evaluation_and_requires_explicit_agent_analysis(tm
     )
     assert analyzed.visual_analysis_status == "agent_reviewed"
     assert analyzed.user_evaluation == "manual note that must survive"
+    visual_note = (
+        tmp_path
+        / "_generated"
+        / "gallery_visual_analysis"
+        / f"{analyzed.sha256}.md"
+    )
+    original_visual_note = visual_note.read_text(encoding="utf-8")
+    rescanned_after_review = index.scan()[0]
+    assert rescanned_after_review.visual_analysis_status == "agent_reviewed"
+    assert visual_note.read_text(encoding="utf-8") == original_visual_note

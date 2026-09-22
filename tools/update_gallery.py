@@ -13,6 +13,8 @@ def main() -> int:
     gallery = GalleryIndex(PROJECT_ROOT / "figure_gallery")
     records = gallery.scan()
     print(f"Indexed {len(records)} gallery image(s) at {gallery.index_path}")
+    reviewed = sum(record.visual_analysis_status == "agent_reviewed" for record in records)
+    print(f"Explicit visual reviews: {reviewed}; remaining not analyzed: {len(records) - reviewed}")
     return 0
 
 

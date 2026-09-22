@@ -2,7 +2,8 @@
 
 import csv
 import hashlib
-from collections.abc import Iterable
+import json
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
@@ -32,6 +33,10 @@ CSV_FIELDS = (
     "source",
     "user_evaluation",
     "analysis_date",
+    "visual_analysis_status",
+    "visual_analysis_date",
+    "visual_analysis_by",
+    "visual_analysis_notes",
 )
 
 
@@ -59,6 +64,10 @@ class GalleryRecord:
     source: str = ""
     user_evaluation: str = ""
     analysis_date: str = field(default_factory=lambda: datetime.now(UTC).date().isoformat())
+    visual_analysis_status: str = "not_analyzed"
+    visual_analysis_date: str = ""
+    visual_analysis_by: str = ""
+    visual_analysis_notes: str = ""
 
     def to_row(self) -> dict[str, str]:
         return {
@@ -82,6 +91,10 @@ class GalleryRecord:
             "source": self.source,
             "user_evaluation": self.user_evaluation,
             "analysis_date": self.analysis_date,
+            "visual_analysis_status": self.visual_analysis_status,
+            "visual_analysis_date": self.visual_analysis_date,
+            "visual_analysis_by": self.visual_analysis_by,
+            "visual_analysis_notes": self.visual_analysis_notes,
         }
 
 
@@ -92,6 +105,7 @@ class GalleryIndex:
         self.root = Path(root).expanduser().resolve()
         self.generated_root = self.root / "_generated"
         self.notes_root = self.generated_root / "gallery_notes"
+        self.visual_analysis_root = self.generated_root / "gallery_visual_analysis"
         self.index_path = self.root / "gallery_index.csv"
         self._records: list[GalleryRecord] = []
         self._scanned = False
@@ -180,6 +194,11 @@ class GalleryIndex:
             source=row.get("source", ""),
             user_evaluation=row.get("user_evaluation", ""),
             analysis_date=row.get("analysis_date", ""),
+            visual_analysis_status=row.get("visual_analysis_status", "not_analyzed")
+            or "not_analyzed",
+            visual_analysis_date=row.get("visual_analysis_date", ""),
+            visual_analysis_by=row.get("visual_analysis_by", ""),
+            visual_analysis_notes=row.get("visual_analysis_notes", ""),
         )
 
     def analyze(self, path: str | Path) -> GalleryRecord:
@@ -207,7 +226,6 @@ class GalleryIndex:
                 whitespace_estimate=whitespace_estimate,
                 style=self._suggested_style(relative_path),
             )
-        self._write_note(record)
         return record
 
     def _write_note(self, record: GalleryRecord) -> None:
@@ -219,7 +237,7 @@ class GalleryIndex:
 - Content hash: `{record.sha256}`
 - Analysis date: `{record.analysis_date}`
 - Source and license: unknown; fill manually when available.
-- User evaluation: blank until the user writes it.
+- User evaluation: {record.user_evaluation or "blank until the user writes it"}.
 
 ## Observable facts
 
@@ -246,6 +264,28 @@ visual review.
 """
         note_path.write_text(note, encoding="utf-8")
 
+    def _write_visual_analysis(self, record: GalleryRecord) -> Path:
+        """Write explicit Agent observations separately from deterministic notes."""
+
+        self.visual_analysis_root.mkdir(parents=True, exist_ok=True)
+        note_path = self.visual_analysis_root / f"{record.sha256}.md"
+        note = f"""# Agent visual analysis
+
+- Relative path: `{record.relative_path}`
+- Content hash: `{record.sha256}`
+- Analysis date: `{record.visual_analysis_date}`
+- Analyzed by: `{record.visual_analysis_by}`
+
+## Observations
+
+{record.visual_analysis_notes}
+
+This file records an explicit visual review and is not produced by the
+deterministic metadata scanner.
+"""
+        note_path.write_text(note, encoding="utf-8")
+        return note_path
+
     def scan(self) -> list[GalleryRecord]:
         """Incrementally scan supported images and update generated metadata."""
 
@@ -263,9 +303,16 @@ visual review.
                 record.tags = previous.tags
                 record.source = previous.source
                 record.user_evaluation = previous.user_evaluation
+                record.analysis_date = previous.analysis_date or record.analysis_date
+                record.visual_analysis_status = previous.visual_analysis_status or "not_analyzed"
+                record.visual_analysis_date = previous.visual_analysis_date
+                record.visual_analysis_by = previous.visual_analysis_by
+                record.visual_analysis_notes = previous.visual_analysis_notes
         for same_hash in by_hash.values():
             for index, record in enumerate(same_hash):
                 record.is_duplicate = index > 0
+        for record in records:
+            self._write_note(record)
         self._records = records
         self._scanned = True
         self.write_index(records)
@@ -315,3 +362,39 @@ visual review.
                 continue
             results.append(record)
         return sorted(results, key=lambda item: (not item.favorite, item.relative_path))
+
+    def record_agent_analysis(
+        self,
+        relative_path: str | Path,
+        observations: Mapping[str, object],
+        analyzed_by: str = "codex",
+    ) -> GalleryRecord:
+        """Persist explicit visual observations without modifying the source image."""
+
+        image_path = (self.root / Path(relative_path)).resolve()
+        if not image_path.is_relative_to(self.root):
+            raise ValueError("relative_path must point inside the gallery root")
+        if not image_path.exists():
+            raise FileNotFoundError(image_path)
+        if not self._scanned:
+            self.scan()
+        path_key = self._relative_path(image_path)
+        record = next((item for item in self._records if item.relative_path == path_key), None)
+        if record is None or record.sha256 != self._hash(image_path):
+            self.scan()
+            record = next(
+                (item for item in self._records if item.relative_path == path_key),
+                None,
+            )
+        if record is None:
+            raise FileNotFoundError(f"Image is not indexed: {path_key}")
+
+        record.visual_analysis_status = "agent_reviewed"
+        record.visual_analysis_date = datetime.now(UTC).isoformat()
+        record.visual_analysis_by = analyzed_by
+        record.visual_analysis_notes = json.dumps(
+            dict(observations), ensure_ascii=False, indent=2, sort_keys=True, default=str
+        )
+        self._write_visual_analysis(record)
+        self.write_index(self._records)
+        return record
