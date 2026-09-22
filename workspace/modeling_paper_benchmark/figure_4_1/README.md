@@ -5,7 +5,7 @@ This benchmark contains a three-stage test of one paper figure: `图 4-1 问题�
 ## Stage directories
 
 - [stage_01_independent](stage_01_independent/): frozen text-only independent design, created before opening the source page image.
-- [stage_02_comparison](stage_02_comparison/): scientific/visual comparison report and provenance; source-page previews remain local because they are source-derived inspection assets.
+- [stage_02_comparison](stage_02_comparison/): source-page preview, original-figure crop, and scientific/visual comparison report.
 - [stage_03_final](stage_03_final/): source-compared final figure, editable Python source/configuration, QA previews, hashes and Design Receipt.
 
 ## Final deliverables
